@@ -2,9 +2,17 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: ProjetSymfonyCovoiturage\CovoiturageBundle\Entity\Utilisateur
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
+
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"

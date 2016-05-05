@@ -1,7 +1,7 @@
 <?php
 
 namespace Acme\CovoiturageBundle\Entity;
-
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="utilisateur")
  * @ORM\Entity
  */
-class Utilisateur
+class Utilisateur extends BaseUser
 {
     /**
      * @var string
@@ -70,7 +70,11 @@ class Utilisateur
      */
     private $id;
 
-
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * Set nom
