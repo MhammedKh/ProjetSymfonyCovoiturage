@@ -29,9 +29,9 @@ class Avis
     private $id;
 
     /**
-     * @var \Acme\CovoiturageBundle\Entity\Utilisateur
+     * @var \Acme\CovoiturageBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="Acme\CovoiturageBundle\Entity\Utilisateur")
+     * @ORM\ManyToOne(targetEntity="Acme\CovoiturageBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_utilisateur", referencedColumnName="id")
      * })
