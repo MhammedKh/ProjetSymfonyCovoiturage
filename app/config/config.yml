@@ -5,11 +5,15 @@ imports:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: AppBundle\Entity\User
+    user_class: Acme\CovoiturageBundle\Entity\User
+    
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:       ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
