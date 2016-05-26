@@ -1,6 +1,7 @@
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
+        Acme\CovoiturageBundle\Entity\User: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

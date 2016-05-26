@@ -11,8 +11,6 @@
                 <th>Prixplace</th>
                 <th>Datedep</th>
                 <th>Heuredep</th>
-                <th>Villedep</th>
-                <th>Villearr</th>
                 <th>Lieudep</th>
                 <th>Commentaire</th>
                 <th>Status</th>
@@ -32,8 +30,6 @@
                 <td>{{ entity.prixPlace }}</td>
                 <td>{% if entity.dateDep %}{{ entity.dateDep|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.heureDep }}</td>
-                <td>{{ entity.villeDep }}</td>
-                <td>{{ entity.villeArr }}</td>
                 <td>{{ entity.lieuDep }}</td>
                 <td>{{ entity.commentaire }}</td>
                 <td>{{ entity.status }}</td>

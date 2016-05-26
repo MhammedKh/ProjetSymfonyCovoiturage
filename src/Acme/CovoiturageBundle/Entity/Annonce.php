@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Annonce
  *
- * @ORM\Table(name="annonce", indexes={@ORM\Index(name="FK_utilisateur", columns={"id_utilisateur"})})
+ * @ORM\Table(name="annonce", indexes={@ORM\Index(name="FK_utilisateur", columns={"id_utilisateur"}), @ORM\Index(name="FK_annonce_2", columns={"ville_dep"}), @ORM\Index(name="FK_annonce_3", columns={"ville_arr"})})
  * @ORM\Entity
  */
 class Annonce
@@ -46,20 +46,6 @@ class Annonce
      * @ORM\Column(name="heure_dep", type="string", length=45, nullable=true)
      */
     private $heureDep;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ville_dep", type="string", length=45, nullable=true)
-     */
-    private $villeDep;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ville_arr", type="string", length=45, nullable=true)
-     */
-    private $villeArr;
 
     /**
      * @var string
@@ -129,360 +115,25 @@ class Annonce
      */
     private $idUtilisateur;
 
-
+    /**
+     * @var \Acme\CovoiturageBundle\Entity\Ville
+     *
+     * @ORM\ManyToOne(targetEntity="Acme\CovoiturageBundle\Entity\Ville")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ville_arr", referencedColumnName="id")
+     * })
+     */
+    private $villeArr;
 
     /**
-     * Set marqueVoiture
+     * @var \Acme\CovoiturageBundle\Entity\Ville
      *
-     * @param string $marqueVoiture
-     * @return Annonce
+     * @ORM\ManyToOne(targetEntity="Acme\CovoiturageBundle\Entity\Ville")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ville_dep", referencedColumnName="id")
+     * })
      */
-    public function setMarqueVoiture($marqueVoiture)
-    {
-        $this->marqueVoiture = $marqueVoiture;
+    private $villeDep;
 
-        return $this;
-    }
 
-    /**
-     * Get marqueVoiture
-     *
-     * @return string 
-     */
-    public function getMarqueVoiture()
-    {
-        return $this->marqueVoiture;
-    }
-
-    /**
-     * Set nombrePlace
-     *
-     * @param integer $nombrePlace
-     * @return Annonce
-     */
-    public function setNombrePlace($nombrePlace)
-    {
-        $this->nombrePlace = $nombrePlace;
-
-        return $this;
-    }
-
-    /**
-     * Get nombrePlace
-     *
-     * @return integer 
-     */
-    public function getNombrePlace()
-    {
-        return $this->nombrePlace;
-    }
-
-    /**
-     * Set prixPlace
-     *
-     * @param float $prixPlace
-     * @return Annonce
-     */
-    public function setPrixPlace($prixPlace)
-    {
-        $this->prixPlace = $prixPlace;
-
-        return $this;
-    }
-
-    /**
-     * Get prixPlace
-     *
-     * @return float 
-     */
-    public function getPrixPlace()
-    {
-        return $this->prixPlace;
-    }
-
-    /**
-     * Set dateDep
-     *
-     * @param \DateTime $dateDep
-     * @return Annonce
-     */
-    public function setDateDep($dateDep)
-    {
-        $this->dateDep = $dateDep;
-
-        return $this;
-    }
-
-    /**
-     * Get dateDep
-     *
-     * @return \DateTime 
-     */
-    public function getDateDep()
-    {
-        return $this->dateDep;
-    }
-
-    /**
-     * Set heureDep
-     *
-     * @param string $heureDep
-     * @return Annonce
-     */
-    public function setHeureDep($heureDep)
-    {
-        $this->heureDep = $heureDep;
-
-        return $this;
-    }
-
-    /**
-     * Get heureDep
-     *
-     * @return string 
-     */
-    public function getHeureDep()
-    {
-        return $this->heureDep;
-    }
-
-    /**
-     * Set villeDep
-     *
-     * @param string $villeDep
-     * @return Annonce
-     */
-    public function setVilleDep($villeDep)
-    {
-        $this->villeDep = $villeDep;
-
-        return $this;
-    }
-
-    /**
-     * Get villeDep
-     *
-     * @return string 
-     */
-    public function getVilleDep()
-    {
-        return $this->villeDep;
-    }
-
-    /**
-     * Set villeArr
-     *
-     * @param string $villeArr
-     * @return Annonce
-     */
-    public function setVilleArr($villeArr)
-    {
-        $this->villeArr = $villeArr;
-
-        return $this;
-    }
-
-    /**
-     * Get villeArr
-     *
-     * @return string 
-     */
-    public function getVilleArr()
-    {
-        return $this->villeArr;
-    }
-
-    /**
-     * Set lieuDep
-     *
-     * @param string $lieuDep
-     * @return Annonce
-     */
-    public function setLieuDep($lieuDep)
-    {
-        $this->lieuDep = $lieuDep;
-
-        return $this;
-    }
-
-    /**
-     * Get lieuDep
-     *
-     * @return string 
-     */
-    public function getLieuDep()
-    {
-        return $this->lieuDep;
-    }
-
-    /**
-     * Set commentaire
-     *
-     * @param string $commentaire
-     * @return Annonce
-     */
-    public function setCommentaire($commentaire)
-    {
-        $this->commentaire = $commentaire;
-
-        return $this;
-    }
-
-    /**
-     * Get commentaire
-     *
-     * @return string 
-     */
-    public function getCommentaire()
-    {
-        return $this->commentaire;
-    }
-
-    /**
-     * Set status
-     *
-     * @param string $status
-     * @return Annonce
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string 
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Set dateIns
-     *
-     * @param \DateTime $dateIns
-     * @return Annonce
-     */
-    public function setDateIns($dateIns)
-    {
-        $this->dateIns = $dateIns;
-
-        return $this;
-    }
-
-    /**
-     * Get dateIns
-     *
-     * @return \DateTime 
-     */
-    public function getDateIns()
-    {
-        return $this->dateIns;
-    }
-
-    /**
-     * Set fumeur
-     *
-     * @param integer $fumeur
-     * @return Annonce
-     */
-    public function setFumeur($fumeur)
-    {
-        $this->fumeur = $fumeur;
-
-        return $this;
-    }
-
-    /**
-     * Get fumeur
-     *
-     * @return integer 
-     */
-    public function getFumeur()
-    {
-        return $this->fumeur;
-    }
-
-    /**
-     * Set musique
-     *
-     * @param integer $musique
-     * @return Annonce
-     */
-    public function setMusique($musique)
-    {
-        $this->musique = $musique;
-
-        return $this;
-    }
-
-    /**
-     * Get musique
-     *
-     * @return integer 
-     */
-    public function getMusique()
-    {
-        return $this->musique;
-    }
-
-    /**
-     * Set discussion
-     *
-     * @param integer $discussion
-     * @return Annonce
-     */
-    public function setDiscussion($discussion)
-    {
-        $this->discussion = $discussion;
-
-        return $this;
-    }
-
-    /**
-     * Get discussion
-     *
-     * @return integer 
-     */
-    public function getDiscussion()
-    {
-        return $this->discussion;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set idUtilisateur
-     *
-     * @param \Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur
-     * @return Annonce
-     */
-    public function setIdUtilisateur(\Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur = null)
-    {
-        $this->idUtilisateur = $idUtilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get idUtilisateur
-     *
-     * @return \Acme\CovoiturageBundle\Entity\Utilisateur 
-     */
-    public function getIdUtilisateur()
-    {
-        return $this->idUtilisateur;
-    }
 }

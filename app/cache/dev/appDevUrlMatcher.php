@@ -481,6 +481,90 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/ville')) {
+            // ville
+            if (rtrim($pathinfo, '/') === '/ville') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_ville;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'ville');
+                }
+
+                return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::indexAction',  '_route' => 'ville',);
+            }
+            not_ville:
+
+            // ville_create
+            if ($pathinfo === '/ville/') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_ville_create;
+                }
+
+                return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::createAction',  '_route' => 'ville_create',);
+            }
+            not_ville_create:
+
+            // ville_new
+            if ($pathinfo === '/ville/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_ville_new;
+                }
+
+                return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::newAction',  '_route' => 'ville_new',);
+            }
+            not_ville_new:
+
+            // ville_show
+            if (preg_match('#^/ville/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_ville_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_show')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::showAction',));
+            }
+            not_ville_show:
+
+            // ville_edit
+            if (preg_match('#^/ville/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_ville_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_edit')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::editAction',));
+            }
+            not_ville_edit:
+
+            // ville_update
+            if (preg_match('#^/ville/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PUT') {
+                    $allow[] = 'PUT';
+                    goto not_ville_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_update')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::updateAction',));
+            }
+            not_ville_update:
+
+            // ville_delete
+            if (preg_match('#^/ville/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_ville_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ville_delete')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\VilleController::deleteAction',));
+            }
+            not_ville_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
