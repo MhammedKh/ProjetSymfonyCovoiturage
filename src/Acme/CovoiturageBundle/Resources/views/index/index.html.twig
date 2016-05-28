@@ -65,7 +65,7 @@
                                     <div class="col-md-4 col-sm-12 col-xs-12">
 
                                         <div class="logo">
-                                            <h1>My ride</h1>
+                                            <h1>Carpool.Tn</h1>
                                         </div><!-- end .logo -->
 
                                     </div><!-- end .col-sm-4 -->
@@ -79,28 +79,22 @@
                                                     <a href="index.html">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href="rides.html">rides</a>
+                                                    <a href="rides.html">Your Reservation</a>
                                                 </li>
+                                                
                                                 <li>
-                                                    <a href="add-ride.html">Submit</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Pages</a>
+                                                    <a href="#">Announcement</a>
                                                     <ul class="sub-menu">
                                                         <li>
-                                                            <a href="events.html">Events</a>
+                                                            <a href="events.html">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href="single-post.html">Single post</a>
+                                                            <a href="single-post.html">Your Announcement</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="single-article.html">Single article</a>
-                                                        </li>
+                                                      
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <a href="blog.html">Blog</a>
-                                                </li>
+                                              
                                                 <li>
                                                     <a href="contact-page.html">Contact</a>
                                                 </li>
@@ -126,15 +120,11 @@
 
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <div class="field">
-                                                <select id="destination" name="destination">
+                                                <select id="destination" name="from">
                                                     <option value="default">From</option>
-                                                    <option>Sofia</option>
-                                                    <option>Plovdiv</option>
-                                                    <option>Hamburg</option>
-                                                    <option>Milano</option>
-                                                    <option>Paris</option>
-                                                    <option>Madrid</option>
-                                                    <option>Berlin</option>
+                                                    {% for entitiesVille in entitiesVille %}
+                                                    <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
+                                                 {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -142,15 +132,11 @@
                                         <div class="col-md-3 col-sm-3 col-xs-12">
 
                                             <div class="field">
-                                                <select id="destination" name="destination">
+                                                <select id="destination" name="to">
                                                     <option value="default">To</option>
-                                                    <option>Sofia</option>
-                                                    <option>Plovdiv</option>
-                                                    <option>Hamburg</option>
-                                                    <option>Milano</option>
-                                                    <option>Paris</option>
-                                                    <option>Madrid</option>
-                                                    <option>Berlin</option>
+                                                    {% for entitiesVille in entitiesVille %}
+                                                    <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
+                                                 {% endfor %}
                                                 </select>
                                             </div>
 
@@ -165,23 +151,14 @@
 
                                         </div>
 
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-
-                                            <div class="field">
-                                                <select id="destination" name="destination">
-                                                    <option value="default">Number of seats</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
+                                
 
                                         <div class="col-md-3 col-sm-3 col-xs-12">
 
                                             <div class="field buttons">
+                                                
                                                 <button type="submit" class="btn btn-lg green-color">Search</button>
+                                                
                                             </div>
 
                                         </div>
@@ -195,6 +172,13 @@
                         </div><!-- end .col-sm-12 -->
 
                     </div><!-- end .second-parallax-content -->
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                 </div><!-- end .main-parallax-content -->
 
@@ -212,7 +196,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                     <div class="page-sub-title textcenter">
-                        <h2>All rides</h2>
+                        <h2>Announcement of day</h2>
                         <div class="line"></div>
                     </div><!-- end .page-sub-title -->
 
@@ -225,12 +209,14 @@
                         <div class="rides-list">
                             
                             {% for entity in entities %}
+                                
+                           
 
                             <article class="ride-box clearfix">
                                 
                       
                                 <div class="ride-content">
-                                    <h3><a href="#">From {{ entity.villeDep }} to <td>{{ entity.villeArr }} at <td>{{ entity.heureDep }}</td> </td></a></h3> ride by <a href="#">{{ entity.idUtilisateur }}</a>
+                                    <h3><a href="#">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
                                 </div>
 
                                 <ul class="ride-meta">
@@ -238,19 +224,22 @@
                                     <li class="ride-date">
                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
                                             <i class="fa fa-calendar"></i>
-                                            July 20, 2014 at 19:00 PM
+                                            {{ entity.getDateDep|date('Y-m-d') }} at {{ entity.getHeurDep }} PM
                                         </a>
                                     </li><!-- end .ride-date -->
 
                                     <li class="ride-people">
                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
                                             <i class="fa fa-user"></i>
-                                            1
+                                            {{entity.nbrPlacedesp}}
                                         </a>
                                     </li><!-- end .ride-people -->
+                                    
+                                    
+                             
 
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ path('annonce_show', { 'id': entity.id }) }}">
                                             <i class="fa fa-file"></i>
                                             Read more
                                         </a>
@@ -267,7 +256,7 @@
                             <div class="post-pagination pagination-margin clearfix">
 
                                 <div class="next pull-right">
-                                    <a href="#">
+                                    <a href="../annonce">
                                         Next
                                         <i class="fa fa-chevron-right"></i>
                                     </a>
@@ -280,6 +269,11 @@
                     </div><!-- end .page-content -->
 
                 </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                
+                
+                
+                
+                
 
             </div><!-- end .row -->
         </div><!-- end .container -->
@@ -317,8 +311,7 @@
                             <button type="submit" class="submit btn green-color">Log in</button>
                         </div>
 
-                        <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                        <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                      
 
                         <div class="clearfix"></div>
 

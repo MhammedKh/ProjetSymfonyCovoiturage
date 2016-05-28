@@ -17,21 +17,21 @@ class Ville
      *
      * @ORM\Column(name="nom_v", type="string", length=45, nullable=true)
      */
-    private $nomV;
+    public $nomV;
 
     /**
      * @var string
      *
      * @ORM\Column(name="altitude", type="string", length=45, nullable=true)
      */
-    private $altitude;
+    public $altitude;
 
     /**
      * @var string
      *
      * @ORM\Column(name="longitude", type="string", length=45, nullable=true)
      */
-    private $longitude;
+    public $longitude;
 
     /**
      * @var integer
@@ -40,7 +40,8 @@ class Ville
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    public $id;
 
+    
 
 }

@@ -28,12 +28,33 @@ class IndexController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->findAll();
-
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showIndexAnnonce();
+        foreach ($entities as $row)
+        {
+           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
+            
+        }
+        
+        $entitiesV = $em->getRepository('AcmeCovoiturageBundle:Ville')->findAll();
+        
+        
+        
         return array(
-            'entities' => $entities,
+            'entities' => $entities, 'entitiesVille' => $entitiesV
         );
     }
+    
+    public function sommeReservationAnnonce($id_ann)
+    {
+         $em = $this->getDoctrine()->getManager();
+         $sum =0;
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonce($id_ann);
+         foreach ($entities as $row)
+         {
+             $sum+=$row->getNbrPlace();
+         }
+        return $sum;
+    }
+       
 }
     

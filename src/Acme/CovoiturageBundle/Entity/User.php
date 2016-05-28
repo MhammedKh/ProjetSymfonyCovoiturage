@@ -20,13 +20,17 @@ class User extends BaseUser
      */
     protected $id;
     
-     /**
+    /**
      * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=45, nullable=true)
      */
     protected $tel;
     
-     /**
+  /**
      * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=45, nullable=true)
      */
     protected $photo;
     

@@ -30,10 +30,28 @@ class AnnonceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->findAll();
+        
+        foreach ($entities as $row)
+        {
+           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
+            
+        }
 
         return array(
             'entities' => $entities,
         );
+    }
+    
+        public function sommeReservationAnnonce($id_ann)
+    {
+         $em = $this->getDoctrine()->getManager();
+         $sum =0;
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonce($id_ann);
+         foreach ($entities as $row)
+         {
+             $sum+=$row->getNbrPlace();
+         }
+        return $sum;
     }
     /**
      * Creates a new Annonce entity.
@@ -111,6 +129,10 @@ class AnnonceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id);
+       
+           $entity->nbrPlacedesp = $entity->nombrePlace -  $this->sommeReservationAnnonce($id);
+            
+        
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Annonce entity.');

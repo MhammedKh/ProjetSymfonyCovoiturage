@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Annonce
  *
  * @ORM\Table(name="annonce", indexes={@ORM\Index(name="FK_utilisateur", columns={"id_utilisateur"}), @ORM\Index(name="FK_annonce_2", columns={"ville_dep"}), @ORM\Index(name="FK_annonce_3", columns={"ville_arr"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\CovoiturageBundle\Entity\AnnonceRepository")
  */
 class Annonce
 {
@@ -17,84 +17,84 @@ class Annonce
      *
      * @ORM\Column(name="marque_voiture", type="string", length=45, nullable=true)
      */
-    private $marqueVoiture;
+    public $marqueVoiture;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="nombre_place", type="integer", nullable=true)
      */
-    private $nombrePlace;
+    public $nombrePlace;
 
     /**
      * @var float
      *
      * @ORM\Column(name="prix_place", type="float", precision=10, scale=0, nullable=true)
      */
-    private $prixPlace;
+    public $prixPlace;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_dep", type="date", nullable=true)
      */
-    private $dateDep;
+    public $dateDep;
 
     /**
      * @var string
      *
      * @ORM\Column(name="heure_dep", type="string", length=45, nullable=true)
      */
-    private $heureDep;
+    public $heureDep;
 
     /**
      * @var string
      *
      * @ORM\Column(name="lieu_dep", type="string", length=45, nullable=true)
      */
-    private $lieuDep;
+    public $lieuDep;
 
     /**
      * @var string
      *
      * @ORM\Column(name="commentaire", type="string", length=45, nullable=true)
      */
-    private $commentaire;
+    public $commentaire;
 
     /**
      * @var string
      *
      * @ORM\Column(name="status", type="string", length=45, nullable=true)
      */
-    private $status;
+    public $status;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_ins", type="date", nullable=true)
      */
-    private $dateIns;
+    public $dateIns;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="fumeur", type="integer", nullable=true)
      */
-    private $fumeur;
+    public $fumeur;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="musique", type="integer", nullable=true)
      */
-    private $musique;
+    public $musique;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="discussion", type="integer", nullable=true)
      */
-    private $discussion;
+    public $discussion;
 
     /**
      * @var integer
@@ -103,7 +103,7 @@ class Annonce
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    public $id;
 
     /**
      * @var \Acme\CovoiturageBundle\Entity\User
@@ -113,7 +113,7 @@ class Annonce
      *   @ORM\JoinColumn(name="id_utilisateur", referencedColumnName="id")
      * })
      */
-    private $idUtilisateur;
+    public $idUtilisateur;
 
     /**
      * @var \Acme\CovoiturageBundle\Entity\Ville
@@ -123,7 +123,7 @@ class Annonce
      *   @ORM\JoinColumn(name="ville_arr", referencedColumnName="id")
      * })
      */
-    private $villeArr;
+    public $villeArr;
 
     /**
      * @var \Acme\CovoiturageBundle\Entity\Ville
@@ -133,7 +133,96 @@ class Annonce
      *   @ORM\JoinColumn(name="ville_dep", referencedColumnName="id")
      * })
      */
-    private $villeDep;
+    public $villeDep;
+    
+    public $nbrPlacedesp ;
+    
+    
+     /**
+     * Get villeDep
+     *
+     * @return \Acme\CovoiturageBundle\Entity\Ville 
+     */
+    public function getVilleDep()
+    {
+        return $this->villeDep->nomV;
+    }
+    
+         /**
+     * Get villeArr
+     *
+     * @return \Acme\CovoiturageBundle\Entity\Ville
+     */
+    public function getVilleArr()
+    {
+        return $this->villeArr->nomV;
+    }
+    
+        /**
+     * Get heurDep
+     *
+     * @return string 
+     */
+    public function getHeurDep()
+    {
+        return $this->heureDep;
+    }
+    
+     /**
+     * Get NameUser
+     *
+     * @return \Acme\CovoiturageBundle\Entity\User 
+     */
+    public function getNameUser()
+    {
+        return $this->idUtilisateur->getUsername();
+    }
+    
+    
+      /**
+     * Get TelUser
+     *
+     * @return \Acme\CovoiturageBundle\Entity\User 
+     */
+    public function getTelUser()
+    {
+        return $this->idUtilisateur->getTel();
+    }
+    
+    
+    
+      /**
+     * Get DateDep
+     *
+     * @return Date
+     */
+    public function getDateDep()
+    {
+        return $this->dateDep;
+    }
+    
+     /**
+     * Get Nbrplace
+     *
+     * @return integer
+     */
+    public function getNbrPlace()
+    {
+        return $this->nombrePlace;
+    }
+    
+     /**
+     * Get prixPlace
+     *
+     * @return float
+     */
+    public function getPrixPlace()
+    {
+        return $this->prixPlace;
+    }
+    
+ 
+
 
 
 }
