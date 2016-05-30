@@ -351,6 +351,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_reservation_new:
 
+            // reservation_add
+            if ($pathinfo === '/reservation/annonceAdd') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_reservation_add;
+                }
+
+                return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\ReservationController::AddAction',  '_route' => 'reservation_add',);
+            }
+            not_reservation_add:
+
             // reservation_show
             if (preg_match('#^/reservation/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -750,6 +761,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        // annonceUser
+        if ($pathinfo === '/annonceUser') {
+            return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\AnnonceController::annonceUserAction',  '_route' => 'annonceUser',);
+        }
+
+        // reservationAnnonce
+        if (0 === strpos($pathinfo, '/reservationAnnonce') && preg_match('#^/reservationAnnonce/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'reservationAnnonce')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\ReservationController::reservationAnnonceAction',));
+        }
+
+        // acceptReservation
+        if (0 === strpos($pathinfo, '/acceptReservation') && preg_match('#^/acceptReservation/(?P<id_ann>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'acceptReservation')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\ReservationController::acceptReservationAction',));
+        }
+
+        // refuseReservation
+        if (0 === strpos($pathinfo, '/refuseReservation') && preg_match('#^/refuseReservation/(?P<id_ann>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'refuseReservation')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\ReservationController::refuseReservationAction',));
+        }
 
         // _welcome
         if (rtrim($pathinfo, '/') === '') {

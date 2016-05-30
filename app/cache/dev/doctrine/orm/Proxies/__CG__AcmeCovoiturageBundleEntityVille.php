@@ -218,4 +218,15 @@ class Ville extends \Acme\CovoiturageBundle\Entity\Ville implements \Doctrine\OR
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }

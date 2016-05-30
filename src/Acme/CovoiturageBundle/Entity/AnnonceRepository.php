@@ -17,6 +17,20 @@ class AnnonceRepository extends EntityRepository {
          
         return $qt->getQuery()->getResult();
     }
+    
+    public function showAnnonceuser($id_user) {
+
+        $qt = $this->createQueryBuilder('a');
+        $qt->select('a')
+                 
+                ->where('a.idUtilisateur=:u')
+                
+                ->setParameter('u',$id_user);
+         
+        return $qt->getQuery()->getResult();
+    }
+
+    
 
 }
 

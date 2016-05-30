@@ -32,11 +32,11 @@ class Annonce
      * @ORM\Column(name="prix_place", type="float", precision=10, scale=0, nullable=true)
      */
     public $prixPlace;
-
+    public $sumReserv;
     /**
-     * @var \DateTime
+     * @var \string
      *
-     * @ORM\Column(name="date_dep", type="date", nullable=true)
+     * @ORM\Column(name="date_dep", type="string", nullable=true)
      */
     public $dateDep;
 
@@ -69,9 +69,9 @@ class Annonce
     public $status;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date_ins", type="date", nullable=true)
+     * @ORM\Column(name="date_ins", type="string", nullable=true)
      */
     public $dateIns;
 
@@ -145,8 +145,22 @@ class Annonce
      */
     public function getVilleDep()
     {
+        return $this->villeDep;
+    }
+    
+    
+     /**
+     * Get villeDepString
+     *
+     * @return string
+     */
+    public function getVilleDepString()
+    {
         return $this->villeDep->nomV;
     }
+    
+    
+    
     
          /**
      * Get villeArr
@@ -155,8 +169,20 @@ class Annonce
      */
     public function getVilleArr()
     {
+        return $this->villeArr;
+    }
+    
+    /**
+       * Get villeArrString
+     *
+     * @return string
+     */
+    public function getVilleArrString()
+    {
         return $this->villeArr->nomV;
     }
+    
+    
     
         /**
      * Get heurDep
@@ -168,6 +194,16 @@ class Annonce
         return $this->heureDep;
     }
     
+    
+       /**
+     * Get getId
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
      /**
      * Get NameUser
      *
@@ -220,6 +256,18 @@ class Annonce
     {
         return $this->prixPlace;
     }
+    
+    /**
+     * Get prixPlace
+     *
+     * @return string
+     */
+    public function __toString() {
+        
+        return $this->id." ";
+    }
+
+    
     
  
 

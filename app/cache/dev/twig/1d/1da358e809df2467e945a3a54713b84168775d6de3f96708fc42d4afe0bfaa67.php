@@ -222,7 +222,10 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
                                     </li><!-- end .ride-people -->
 
                                     <li>
-                                        <a href=\"\">
+                                        <a href=\"";
+            // line 177
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\">
                                             <i class=\"fa fa-file\"></i>
                                             Read more
                                         </a>
@@ -357,129 +360,7 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
             </div><!-- end .modal-dialog -->
         </div><!-- end .modal -->
     
-    
-<!--
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Marquevoiture</th>
-                <th>Nombreplace</th>
-                <th>Prixplace</th>
-                <th>Datedep</th>
-                <th>Heuredep</th>
-                <th>Lieudep</th>
-                <th>Commentaire</th>
-                <th>Status</th>
-                <th>Dateins</th>
-                <th>Fumeur</th>
-                <th>Musique</th>
-                <th>Discussion</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 329
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
-        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 330
-            echo "            <tr>
-                <td><a href=\"";
-            // line 331
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "marqueVoiture", array()), "html", null, true);
-            echo "</a></td>
-                <td>";
-            // line 332
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombrePlace", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 333
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "prixPlace", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 334
-            if ($this->getAttribute($context["entity"], "dateDep", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateDep", array()), "Y-m-d H:i:s"), "html", null, true);
-            }
-            echo "</td>
-                <td>";
-            // line 335
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "heureDep", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 336
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "lieuDep", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 337
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "commentaire", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 338
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "status", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 339
-            if ($this->getAttribute($context["entity"], "dateIns", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "dateIns", array()), "Y-m-d H:i:s"), "html", null, true);
-            }
-            echo "</td>
-                <td>";
-            // line 340
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "fumeur", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 341
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "musique", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 342
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "discussion", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 343
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 347
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 350
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 356
-        echo "        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href=\"";
-        // line 361
-        echo $this->env->getExtension('routing')->getPath("annonce_new");
-        echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>-->
+  
     ";
     }
 
@@ -495,7 +376,7 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
 
     public function getDebugInfo()
     {
-        return array (  477 => 361,  470 => 356,  458 => 350,  452 => 347,  445 => 343,  441 => 342,  437 => 341,  433 => 340,  427 => 339,  423 => 338,  419 => 337,  415 => 336,  411 => 335,  405 => 334,  401 => 333,  397 => 332,  391 => 331,  388 => 330,  384 => 329,  240 => 187,  219 => 172,  207 => 165,  192 => 157,  183 => 150,  179 => 149,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
+        return array (  243 => 187,  227 => 177,  219 => 172,  207 => 165,  192 => 157,  183 => 150,  179 => 149,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -674,7 +555,7 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
 /*                                     </li><!-- end .ride-people -->*/
 /* */
 /*                                     <li>*/
-/*                                         <a href="">*/
+/*                                         <a href="{{ path('annonce_show', { 'id': entity.id }) }}">*/
 /*                                             <i class="fa fa-file"></i>*/
 /*                                             Read more*/
 /*                                         </a>*/
@@ -804,64 +685,6 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
 /*             </div><!-- end .modal-dialog -->*/
 /*         </div><!-- end .modal -->*/
 /*     */
-/*     */
-/* <!--*/
-/*     <table class="records_list">*/
-/*         <thead>*/
-/*             <tr>*/
-/*                 <th>Marquevoiture</th>*/
-/*                 <th>Nombreplace</th>*/
-/*                 <th>Prixplace</th>*/
-/*                 <th>Datedep</th>*/
-/*                 <th>Heuredep</th>*/
-/*                 <th>Lieudep</th>*/
-/*                 <th>Commentaire</th>*/
-/*                 <th>Status</th>*/
-/*                 <th>Dateins</th>*/
-/*                 <th>Fumeur</th>*/
-/*                 <th>Musique</th>*/
-/*                 <th>Discussion</th>*/
-/*                 <th>Id</th>*/
-/*                 <th>Actions</th>*/
-/*             </tr>*/
-/*         </thead>*/
-/*         <tbody>*/
-/*         {% for entity in entities %}*/
-/*             <tr>*/
-/*                 <td><a href="{{ path('annonce_show', { 'id': entity.id }) }}">{{ entity.marqueVoiture }}</a></td>*/
-/*                 <td>{{ entity.nombrePlace }}</td>*/
-/*                 <td>{{ entity.prixPlace }}</td>*/
-/*                 <td>{% if entity.dateDep %}{{ entity.dateDep|date('Y-m-d H:i:s') }}{% endif %}</td>*/
-/*                 <td>{{ entity.heureDep }}</td>*/
-/*                 <td>{{ entity.lieuDep }}</td>*/
-/*                 <td>{{ entity.commentaire }}</td>*/
-/*                 <td>{{ entity.status }}</td>*/
-/*                 <td>{% if entity.dateIns %}{{ entity.dateIns|date('Y-m-d H:i:s') }}{% endif %}</td>*/
-/*                 <td>{{ entity.fumeur }}</td>*/
-/*                 <td>{{ entity.musique }}</td>*/
-/*                 <td>{{ entity.discussion }}</td>*/
-/*                 <td>{{ entity.id }}</td>*/
-/*                 <td>*/
-/*                 <ul>*/
-/*                     <li>*/
-/*                         <a href="{{ path('annonce_show', { 'id': entity.id }) }}">show</a>*/
-/*                     </li>*/
-/*                     <li>*/
-/*                         <a href="{{ path('annonce_edit', { 'id': entity.id }) }}">edit</a>*/
-/*                     </li>*/
-/*                 </ul>*/
-/*                 </td>*/
-/*             </tr>*/
-/*         {% endfor %}*/
-/*         </tbody>*/
-/*     </table>*/
-/* */
-/*         <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('annonce_new') }}">*/
-/*                 Create a new entry*/
-/*             </a>*/
-/*         </li>*/
-/*     </ul>-->*/
+/*   */
 /*     {% endblock %}*/
 /* */

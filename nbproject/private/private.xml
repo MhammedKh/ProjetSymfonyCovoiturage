@@ -10,35 +10,41 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/parameters.yml.dist</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/VilleType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/composer.lock</file>
-            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/ReservationRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config.yml</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/ReservationRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/parameters.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/console</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/js/bootstrap.min.js</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_dev.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/AnnonceRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Ville.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/userAnnonce.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/index/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/phpunit.xml.dist</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/.travis.yml</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/phpunit.xml.dist</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Avis.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/UtilisateurController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/composer.json</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/AppCache.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/AvisType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/security.yml</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/show.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/DemoBundle/Controller/DemoController.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/js/hoverIntent.js</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/VilleController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/routing_dev.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/DependencyInjection/Configuration.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/UPGRADE-2.3.md</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/new.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Annonce.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/check.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_test.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/style.css</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Reservation.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/new.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/ReservationType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/routing.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/ReservationController.php</file>
@@ -51,8 +57,10 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/Resources/views/base.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/UPGRADE-2.2.md</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/config/services.xml</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/AnnonceReservation.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/edit.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/js/bootstrap.js</file>
         </group>
     </open-files>
 </project-private>

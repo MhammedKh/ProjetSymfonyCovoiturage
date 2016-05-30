@@ -366,39 +366,37 @@ class __TwigTemplate_9618f9ce2ec363e66296e7deb6b1ac5607503c8f459a4c10654309c89b4
                             </article>
 
                             <div class=\"ride-suggestions\">
-                                <h3>Suggestions</h3>
+                                <h3>Reservation</h3>
                             </div>
+                                
+                                
+                                
+                                
 
                             <article class=\"ride-box clearfix\">
-
-                                <div class=\"ride-content\">
-                                    <h3><a href=\"#\">From Sofia to Plovdiv</a></h3>ride by <a href=\"#\">Stefan Valkov</a>
+                            <form method=\"POST\" action=\"";
+        // line 271
+        echo $this->env->getExtension('routing')->getPath("reservation_add");
+        echo "\">
+                             <div class=\"field\">
+                                 <input type=\"hidden\" name=\"id_ann\" value=\"";
+        // line 273
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()), "html", null, true);
+        echo "\">
+                                  <input name=\"nbr_p\" type=\"number\" min =\"1\" max=\"";
+        // line 274
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPlacedesp", array()), "html", null, true);
+        echo "\"> 
                                 </div>
-
-                                <ul class=\"ride-meta\">
-
-                                    <li class=\"ride-date\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-calendar\"></i>
-                                            July 20, 2014 at 19:00 PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-
-                                    <li class=\"ride-people\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-user\"></i>
-                                            1
-                                        </a>
-                                    </li><!-- end .ride-people -->
-
-                                    <li>
-                                        <a href=\"#\">
-                                            <i class=\"fa fa-file\"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-
-                                </ul><!-- end .ride-meta -->
+                                <div class=\"field\">
+                                  <input type=\"text\" name=\"comm_user\"> 
+                                </div>
+                                <div class=\"field buttons\">
+                                    <button type=\"submit\" class=\"btn btn-lg green-color\">Submit</button>
+                                </div>
+                                
+                            </form>
+    
 
                             </article><!-- end .ride-box -->
 
@@ -535,7 +533,7 @@ class __TwigTemplate_9618f9ce2ec363e66296e7deb6b1ac5607503c8f459a4c10654309c89b4
 
     public function getDebugInfo()
     {
-        return array (  361 => 256,  351 => 249,  341 => 242,  330 => 234,  320 => 227,  308 => 220,  297 => 212,  291 => 211,  206 => 129,  148 => 74,  141 => 70,  133 => 65,  123 => 58,  116 => 54,  109 => 50,  102 => 46,  95 => 42,  88 => 38,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  388 => 274,  384 => 273,  379 => 271,  361 => 256,  351 => 249,  341 => 242,  330 => 234,  320 => 227,  308 => 220,  297 => 212,  291 => 211,  206 => 129,  148 => 74,  141 => 70,  133 => 65,  123 => 58,  116 => 54,  109 => 50,  102 => 46,  95 => 42,  88 => 38,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -800,39 +798,28 @@ class __TwigTemplate_9618f9ce2ec363e66296e7deb6b1ac5607503c8f459a4c10654309c89b4
 /*                             </article>*/
 /* */
 /*                             <div class="ride-suggestions">*/
-/*                                 <h3>Suggestions</h3>*/
+/*                                 <h3>Reservation</h3>*/
 /*                             </div>*/
+/*                                 */
+/*                                 */
+/*                                 */
+/*                                 */
 /* */
 /*                             <article class="ride-box clearfix">*/
-/* */
-/*                                 <div class="ride-content">*/
-/*                                     <h3><a href="#">From Sofia to Plovdiv</a></h3>ride by <a href="#">Stefan Valkov</a>*/
+/*                             <form method="POST" action="{{path('reservation_add')}}">*/
+/*                              <div class="field">*/
+/*                                  <input type="hidden" name="id_ann" value="{{entity.id}}">*/
+/*                                   <input name="nbr_p" type="number" min ="1" max="{{ entity.nbrPlacedesp }}"> */
 /*                                 </div>*/
-/* */
-/*                                 <ul class="ride-meta">*/
-/* */
-/*                                     <li class="ride-date">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-calendar"></i>*/
-/*                                             July 20, 2014 at 19:00 PM*/
-/*                                         </a>*/
-/*                                     </li><!-- end .ride-date -->*/
-/* */
-/*                                     <li class="ride-people">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-user"></i>*/
-/*                                             1*/
-/*                                         </a>*/
-/*                                     </li><!-- end .ride-people -->*/
-/* */
-/*                                     <li>*/
-/*                                         <a href="#">*/
-/*                                             <i class="fa fa-file"></i>*/
-/*                                             Read more*/
-/*                                         </a>*/
-/*                                     </li>*/
-/* */
-/*                                 </ul><!-- end .ride-meta -->*/
+/*                                 <div class="field">*/
+/*                                   <input type="text" name="comm_user"> */
+/*                                 </div>*/
+/*                                 <div class="field buttons">*/
+/*                                     <button type="submit" class="btn btn-lg green-color">Submit</button>*/
+/*                                 </div>*/
+/*                                 */
+/*                             </form>*/
+/*     */
 /* */
 /*                             </article><!-- end .ride-box -->*/
 /* */

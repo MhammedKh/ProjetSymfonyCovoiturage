@@ -113,13 +113,19 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                                                 </li>
                                                 
                                                 <li>
-                                                    <a href=\"#\">Announcement</a>
+                                                    <a>Announcement</a>
                                                     <ul class=\"sub-menu\">
                                                         <li>
-                                                            <a href=\"events.html\">New Announcement</a>
+                                                            <a href=\"";
+        // line 89
+        echo $this->env->getExtension('routing')->getPath("annonce_new");
+        echo "\">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href=\"single-post.html\">Your Announcement</a>
+                                                            <a href=\"";
+        // line 92
+        echo $this->env->getExtension('routing')->getPath("annonceUser");
+        echo "\">Your Announcement</a>
                                                         </li>
                                                       
                                                     </ul>
@@ -281,9 +287,9 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                                 <div class=\"ride-content\">
                                     <h3><a href=\"#\">From ";
             // line 219
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleDep", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleDepString", array()), "html", null, true);
             echo " To ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleArr", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleArrString", array()), "html", null, true);
             echo " </a></h3> ride by <a href=\"#\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getNameUser", array()), "html", null, true);
             echo "</a>
@@ -470,7 +476,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
     public function getDebugInfo()
     {
-        return array (  338 => 252,  322 => 242,  311 => 234,  299 => 227,  284 => 219,  275 => 212,  271 => 211,  198 => 140,  187 => 138,  183 => 137,  172 => 128,  161 => 126,  157 => 125,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  344 => 252,  328 => 242,  317 => 234,  305 => 227,  290 => 219,  281 => 212,  277 => 211,  204 => 140,  193 => 138,  189 => 137,  178 => 128,  167 => 126,  163 => 125,  127 => 92,  121 => 89,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -558,13 +564,13 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                                 </li>*/
 /*                                                 */
 /*                                                 <li>*/
-/*                                                     <a href="#">Announcement</a>*/
+/*                                                     <a>Announcement</a>*/
 /*                                                     <ul class="sub-menu">*/
 /*                                                         <li>*/
-/*                                                             <a href="events.html">New Announcement</a>*/
+/*                                                             <a href="{{ path('annonce_new') }}">New Announcement</a>*/
 /*                                                         </li>*/
 /*                                                         <li>*/
-/*                                                             <a href="single-post.html">Your Announcement</a>*/
+/*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
 /*                                                         </li>*/
 /*                                                       */
 /*                                                     </ul>*/
@@ -691,7 +697,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                 */
 /*                       */
 /*                                 <div class="ride-content">*/
-/*                                     <h3><a href="#">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
+/*                                     <h3><a href="#">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
 /*                                 </div>*/
 /* */
 /*                                 <ul class="ride-meta">*/

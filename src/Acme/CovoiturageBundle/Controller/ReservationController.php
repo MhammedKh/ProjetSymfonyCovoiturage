@@ -9,14 +9,22 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Acme\CovoiturageBundle\Entity\Reservation;
 use Acme\CovoiturageBundle\Form\ReservationType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Reservation controller.
  *
  * @Route("/reservation")
  */
-class ReservationController extends Controller
-{
+class ReservationController extends Controller {
+
+    public function reservationAnnonceAction($id) {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonceUser($id);
+
+        return($this->render("AcmeCovoiturageBundle:Reservation:AnnonceReservation.html.twig", array("entities" => $entities)));
+    }
 
     /**
      * Lists all Reservation entities.
@@ -25,8 +33,7 @@ class ReservationController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->findAll();
@@ -35,6 +42,7 @@ class ReservationController extends Controller
             'entities' => $entities,
         );
     }
+
     /**
      * Creates a new Reservation entity.
      *
@@ -42,8 +50,7 @@ class ReservationController extends Controller
      * @Method("POST")
      * @Template("AcmeCovoiturageBundle:Reservation:new.html.twig")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Reservation();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -58,7 +65,7 @@ class ReservationController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -69,8 +76,7 @@ class ReservationController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Reservation $entity)
-    {
+    private function createCreateForm(Reservation $entity) {
         $form = $this->createForm(new ReservationType(), $entity, array(
             'action' => $this->generateUrl('reservation_create'),
             'method' => 'POST',
@@ -88,15 +94,69 @@ class ReservationController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Reservation();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
+    }
+
+    /**
+     * Displays a form to create a new Reservation entity.
+     *
+     * @Route("/annonceAdd", name="reservation_add")
+     * @Method("POST")
+
+     */
+    public function AddAction() {
+
+
+        $entity = new Reservation();
+
+
+        $nbr_p = $this->get('request')->request->get('nbr_p');
+        $entity->setNbrPlace($nbr_p);
+        $entity->setStatusRes("non confirmer");
+        $entity->setCommentaireRes($this->get('request')->request->get('comm_user'));
+        $entityAn = $this->showAnnonce($this->get('request')->request->get('id_ann'));
+        $entityUser = $this->showUser(1);
+        $entity->setIdAnnonce($entityAn);
+
+        /* $session = new Session();
+
+          $session->set('user', $entityUser); */
+        $entity->setIdUtilisateur($entityUser);
+
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('annonce'));
+    }
+
+    public function showAnnonce($id) {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id);
+
+
+
+        return $entity;
+    }
+
+    public function showUser($id) {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
+
+
+        return $entity;
     }
 
     /**
@@ -106,8 +166,7 @@ class ReservationController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Reservation')->find($id);
@@ -119,7 +178,7 @@ class ReservationController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -131,8 +190,7 @@ class ReservationController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Reservation')->find($id);
@@ -145,21 +203,72 @@ class ReservationController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
+    public function acceptReservationAction($id_ann,$id) {
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AcmeCovoiturageBundle:Reservation')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Reservation entity.');
+        }
+
+        $entity->setStatusRes("yes");
+        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity);
+      
+       
+
+            $em->flush();
+            
+        
+          $entitiesRes = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonceUser($id_ann);
+
+        return($this->render("AcmeCovoiturageBundle:Reservation:AnnonceReservation.html.twig", array("entities" => $entitiesRes)));
+    
+        
+        
+    }
+
+    public function refuseReservationAction($id_ann,$id) {
+     
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AcmeCovoiturageBundle:Reservation')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Reservation entity.');
+        }
+
+        $entity->setStatusRes("no");
+        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity);
+      
+       
+
+            $em->flush();
+            
+        
+          $entitiesRes = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonceUser($id_ann);
+
+        return($this->render("AcmeCovoiturageBundle:Reservation:AnnonceReservation.html.twig", array("entities" => $entitiesRes)));
+    }
+
     /**
-    * Creates a form to edit a Reservation entity.
-    *
-    * @param Reservation $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Reservation $entity)
-    {
+     * Creates a form to edit a Reservation entity.
+     *
+     * @param Reservation $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Reservation $entity) {
         $form = $this->createForm(new ReservationType(), $entity, array(
             'action' => $this->generateUrl('reservation_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -169,6 +278,7 @@ class ReservationController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Reservation entity.
      *
@@ -176,8 +286,9 @@ class ReservationController extends Controller
      * @Method("PUT")
      * @Template("AcmeCovoiturageBundle:Reservation:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
+
+
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Reservation')->find($id);
@@ -197,19 +308,19 @@ class ReservationController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Reservation entity.
      *
      * @Route("/{id}", name="reservation_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -235,13 +346,13 @@ class ReservationController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('reservation_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('reservation_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }

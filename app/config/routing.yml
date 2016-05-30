@@ -5,6 +5,20 @@ acme_covoiturage:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     
+ 
+annonceUser:
+    pattern : /annonceUser
+    defaults: { _controller: AcmeCovoiturageBundle:Annonce:annonceUser}
     
+reservationAnnonce:
+    pattern : /reservationAnnonce/{id}
+    defaults: { _controller: AcmeCovoiturageBundle:Reservation:reservationAnnonce}    
 
 
+acceptReservation:
+    pattern : /acceptReservation/{id_ann}/{id}
+    defaults: { _controller: AcmeCovoiturageBundle:Reservation:acceptReservation}    
+
+refuseReservation:
+    pattern : /refuseReservation/{id_ann}/{id}
+    defaults: { _controller: AcmeCovoiturageBundle:Reservation:refuseReservation}     

@@ -18,6 +18,27 @@ use Acme\CovoiturageBundle\Form\AnnonceType;
 class AnnonceController extends Controller
 {
 
+    
+    public function annonceUserAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        //TODO SESSION USER
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showAnnonceuser(1);
+        
+        foreach ($entities as $row)
+        {
+           $row->sumReserv =  $this->sommeReservationAnnonce($row->id);
+           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
+            
+        }
+
+        return($this->render("AcmeCovoiturageBundle:Annonce:userAnnonce.html.twig", array("entities" => $entities)));
+    }
+    
+    
+    
+    
+    
     /**
      * Lists all Annonce entities.
      *
@@ -63,21 +84,42 @@ class AnnonceController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Annonce();
+        $entity->status="En cour";
+        $entity->dateIns=date("Y-m-d");
+        $entity->idUtilisateur=$this->showUser(1);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+        
+       $datedepString=  $entity->dateDep;
+        $day=substr($datedepString,3,2);
+        $month=substr($datedepString,0,2);
+        $year=substr($datedepString,6,4);
+        $entity->dateDep=$year.'-'.$month.'-'.$day;
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('annonce_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('annonce'));
         }
 
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
         );
+    }
+    
+    
+    
+        public function showUser($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
+
+
+        return  $entity;
     }
 
     /**
@@ -109,7 +151,9 @@ class AnnonceController extends Controller
     public function newAction()
     {
         $entity = new Annonce();
+        
         $form   = $this->createCreateForm($entity);
+        
 
         return array(
             'entity' => $entity,
@@ -145,6 +189,14 @@ class AnnonceController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
+    
+    
+    
+   
+    
+    
+    
 
     /**
      * Displays a form to edit an existing Annonce entity.

@@ -146,10 +146,10 @@ class Reservation
     /**
      * Set idUtilisateur
      *
-     * @param \Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur
+     * @param \Acme\CovoiturageBundle\Entity\User $idUtilisateur
      * @return Reservation
      */
-    public function setIdUtilisateur(\Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur = null)
+    public function setIdUtilisateur(\Acme\CovoiturageBundle\Entity\User $idUtilisateur = null)
     {
         $this->idUtilisateur = $idUtilisateur;
 
@@ -159,7 +159,7 @@ class Reservation
     /**
      * Get idUtilisateur
      *
-     * @return \Acme\CovoiturageBundle\Entity\Utilisateur 
+     * @return \Acme\CovoiturageBundle\Entity\User
      */
     public function getIdUtilisateur()
     {
@@ -188,4 +188,6 @@ class Reservation
     {
         return $this->idAnnonce;
     }
+    
+    
 }

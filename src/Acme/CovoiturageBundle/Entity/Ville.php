@@ -42,6 +42,9 @@ class Ville
      */
     public $id;
 
-    
+    public function __toString() {
+        return $this->nomV;
+    }
+
 
 }

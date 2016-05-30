@@ -83,13 +83,13 @@
                                                 </li>
                                                 
                                                 <li>
-                                                    <a href="#">Announcement</a>
+                                                    <a>Announcement</a>
                                                     <ul class="sub-menu">
                                                         <li>
-                                                            <a href="events.html">New Announcement</a>
+                                                            <a href="{{ path('annonce_new') }}">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href="single-post.html">Your Announcement</a>
+                                                            <a href="{{ path('annonceUser') }}">Your Announcement</a>
                                                         </li>
                                                       
                                                     </ul>
@@ -216,7 +216,7 @@
                                 
                       
                                 <div class="ride-content">
-                                    <h3><a href="#">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
+                                    <h3><a href="#">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
                                 </div>
 
                                 <ul class="ride-meta">
