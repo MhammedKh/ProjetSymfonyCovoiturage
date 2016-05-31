@@ -100,18 +100,24 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
                                     </div><!-- end .col-sm-4 -->
 
-                                    <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                                    <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
 
-                                        <nav id=\"nav\" class=\"main-navigation\">
+                                        <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
 
                                             <ul class=\"navigation\">
                                                 <li>
-                                                    <a href=\"index.html\">Home</a>
+                                                    <a href=";
+        // line 79
+        echo $this->env->getExtension('routing')->getPath("index");
+        echo ">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href=\"rides.html\">Your Reservation</a>
+                                                    <a href=\"";
+        // line 82
+        echo $this->env->getExtension('routing')->getPath("reservation");
+        echo "\">Your Reservation</a>
                                                 </li>
-                                                
+
                                                 <li>
                                                     <a>Announcement</a>
                                                     <ul class=\"sub-menu\">
@@ -127,13 +133,11 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
         echo $this->env->getExtension('routing')->getPath("annonceUser");
         echo "\">Your Announcement</a>
                                                         </li>
-                                                      
+
                                                     </ul>
                                                 </li>
+
                                               
-                                                <li>
-                                                    <a href=\"contact-page.html\">Contact</a>
-                                                </li>
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
@@ -159,22 +163,22 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                                                 <select id=\"destination\" name=\"from\">
                                                     <option value=\"default\">From</option>
                                                     ";
-        // line 125
+        // line 123
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["entitiesVille"]);
         foreach ($context['_seq'] as $context["_key"] => $context["entitiesVille"]) {
-            // line 126
-            echo "                                                    <option value=\"";
+            // line 124
+            echo "                                                        <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entitiesVille"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entitiesVille"], "nomV", array()), "html", null, true);
             echo "</option>
-                                                 ";
+                                                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entitiesVille'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 128
+        // line 126
         echo "                                                </select>
                                             </div>
                                         </div>
@@ -185,22 +189,22 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                                                 <select id=\"destination\" name=\"to\">
                                                     <option value=\"default\">To</option>
                                                     ";
-        // line 137
+        // line 135
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["entitiesVille"]);
         foreach ($context['_seq'] as $context["_key"] => $context["entitiesVille"]) {
-            // line 138
-            echo "                                                    <option value=\"";
+            // line 136
+            echo "                                                        <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entitiesVille"], "id", array()), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entitiesVille"], "nomV", array()), "html", null, true);
             echo "</option>
-                                                 ";
+                                                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entitiesVille'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 140
+        // line 138
         echo "                                                </select>
                                             </div>
 
@@ -215,14 +219,14 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
                                         </div>
 
-                                
+
 
                                         <div class=\"col-md-3 col-sm-3 col-xs-12\">
 
                                             <div class=\"field buttons\">
-                                                
+
                                                 <button type=\"submit\" class=\"btn btn-lg green-color\">Search</button>
-                                                
+
                                             </div>
 
                                         </div>
@@ -236,13 +240,13 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                         </div><!-- end .col-sm-12 -->
 
                     </div><!-- end .second-parallax-content -->
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
+
 
                 </div><!-- end .main-parallax-content -->
 
@@ -271,77 +275,120 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                     <div class=\"page-content\">
 
                         <div class=\"rides-list\">
-                            
+
                             ";
-        // line 211
+        // line 209
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 212
-            echo "                                
-                           
+            // line 210
+            echo "
 
-                            <article class=\"ride-box clearfix\">
-                                
-                      
-                                <div class=\"ride-content\">
-                                    <h3><a href=\"#\">From ";
-            // line 219
+
+                                <article class=\"ride-box clearfix\">
+
+
+                                    <div class=\"ride-content\">
+                                        <h3><a href=\"";
+            // line 217
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("map", array("from" => $this->getAttribute($this->getAttribute($context["entity"], "villeDep", array()), "id", array()), "to" => $this->getAttribute($this->getAttribute($context["entity"], "villeArr", array()), "id", array()))), "html", null, true);
+            echo "\">From ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleDepString", array()), "html", null, true);
             echo " To ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleArrString", array()), "html", null, true);
             echo " </a></h3> ride by <a href=\"#\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getNameUser", array()), "html", null, true);
             echo "</a>
-                                </div>
+                                    </div>
 
-                                <ul class=\"ride-meta\">
+                                    <ul class=\"ride-meta\">
 
-                                    <li class=\"ride-date\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-calendar\"></i>
-                                            ";
-            // line 227
+                                        ";
+            // line 222
+            if (($this->getAttribute($context["entity"], "fumeur", array()) == 1)) {
+                // line 223
+                echo "                                            <li class=\"ride-people\">
+                                                <span class=\"fa-stack fa-lg\">
+                                                    <i class=\"flaticon-smoking-sign fa-stack-2x\" style=\"\"></i>
+                                                   <!-- <i class=\"fa fa-ban fa-stack-2x text-danger\" style=\"margin-left:13px; margin-top:2px;\"></i> -->
+                                                </span>
+                                            </li>
+                                        ";
+            }
+            // line 230
+            echo "
+                                        ";
+            // line 231
+            if (($this->getAttribute($context["entity"], "musique", array()) == 1)) {
+                // line 232
+                echo "                                            <li class=\"ride-people\">
+                                                <span class=\"fa-stack fa-lg\">
+                                                    <i class=\"fa fa-music fa-stack-2x\"></i>
+                                                   <!-- <i class=\"fa fa-ban fa-stack-2x text-danger\" ></i> -->
+                                                    
+                                                </span>
+                                            </li>
+                                        ";
+            }
+            // line 240
+            echo "                                        ";
+            if (($this->getAttribute($context["entity"], "discussion", array()) == 1)) {
+                // line 241
+                echo "                                            <li class=\"ride-people\">
+                                                <span class=\"fa-stack fa-lg\">
+                                                    <i class=\"fa fa-comments-o fa-stack-2x\"></i>
+                                                    
+                                                    
+                                                </span>
+                                            </li>
+                                        ";
+            }
+            // line 249
+            echo "                                        
+
+                                        <li class=\"ride-date\">
+                                            <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
+                                                <i class=\"fa fa-calendar\"></i>
+                                                ";
+            // line 254
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "getDateDep", array()), "Y-m-d"), "html", null, true);
             echo " at ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getHeurDep", array()), "html", null, true);
             echo " PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
+                                            </a>
+                                        </li><!-- end .ride-date -->
 
-                                    <li class=\"ride-people\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-user\"></i>
-                                            ";
-            // line 234
+                                        <li class=\"ride-people\">
+                                            <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
+                                                <i class=\"fa fa-user\"></i>
+                                                ";
+            // line 261
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nbrPlacedesp", array()), "html", null, true);
             echo "
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    
-                                    
-                             
+                                            </a>
+                                        </li><!-- end .ride-people -->
 
-                                    <li>
-                                        <a href=\"";
-            // line 242
+
+                                        <li>
+                                            <a href=\"";
+            // line 267
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">
-                                            <i class=\"fa fa-file\"></i>
-                                            Read more
-                                        </a>
-                                    </li>
+                                                <i class=\"fa fa-file\"></i>
+                                                Read more
+                                            </a>
+                                        </li>
 
-                                </ul><!-- end .ride-meta -->
+                                    </ul><!-- end .ride-meta -->
 
-                            </article><!-- end .ride-box -->
-";
+                                </article><!-- end .ride-box -->
+                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 252
-        echo "                           
+        // line 277
+        echo "
 
                             <div class=\"clearfix\"></div>
 
@@ -361,18 +408,18 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                     </div><!-- end .page-content -->
 
                 </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
-                
-                
-                
-                
-                
+
+
+
+
+
 
             </div><!-- end .row -->
         </div><!-- end .container -->
 
     </section><!-- end .main-content -->
 
-   
+
 
     <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
@@ -403,7 +450,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                             <button type=\"submit\" class=\"submit btn green-color\">Log in</button>
                         </div>
 
-                      
+
 
                         <div class=\"clearfix\"></div>
 
@@ -476,7 +523,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
     public function getDebugInfo()
     {
-        return array (  344 => 252,  328 => 242,  317 => 234,  305 => 227,  290 => 219,  281 => 212,  277 => 211,  204 => 140,  193 => 138,  189 => 137,  178 => 128,  167 => 126,  163 => 125,  127 => 92,  121 => 89,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  391 => 277,  375 => 267,  366 => 261,  354 => 254,  347 => 249,  337 => 241,  334 => 240,  324 => 232,  322 => 231,  319 => 230,  310 => 223,  308 => 222,  294 => 217,  285 => 210,  281 => 209,  208 => 138,  197 => 136,  193 => 135,  182 => 126,  171 => 124,  167 => 123,  133 => 92,  127 => 89,  117 => 82,  111 => 79,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -551,18 +598,18 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /* */
 /*                                     </div><!-- end .col-sm-4 -->*/
 /* */
-/*                                     <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                                     <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
 /* */
-/*                                         <nav id="nav" class="main-navigation">*/
+/*                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
 /*                                             <ul class="navigation">*/
 /*                                                 <li>*/
-/*                                                     <a href="index.html">Home</a>*/
+/*                                                     <a href={{ path('index') }}>Home</a>*/
 /*                                                 </li>*/
 /*                                                 <li>*/
-/*                                                     <a href="rides.html">Your Reservation</a>*/
+/*                                                     <a href="{{ path('reservation') }}">Your Reservation</a>*/
 /*                                                 </li>*/
-/*                                                 */
+/* */
 /*                                                 <li>*/
 /*                                                     <a>Announcement</a>*/
 /*                                                     <ul class="sub-menu">*/
@@ -572,13 +619,11 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                                         <li>*/
 /*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
 /*                                                         </li>*/
-/*                                                       */
+/* */
 /*                                                     </ul>*/
 /*                                                 </li>*/
+/* */
 /*                                               */
-/*                                                 <li>*/
-/*                                                     <a href="contact-page.html">Contact</a>*/
-/*                                                 </li>*/
 /*                                             </ul>*/
 /* */
 /*                                         </nav><!-- end .main-navigation -->*/
@@ -604,8 +649,8 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                                 <select id="destination" name="from">*/
 /*                                                     <option value="default">From</option>*/
 /*                                                     {% for entitiesVille in entitiesVille %}*/
-/*                                                     <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>*/
-/*                                                  {% endfor %}*/
+/*                                                         <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>*/
+/*                                                     {% endfor %}*/
 /*                                                 </select>*/
 /*                                             </div>*/
 /*                                         </div>*/
@@ -616,8 +661,8 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                                 <select id="destination" name="to">*/
 /*                                                     <option value="default">To</option>*/
 /*                                                     {% for entitiesVille in entitiesVille %}*/
-/*                                                     <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>*/
-/*                                                  {% endfor %}*/
+/*                                                         <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>*/
+/*                                                     {% endfor %}*/
 /*                                                 </select>*/
 /*                                             </div>*/
 /* */
@@ -632,14 +677,14 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /* */
 /*                                         </div>*/
 /* */
-/*                                 */
+/* */
 /* */
 /*                                         <div class="col-md-3 col-sm-3 col-xs-12">*/
 /* */
 /*                                             <div class="field buttons">*/
-/*                                                 */
+/* */
 /*                                                 <button type="submit" class="btn btn-lg green-color">Search</button>*/
-/*                                                 */
+/* */
 /*                                             </div>*/
 /* */
 /*                                         </div>*/
@@ -653,13 +698,13 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                         </div><!-- end .col-sm-12 -->*/
 /* */
 /*                     </div><!-- end .second-parallax-content -->*/
-/*                     */
-/*                     */
-/*                     */
-/*                     */
-/*                     */
-/*                     */
-/*                     */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
 /* */
 /*                 </div><!-- end .main-parallax-content -->*/
 /* */
@@ -688,49 +733,76 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                     <div class="page-content">*/
 /* */
 /*                         <div class="rides-list">*/
-/*                             */
+/* */
 /*                             {% for entity in entities %}*/
-/*                                 */
-/*                            */
 /* */
-/*                             <article class="ride-box clearfix">*/
-/*                                 */
-/*                       */
-/*                                 <div class="ride-content">*/
-/*                                     <h3><a href="#">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
-/*                                 </div>*/
 /* */
-/*                                 <ul class="ride-meta">*/
 /* */
-/*                                     <li class="ride-date">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-calendar"></i>*/
-/*                                             {{ entity.getDateDep|date('Y-m-d') }} at {{ entity.getHeurDep }} PM*/
-/*                                         </a>*/
-/*                                     </li><!-- end .ride-date -->*/
+/*                                 <article class="ride-box clearfix">*/
 /* */
-/*                                     <li class="ride-people">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-user"></i>*/
-/*                                             {{entity.nbrPlacedesp}}*/
-/*                                         </a>*/
-/*                                     </li><!-- end .ride-people -->*/
-/*                                     */
-/*                                     */
-/*                              */
 /* */
-/*                                     <li>*/
-/*                                         <a href="{{ path('annonce_show', { 'id': entity.id }) }}">*/
-/*                                             <i class="fa fa-file"></i>*/
-/*                                             Read more*/
-/*                                         </a>*/
-/*                                     </li>*/
+/*                                     <div class="ride-content">*/
+/*                                         <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
+/*                                     </div>*/
 /* */
-/*                                 </ul><!-- end .ride-meta -->*/
+/*                                     <ul class="ride-meta">*/
 /* */
-/*                             </article><!-- end .ride-box -->*/
-/* {% endfor %}*/
-/*                            */
+/*                                         {% if entity.fumeur==1 %}*/
+/*                                             <li class="ride-people">*/
+/*                                                 <span class="fa-stack fa-lg">*/
+/*                                                     <i class="flaticon-smoking-sign fa-stack-2x" style=""></i>*/
+/*                                                    <!-- <i class="fa fa-ban fa-stack-2x text-danger" style="margin-left:13px; margin-top:2px;"></i> -->*/
+/*                                                 </span>*/
+/*                                             </li>*/
+/*                                         {% endif %}*/
+/* */
+/*                                         {% if entity.musique==1 %}*/
+/*                                             <li class="ride-people">*/
+/*                                                 <span class="fa-stack fa-lg">*/
+/*                                                     <i class="fa fa-music fa-stack-2x"></i>*/
+/*                                                    <!-- <i class="fa fa-ban fa-stack-2x text-danger" ></i> -->*/
+/*                                                     */
+/*                                                 </span>*/
+/*                                             </li>*/
+/*                                         {% endif %}*/
+/*                                         {% if entity.discussion==1 %}*/
+/*                                             <li class="ride-people">*/
+/*                                                 <span class="fa-stack fa-lg">*/
+/*                                                     <i class="fa fa-comments-o fa-stack-2x"></i>*/
+/*                                                     */
+/*                                                     */
+/*                                                 </span>*/
+/*                                             </li>*/
+/*                                         {% endif %}*/
+/*                                         */
+/* */
+/*                                         <li class="ride-date">*/
+/*                                             <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">*/
+/*                                                 <i class="fa fa-calendar"></i>*/
+/*                                                 {{ entity.getDateDep|date('Y-m-d') }} at {{ entity.getHeurDep }} PM*/
+/*                                             </a>*/
+/*                                         </li><!-- end .ride-date -->*/
+/* */
+/*                                         <li class="ride-people">*/
+/*                                             <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">*/
+/*                                                 <i class="fa fa-user"></i>*/
+/*                                                 {{entity.nbrPlacedesp}}*/
+/*                                             </a>*/
+/*                                         </li><!-- end .ride-people -->*/
+/* */
+/* */
+/*                                         <li>*/
+/*                                             <a href="{{ path('annonce_show', { 'id': entity.id }) }}">*/
+/*                                                 <i class="fa fa-file"></i>*/
+/*                                                 Read more*/
+/*                                             </a>*/
+/*                                         </li>*/
+/* */
+/*                                     </ul><!-- end .ride-meta -->*/
+/* */
+/*                                 </article><!-- end .ride-box -->*/
+/*                             {% endfor %}*/
+/* */
 /* */
 /*                             <div class="clearfix"></div>*/
 /* */
@@ -750,18 +822,18 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                     </div><!-- end .page-content -->*/
 /* */
 /*                 </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->*/
-/*                 */
-/*                 */
-/*                 */
-/*                 */
-/*                 */
+/* */
+/* */
+/* */
+/* */
+/* */
 /* */
 /*             </div><!-- end .row -->*/
 /*         </div><!-- end .container -->*/
 /* */
 /*     </section><!-- end .main-content -->*/
 /* */
-/*    */
+/* */
 /* */
 /*     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
 /*         <div class="modal-dialog">*/
@@ -792,7 +864,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                             <button type="submit" class="submit btn green-color">Log in</button>*/
 /*                         </div>*/
 /* */
-/*                       */
+/* */
 /* */
 /*                         <div class="clearfix"></div>*/
 /* */

@@ -100,38 +100,47 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 
                                         </div><!-- end .col-sm-4 -->
 
-                                        <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                                       <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
 
-                                            <nav id=\"nav\" class=\"main-navigation\">
+                                        <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
 
                                             <ul class=\"navigation\">
                                                 <li>
-                                                    <a href=\"index.html\">Home</a>
+                                                    <a href=";
+        // line 81
+        echo $this->env->getExtension('routing')->getPath("index");
+        echo ">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href=\"rides.html\">Your Reservation</a>
+                                                    <a href=\"";
+        // line 84
+        echo $this->env->getExtension('routing')->getPath("reservation");
+        echo "\">Your Reservation</a>
                                                 </li>
-                                                
+
                                                 <li>
-                                                    <a href=\"#\">Announcement</a>
+                                                    <a>Announcement</a>
                                                     <ul class=\"sub-menu\">
                                                         <li>
-                                                            <a href=\"events.html\">New Announcement</a>
+                                                            <a href=\"";
+        // line 91
+        echo $this->env->getExtension('routing')->getPath("annonce_new");
+        echo "\">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href=\"single-post.html\">Your Announcement</a>
+                                                            <a href=\"";
+        // line 94
+        echo $this->env->getExtension('routing')->getPath("annonceUser");
+        echo "\">Your Announcement</a>
                                                         </li>
-                                                      
+
                                                     </ul>
                                                 </li>
+
                                               
-                                                <li>
-                                                    <a href=\"contact-page.html\">Contact</a>
-                                                </li>
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
-                                        </div><!-- end .col-md-8 -->
 
                                     </div><!-- end .main-header-container -->
 
@@ -169,7 +178,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
                         <div class=\"page-content add-new-ride\">
                             
                             ";
-        // line 143
+        // line 140
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "idealforms add-ride")));
         echo "
                             
@@ -177,55 +186,55 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
                             
                              <div class=\"field\">
                             ";
-        // line 148
+        // line 145
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeDep", array()), 'widget', array("attr" => array("id" => "destination")));
         echo "
                              </div>
                               <div class=\"field\">
                                   ";
-        // line 151
+        // line 148
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeArr", array()), 'widget', array("attr" => array("id" => "destination")));
         echo "
                              </div>
                              
                               <div class=\"field\">
                                     ";
-        // line 155
+        // line 152
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDep", array()), 'widget', array("attr" => array("class" => "datepicker", "value" => "Date")));
         echo "
                                 </div>
                                  
                                 <div class=\"field\">
                                     ";
-        // line 159
+        // line 156
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heureDep", array()), 'widget', array("attr" => array("pattern" => "0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]", "placeholder" => "Time")));
         echo "
                                 </div>
                                 
                                 <div class=\"field\">
                                     ";
-        // line 163
+        // line 160
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombrePlace", array()), 'widget');
         echo "
                                 </div>
                                 
                                  <div class=\"field\">
                                     ";
-        // line 167
+        // line 164
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "marqueVoiture", array()), 'widget', array("attr" => array("placeholder" => "Car s Brand")));
         echo "
                                 </div>
                                 
                                  <div class=\"field\">
                                     ";
-        // line 171
+        // line 168
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prixPlace", array()), 'widget', array("attr" => array("placeholder" => "Price", "step" => "0.5")));
         echo "
                                 </div>
                                 
                                  <div class=\"field\">
                                     ";
-        // line 175
+        // line 172
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "lieuDep", array()), 'widget', array("attr" => array("placeholder" => "Place")));
         echo "
                                 </div>
@@ -234,32 +243,32 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
                                 
                                 <div class=\"field\">
                                     ";
-        // line 181
+        // line 178
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "fumeur", array()), 'widget');
         echo "
                                 </div>
                                 
                                 <div class=\"field\">
                                     ";
-        // line 185
+        // line 182
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "musique", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"field\">
                                     ";
-        // line 188
+        // line 185
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "discussion", array()), 'widget');
         echo "
                                 </div>
                                    <div class=\"field\">
                                     ";
-        // line 191
+        // line 188
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("placeholder" => "Comment")));
         echo "
                                 </div>
                                  <div class=\"field buttons\">
                                 ";
-        // line 194
+        // line 191
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'row', array("attr" => array("class" => "btn btn-lg green-color")));
         echo "
                                  </div>
@@ -273,7 +282,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
                             
                             
                              ";
-        // line 205
+        // line 202
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 
@@ -415,7 +424,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 
     public function getDebugInfo()
     {
-        return array (  277 => 205,  263 => 194,  257 => 191,  251 => 188,  245 => 185,  238 => 181,  229 => 175,  222 => 171,  215 => 167,  208 => 163,  201 => 159,  194 => 155,  187 => 151,  181 => 148,  173 => 143,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
+        return array (  286 => 202,  272 => 191,  266 => 188,  260 => 185,  254 => 182,  247 => 178,  238 => 172,  231 => 168,  224 => 164,  217 => 160,  210 => 156,  203 => 152,  196 => 148,  190 => 145,  182 => 140,  133 => 94,  127 => 91,  117 => 84,  111 => 81,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -492,38 +501,35 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 /* */
 /*                                         </div><!-- end .col-sm-4 -->*/
 /* */
-/*                                         <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                                        <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
 /* */
-/*                                             <nav id="nav" class="main-navigation">*/
+/*                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
 /*                                             <ul class="navigation">*/
 /*                                                 <li>*/
-/*                                                     <a href="index.html">Home</a>*/
+/*                                                     <a href={{ path('index') }}>Home</a>*/
 /*                                                 </li>*/
 /*                                                 <li>*/
-/*                                                     <a href="rides.html">Your Reservation</a>*/
+/*                                                     <a href="{{ path('reservation') }}">Your Reservation</a>*/
 /*                                                 </li>*/
-/*                                                 */
+/* */
 /*                                                 <li>*/
-/*                                                     <a href="#">Announcement</a>*/
+/*                                                     <a>Announcement</a>*/
 /*                                                     <ul class="sub-menu">*/
 /*                                                         <li>*/
-/*                                                             <a href="events.html">New Announcement</a>*/
+/*                                                             <a href="{{ path('annonce_new') }}">New Announcement</a>*/
 /*                                                         </li>*/
 /*                                                         <li>*/
-/*                                                             <a href="single-post.html">Your Announcement</a>*/
+/*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
 /*                                                         </li>*/
-/*                                                       */
+/* */
 /*                                                     </ul>*/
 /*                                                 </li>*/
+/* */
 /*                                               */
-/*                                                 <li>*/
-/*                                                     <a href="contact-page.html">Contact</a>*/
-/*                                                 </li>*/
 /*                                             </ul>*/
 /* */
 /*                                         </nav><!-- end .main-navigation -->*/
-/*                                         </div><!-- end .col-md-8 -->*/
 /* */
 /*                                     </div><!-- end .main-header-container -->*/
 /* */

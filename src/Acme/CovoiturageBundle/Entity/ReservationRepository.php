@@ -31,6 +31,20 @@ class ReservationRepository extends EntityRepository {
          
         return $qt->getQuery()->getResult();
     }
+    
+    
+       public function showReservationUser($id) {
+
+        $qt = $this->createQueryBuilder('r');
+        $qt->select('r')
+                 
+                ->where('r.idUtilisateur=:u')
+               
+                ->setParameter('u',$id);
+               
+         
+        return $qt->getQuery()->getResult();
+    }
 
 }
 

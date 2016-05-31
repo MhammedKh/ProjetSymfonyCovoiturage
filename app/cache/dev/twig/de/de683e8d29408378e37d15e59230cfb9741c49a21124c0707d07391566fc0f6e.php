@@ -100,42 +100,47 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
 
                                         </div><!-- end .col-sm-4 -->
 
-                                         <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                                      <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
 
-                                        <nav id=\"nav\" class=\"main-navigation\">
+                                        <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
 
                                             <ul class=\"navigation\">
                                                 <li>
-                                                    <a href=\"index.html\">Home</a>
+                                                    <a href=";
+        // line 81
+        echo $this->env->getExtension('routing')->getPath("index");
+        echo ">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href=\"rides.html\">Your Reservation</a>
+                                                    <a href=\"";
+        // line 84
+        echo $this->env->getExtension('routing')->getPath("reservation");
+        echo "\">Your Reservation</a>
                                                 </li>
-                                                
+
                                                 <li>
-                                                    <a href=\"#\">Announcement</a>
+                                                    <a>Announcement</a>
                                                     <ul class=\"sub-menu\">
                                                         <li>
-                                                            <a href=\"events.html\">New Announcement</a>
+                                                            <a href=\"";
+        // line 91
+        echo $this->env->getExtension('routing')->getPath("annonce_new");
+        echo "\">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href=\"single-post.html\">Your Announcement</a>
+                                                            <a href=\"";
+        // line 94
+        echo $this->env->getExtension('routing')->getPath("annonceUser");
+        echo "\">Your Announcement</a>
                                                         </li>
-                                                      
+
                                                     </ul>
                                                 </li>
+
                                               
-                                                <li>
-                                                    <a href=\"contact-page.html\">Contact</a>
-                                                </li>
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
-
-                                    </div><!-- end .col-md-8 -->
-
-                                    </div><!-- end .main-header-container -->
-
                                 </div><!-- end .row -->
 
                             </section><!-- end .container -->
@@ -175,11 +180,11 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
                         <div class=\"rides-list\">
                             
                             ";
-        // line 149
+        // line 142
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 150
+            // line 143
             echo "                                
                            
 
@@ -188,7 +193,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
                       
                                 <div class=\"ride-content\">
                                     <h3><a href=\"#\">From ";
-            // line 157
+            // line 150
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleDep", array()), "html", null, true);
             echo " To ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleArr", array()), "html", null, true);
@@ -201,7 +206,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
                                         <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
                                             <i class=\"fa fa-calendar\"></i>
                                             ";
-            // line 165
+            // line 158
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "getDateDep", array()), "Y-m-d"), "html", null, true);
             echo " at ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getHeurDep", array()), "html", null, true);
@@ -211,12 +216,12 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
 
                                     <li class=\"ride-people\">
                                         <a href=\"";
-            // line 170
+            // line 163
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("reservationAnnonce", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
                                             <i class=\"fa fa-user\"></i>
                                             ";
-            // line 172
+            // line 165
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "sumReserv", array()), "html", null, true);
             echo " /  ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombrePlace", array()), "html", null, true);
@@ -228,7 +233,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
                                         <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Car\" data-toggle=\"tooltip\">
                                             <i class=\"fa fa-car\"></i>
                                             ";
-            // line 179
+            // line 172
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "marqueVoiture", array()), "html", null, true);
             echo "
                                         </a>
@@ -241,7 +246,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
                                         <a>
                                             <i class=\"fa fa-dollar\"></i>
                                              ";
-            // line 189
+            // line 182
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "prixPlace", array()), "html", null, true);
             echo " DT
                                         </a>
@@ -257,7 +262,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 199
+        // line 192
         echo "                           
 
                             <div class=\"clearfix\"></div>
@@ -394,7 +399,7 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
 
     public function getDebugInfo()
     {
-        return array (  261 => 199,  245 => 189,  232 => 179,  220 => 172,  215 => 170,  205 => 165,  192 => 157,  183 => 150,  179 => 149,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
+        return array (  266 => 192,  250 => 182,  237 => 172,  225 => 165,  220 => 163,  210 => 158,  197 => 150,  188 => 143,  184 => 142,  133 => 94,  127 => 91,  117 => 84,  111 => 81,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -471,42 +476,35 @@ class __TwigTemplate_4423cec8f87816f8c1d105864b256f3500002f4508882a1f4b1fba2c43f
 /* */
 /*                                         </div><!-- end .col-sm-4 -->*/
 /* */
-/*                                          <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                                       <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
 /* */
-/*                                         <nav id="nav" class="main-navigation">*/
+/*                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
 /*                                             <ul class="navigation">*/
 /*                                                 <li>*/
-/*                                                     <a href="index.html">Home</a>*/
+/*                                                     <a href={{ path('index') }}>Home</a>*/
 /*                                                 </li>*/
 /*                                                 <li>*/
-/*                                                     <a href="rides.html">Your Reservation</a>*/
+/*                                                     <a href="{{ path('reservation') }}">Your Reservation</a>*/
 /*                                                 </li>*/
-/*                                                 */
+/* */
 /*                                                 <li>*/
-/*                                                     <a href="#">Announcement</a>*/
+/*                                                     <a>Announcement</a>*/
 /*                                                     <ul class="sub-menu">*/
 /*                                                         <li>*/
-/*                                                             <a href="events.html">New Announcement</a>*/
+/*                                                             <a href="{{ path('annonce_new') }}">New Announcement</a>*/
 /*                                                         </li>*/
 /*                                                         <li>*/
-/*                                                             <a href="single-post.html">Your Announcement</a>*/
+/*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
 /*                                                         </li>*/
-/*                                                       */
+/* */
 /*                                                     </ul>*/
 /*                                                 </li>*/
+/* */
 /*                                               */
-/*                                                 <li>*/
-/*                                                     <a href="contact-page.html">Contact</a>*/
-/*                                                 </li>*/
 /*                                             </ul>*/
 /* */
 /*                                         </nav><!-- end .main-navigation -->*/
-/* */
-/*                                     </div><!-- end .col-md-8 -->*/
-/* */
-/*                                     </div><!-- end .main-header-container -->*/
-/* */
 /*                                 </div><!-- end .row -->*/
 /* */
 /*                             </section><!-- end .container -->*/

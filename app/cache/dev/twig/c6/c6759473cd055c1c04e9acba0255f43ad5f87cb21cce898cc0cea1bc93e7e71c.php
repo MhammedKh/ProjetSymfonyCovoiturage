@@ -27,86 +27,8 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        // line 4
-        echo "<!-- <h1>Reservation list</h1>
-
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Nbrplace</th>
-                <th>Commentaireres</th>
-                <th>Statusres</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 17
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
-        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 18
-            echo "            <tr>
-                <td><a href=\"";
-            // line 19
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("reservation_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nbrPlace", array()), "html", null, true);
-            echo "</a></td>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "commentaireRes", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "statusRes", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("reservation_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("reservation_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href=\"";
-        // line 40
-        echo $this->env->getExtension('routing')->getPath("reservation_new");
-        echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul> -->
-        
-
-    
-    
-            <header class=\"header\">
+        // line 7
+        echo "<header class=\"header\">
 
             <div class=\"top-menu\">
 
@@ -156,7 +78,7 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
             <div class=\"main-baner\">
 
                 <div class=\"background parallax clearfix\" style=\"background-image:url(";
-        // line 98
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg"), "html", null, true);
         echo ");\" data-img-width=\"1600\" data-img-height=\"1064\">
 
@@ -253,11 +175,11 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                         <div class=\"rides-list\">
                             
                             ";
-        // line 192
+        // line 150
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 193
+            // line 151
             echo "                                
                            
 
@@ -266,7 +188,7 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                       
                                 <div class=\"ride-content\">
                                     <h3><a href=\"#\">Reservation by: </a>";
-            // line 200
+            // line 158
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "getIdUtilisateur", array()), "getUsername", array()), "html", null, true);
             echo "  </h3>
                                 </div>
@@ -280,7 +202,7 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                                         <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number\" data-toggle=\"tooltip\">
                                             <i class=\"fa fa-mobile\"></i>
                                             ";
-            // line 211
+            // line 169
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "getIdUtilisateur", array()), "getTel", array()), "html", null, true);
             echo "
                                         </a>
@@ -292,16 +214,16 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                                         <a  class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
                                             <i class=\"fa fa-user\"></i>
                                             ";
-            // line 220
+            // line 178
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getNbrPlace", array()), "html", null, true);
             echo "
                                         </a>
                                         </h2>
                                     </li><!-- end .ride-people -->
                                     ";
-            // line 224
+            // line 182
             if (($this->getAttribute($context["entity"], "getStatusRes", array()) == "yes")) {
-                // line 225
+                // line 183
                 echo "                                      <li class=\"ride-people\">
                                         <h2>
                                         <a  class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
@@ -312,10 +234,10 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                                     </li><!-- end .ride-people -->
                                     ";
             }
-            // line 234
+            // line 192
             echo "                                    ";
             if (($this->getAttribute($context["entity"], "getStatusRes", array()) == "no")) {
-                // line 235
+                // line 193
                 echo "                                    <li class=\"ride-people\">
                                         <h2>
                                         <a  class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
@@ -326,25 +248,25 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                                     </li><!-- end .ride-people -->
                                     ";
             }
-            // line 244
+            // line 202
             echo "                                    ";
             if (($this->getAttribute($context["entity"], "getStatusRes", array()) == "non confirmer")) {
-                // line 245
+                // line 203
                 echo "                                        <li class=\"ride-people\">
                                             <form method=\"\" action=\"\">
                                                     
                                                 <input type=\"hidden\" name=\"id_ann\" value=\"";
-                // line 248
+                // line 206
                 echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
                 echo "\">
                                                 
                                                 <button type=\"button\" class=\"btn btn-success\" name=\"accept\"><a href=\" ";
-                // line 250
+                // line 208
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("acceptReservation", array("id_ann" => $this->getAttribute($this->getAttribute($context["entity"], "getIdAnnonce", array()), "id", array()), "id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
                 echo "\" style=\"color: #ffffff;\">Accept</a></button>
                                                 
                                                  <button type=\"button\" class=\"btn btn-danger\" name=\"refuse\"><a href=\"";
-                // line 252
+                // line 210
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("refuseReservation", array("id_ann" => $this->getAttribute($this->getAttribute($context["entity"], "getIdAnnonce", array()), "id", array()), "id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
                 echo "\" style=\"color: #ffffff;\">Refuse</a></button>
                                             </form>
@@ -352,28 +274,28 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
                                         </li>
                                     ";
             }
-            // line 257
+            // line 215
             echo "                                   
 
                                 </ul><!-- end .ride-meta -->
 
                           
                            ";
-            // line 262
+            // line 220
             if (($this->getAttribute($context["entity"], "getCommentaireRes", array()) != "")) {
-                // line 263
+                // line 221
                 echo "                            <article class=\"ride-box clearfix\" style=\"margin-top:20px;\">
                               <div class=\"ride-suggestions\">
                                   <h3>Comment :</h3>
                             ";
-                // line 266
+                // line 224
                 echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getCommentaireRes", array()), "html", null, true);
                 echo "
                                 
                                 
     ";
             }
-            // line 270
+            // line 228
             echo "
                             </article><!-- end .ride-box -->
                               </article><!-- end .ride-box -->
@@ -382,7 +304,7 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 274
+        // line 232
         echo "                           
 
                             <div class=\"clearfix\"></div>
@@ -519,55 +441,13 @@ class __TwigTemplate_c47f61a714cd432ca17ce41075870ed26369a2fd1cea9c66497b3870905
 
     public function getDebugInfo()
     {
-        return array (  386 => 274,  377 => 270,  370 => 266,  365 => 263,  363 => 262,  356 => 257,  348 => 252,  343 => 250,  338 => 248,  333 => 245,  330 => 244,  319 => 235,  316 => 234,  305 => 225,  303 => 224,  296 => 220,  284 => 211,  270 => 200,  261 => 193,  257 => 192,  160 => 98,  99 => 40,  92 => 35,  80 => 29,  74 => 26,  67 => 22,  63 => 21,  59 => 20,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  308 => 232,  299 => 228,  292 => 224,  287 => 221,  285 => 220,  278 => 215,  270 => 210,  265 => 208,  260 => 206,  255 => 203,  252 => 202,  241 => 193,  238 => 192,  227 => 183,  225 => 182,  218 => 178,  206 => 169,  192 => 158,  183 => 151,  179 => 150,  82 => 56,  31 => 7,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*    <!-- <h1>Reservation list</h1>*/
-/* */
-/*     <table class="records_list">*/
-/*         <thead>*/
-/*             <tr>*/
-/*                 <th>Nbrplace</th>*/
-/*                 <th>Commentaireres</th>*/
-/*                 <th>Statusres</th>*/
-/*                 <th>Id</th>*/
-/*                 <th>Actions</th>*/
-/*             </tr>*/
-/*         </thead>*/
-/*         <tbody>*/
-/*         {% for entity in entities %}*/
-/*             <tr>*/
-/*                 <td><a href="{{ path('reservation_show', { 'id': entity.id }) }}">{{ entity.nbrPlace }}</a></td>*/
-/*                 <td>{{ entity.commentaireRes }}</td>*/
-/*                 <td>{{ entity.statusRes }}</td>*/
-/*                 <td>{{ entity.id }}</td>*/
-/*                 <td>*/
-/*                 <ul>*/
-/*                     <li>*/
-/*                         <a href="{{ path('reservation_show', { 'id': entity.id }) }}">show</a>*/
-/*                     </li>*/
-/*                     <li>*/
-/*                         <a href="{{ path('reservation_edit', { 'id': entity.id }) }}">edit</a>*/
-/*                     </li>*/
-/*                 </ul>*/
-/*                 </td>*/
-/*             </tr>*/
-/*         {% endfor %}*/
-/*         </tbody>*/
-/*     </table>*/
-/* */
-/*         <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('reservation_new') }}">*/
-/*                 Create a new entry*/
-/*             </a>*/
-/*         </li>*/
-/*     </ul> -->*/
-/*         */
-/* */
+/*    */
 /*     */
 /*     */
 /*             <header class="header">*/

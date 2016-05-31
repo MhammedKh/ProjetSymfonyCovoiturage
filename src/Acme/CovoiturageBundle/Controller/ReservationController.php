@@ -35,8 +35,8 @@ class ReservationController extends Controller {
      */
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->findAll();
+        //$id_user=$this->getUser();
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationUser(1);
 
         return array(
             'entities' => $entities,

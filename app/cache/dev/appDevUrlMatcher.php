@@ -782,6 +782,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'refuseReservation')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\ReservationController::refuseReservationAction',));
         }
 
+        // map
+        if (0 === strpos($pathinfo, '/map') && preg_match('#^/map/(?P<from>[^/]++)/(?P<to>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'map')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\MapController::indexAction',));
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

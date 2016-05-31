@@ -70,18 +70,18 @@
 
                                     </div><!-- end .col-sm-4 -->
 
-                                    <div class="col-md-8 col-sm-8 col-xs-12">
+                                    <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">
 
-                                        <nav id="nav" class="main-navigation">
+                                        <nav id="nav" class="main-navigation" style="padding-left:60px;">
 
                                             <ul class="navigation">
                                                 <li>
-                                                    <a href="index.html">Home</a>
+                                                    <a href={{ path('index') }}>Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href="rides.html">Your Reservation</a>
+                                                    <a href="{{ path('reservation') }}">Your Reservation</a>
                                                 </li>
-                                                
+
                                                 <li>
                                                     <a>Announcement</a>
                                                     <ul class="sub-menu">
@@ -91,13 +91,11 @@
                                                         <li>
                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>
                                                         </li>
-                                                      
+
                                                     </ul>
                                                 </li>
+
                                               
-                                                <li>
-                                                    <a href="contact-page.html">Contact</a>
-                                                </li>
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
@@ -123,8 +121,8 @@
                                                 <select id="destination" name="from">
                                                     <option value="default">From</option>
                                                     {% for entitiesVille in entitiesVille %}
-                                                    <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
-                                                 {% endfor %}
+                                                        <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -135,8 +133,8 @@
                                                 <select id="destination" name="to">
                                                     <option value="default">To</option>
                                                     {% for entitiesVille in entitiesVille %}
-                                                    <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
-                                                 {% endfor %}
+                                                        <option value="{{ entitiesVille.id }}">{{ entitiesVille.nomV }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
 
@@ -151,14 +149,14 @@
 
                                         </div>
 
-                                
+
 
                                         <div class="col-md-3 col-sm-3 col-xs-12">
 
                                             <div class="field buttons">
-                                                
+
                                                 <button type="submit" class="btn btn-lg green-color">Search</button>
-                                                
+
                                             </div>
 
                                         </div>
@@ -172,13 +170,13 @@
                         </div><!-- end .col-sm-12 -->
 
                     </div><!-- end .second-parallax-content -->
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
+
 
                 </div><!-- end .main-parallax-content -->
 
@@ -207,49 +205,76 @@
                     <div class="page-content">
 
                         <div class="rides-list">
-                            
+
                             {% for entity in entities %}
-                                
-                           
 
-                            <article class="ride-box clearfix">
-                                
-                      
-                                <div class="ride-content">
-                                    <h3><a href="#">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
-                                </div>
 
-                                <ul class="ride-meta">
 
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            {{ entity.getDateDep|date('Y-m-d') }} at {{ entity.getHeurDep }} PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
+                                <article class="ride-box clearfix">
 
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            {{entity.nbrPlacedesp}}
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    
-                                    
-                             
 
-                                    <li>
-                                        <a href="{{ path('annonce_show', { 'id': entity.id }) }}">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
+                                    <div class="ride-content">
+                                        <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
+                                    </div>
 
-                                </ul><!-- end .ride-meta -->
+                                    <ul class="ride-meta">
 
-                            </article><!-- end .ride-box -->
-{% endfor %}
-                           
+                                        {% if entity.fumeur==1 %}
+                                            <li class="ride-people">
+                                                <span class="fa-stack fa-lg">
+                                                    <i class="flaticon-smoking-sign fa-stack-2x" style=""></i>
+                                                   <!-- <i class="fa fa-ban fa-stack-2x text-danger" style="margin-left:13px; margin-top:2px;"></i> -->
+                                                </span>
+                                            </li>
+                                        {% endif %}
+
+                                        {% if entity.musique==1 %}
+                                            <li class="ride-people">
+                                                <span class="fa-stack fa-lg">
+                                                    <i class="fa fa-music fa-stack-2x"></i>
+                                                   <!-- <i class="fa fa-ban fa-stack-2x text-danger" ></i> -->
+                                                    
+                                                </span>
+                                            </li>
+                                        {% endif %}
+                                        {% if entity.discussion==1 %}
+                                            <li class="ride-people">
+                                                <span class="fa-stack fa-lg">
+                                                    <i class="fa fa-comments-o fa-stack-2x"></i>
+                                                    
+                                                    
+                                                </span>
+                                            </li>
+                                        {% endif %}
+                                        
+
+                                        <li class="ride-date">
+                                            <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
+                                                <i class="fa fa-calendar"></i>
+                                                {{ entity.getDateDep|date('Y-m-d') }} at {{ entity.getHeurDep }} PM
+                                            </a>
+                                        </li><!-- end .ride-date -->
+
+                                        <li class="ride-people">
+                                            <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
+                                                <i class="fa fa-user"></i>
+                                                {{entity.nbrPlacedesp}}
+                                            </a>
+                                        </li><!-- end .ride-people -->
+
+
+                                        <li>
+                                            <a href="{{ path('annonce_show', { 'id': entity.id }) }}">
+                                                <i class="fa fa-file"></i>
+                                                Read more
+                                            </a>
+                                        </li>
+
+                                    </ul><!-- end .ride-meta -->
+
+                                </article><!-- end .ride-box -->
+                            {% endfor %}
+
 
                             <div class="clearfix"></div>
 
@@ -269,18 +294,18 @@
                     </div><!-- end .page-content -->
 
                 </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
-                
-                
-                
-                
-                
+
+
+
+
+
 
             </div><!-- end .row -->
         </div><!-- end .container -->
 
     </section><!-- end .main-content -->
 
-   
+
 
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -311,7 +336,7 @@
                             <button type="submit" class="submit btn green-color">Log in</button>
                         </div>
 
-                      
+
 
                         <div class="clearfix"></div>
 

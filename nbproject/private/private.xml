@@ -4,12 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/bootstrap.min.css</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/map/map.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/AnnonceType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/UtilisateurType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/AnnonceController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/parameters.yml.dist</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Form/VilleType.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/composer.lock</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/MapController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/ReservationRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/parameters.yml</file>
@@ -39,6 +41,7 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/UPGRADE-2.3.md</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/new.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Annonce.php</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/flaticon.css</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/check.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_test.yml</file>
@@ -51,10 +54,13 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_prod.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/AppKernel.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/DemoBundle/Resources/views/Demo/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/_flaticon.scss</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/map/Map.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/edit.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/User.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/AcmeCovoiturageBundle.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/my-icons-collection/font/flaticon.css</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/UPGRADE-2.2.md</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/config/services.xml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/AnnonceReservation.html.twig</file>

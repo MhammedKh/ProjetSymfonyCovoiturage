@@ -21,4 +21,9 @@ acceptReservation:
 
 refuseReservation:
     pattern : /refuseReservation/{id_ann}/{id}
-    defaults: { _controller: AcmeCovoiturageBundle:Reservation:refuseReservation}     
+    defaults: { _controller: AcmeCovoiturageBundle:Reservation:refuseReservation}
+    
+map:
+    pattern : /map/{from}/{to}
+    defaults: { _controller: AcmeCovoiturageBundle:Map:index}
+ 

@@ -15,6 +15,7 @@
         <!-- Styles -->
 
         <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/flaticon.css') }}">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Forms -->
         <link href="{{ asset('css/jquery.idealforms.css') }}" rel="stylesheet">
@@ -38,7 +39,7 @@
         <script src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
         <script src="{{ asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
         <![endif]-->
-
+            {% block styleMap %}{% endblock %}
     </head
     <body>
         {% block body %}{% endblock %}
@@ -61,6 +62,10 @@
         <!-- Rating  -->
         <script type="text/javascript" src="{{ asset('js/bootstrap-rating-input.min.js') }}"></script>
         <!-- Slicknav  -->
-        <script type="text/javascript" src="{{ asset('js/jquery.slicknav.min.js') }}"></script>{% endblock %}
+        <script type="text/javascript" src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+        
+        {% block javascriptsMap %}  {% endblock %}
+        {% endblock %}
+        
     </body>
 </html>
