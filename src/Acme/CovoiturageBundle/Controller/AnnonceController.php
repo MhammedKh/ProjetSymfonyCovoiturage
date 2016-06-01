@@ -35,7 +35,35 @@ class AnnonceController extends Controller
         return($this->render("AcmeCovoiturageBundle:Annonce:userAnnonce.html.twig", array("entities" => $entities)));
     }
     
-    
+   public function searchAnnonceAction()
+    {
+
+
+      $villedep =$this->get('request')->request->get('from');
+      $villedest =$this->get('request')->request->get('to');
+      $date = $this->get('request')->request->get('date');
+      
+       
+        $day=substr($date,3,2);
+        $month=substr($date,0,2);
+        $year=substr($date,6,4);
+        $date=$year.'-'.$month.'-'.$day;
+        
+        $em = $this->getDoctrine()->getManager();
+ 
+         $annoncelist = $em->getRepository("AcmeCovoiturageBundle:Annonce")
+                ->search($villedep, $villedest, $date);
+               foreach ($annoncelist as $row)
+        {
+           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
+            
+        }
+      
+ 
+        return $this->render('AcmeCovoiturageBundle:Annonce:index.html.twig', array(
+      'entities' => $annoncelist
+    ));
+    }
     
     
     
@@ -86,6 +114,7 @@ class AnnonceController extends Controller
         $entity = new Annonce();
         $entity->status="En cour";
         $entity->dateIns=date("Y-m-d");
+        //TODO
         $entity->idUtilisateur=$this->showUser(1);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);

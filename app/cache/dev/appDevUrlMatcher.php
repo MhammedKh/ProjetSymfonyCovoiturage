@@ -298,21 +298,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_covoiturage_default_index')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        // index
-        if (rtrim($pathinfo, '/') === '/index') {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_index;
-            }
-
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'index');
-            }
-
-            return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\IndexController::indexAction',  '_route' => 'index',);
-        }
-        not_index:
-
         if (0 === strpos($pathinfo, '/reservation')) {
             // reservation
             if (rtrim($pathinfo, '/') === '/reservation') {
@@ -785,6 +770,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // map
         if (0 === strpos($pathinfo, '/map') && preg_match('#^/map/(?P<from>[^/]++)/(?P<to>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'map')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\MapController::indexAction',));
+        }
+
+        // annonce_search
+        if ($pathinfo === '/search') {
+            return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\AnnonceController::searchAnnonceAction',  '_route' => 'annonce_search',);
+        }
+
+        // index
+        if ($pathinfo === '/index') {
+            return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\IndexController::indexAction',  '_route' => 'index',);
         }
 
         // _welcome

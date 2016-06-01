@@ -27,3 +27,10 @@ map:
     pattern : /map/{from}/{to}
     defaults: { _controller: AcmeCovoiturageBundle:Map:index}
  
+annonce_search:
+    pattern : /search
+    defaults: { _controller: AcmeCovoiturageBundle:Annonce:searchAnnonce}
+
+index:
+    pattern : /index
+    defaults: { _controller: AcmeCovoiturageBundle:Index:index}

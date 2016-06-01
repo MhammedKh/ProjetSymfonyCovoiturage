@@ -10,6 +10,18 @@ fos_user:
 services:
     fos_user.doctrine_registry:
         alias: doctrine
+    sdz_user.registration_complet:
+        class: Acme\CovoiturageBundle\Services\LoginConfirmListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }
+                
+    sdz_user.login_complet:
+        class: Acme\CovoiturageBundle\Services\LoginConfirmListener
+        arguments: [@router]
+        tags:
+            - {  name: kernel.event_subscriber}
+           
 
 framework:
     #esi:             ~

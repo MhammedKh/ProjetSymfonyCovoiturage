@@ -204,7 +204,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
         echo "
                                 </div>
                                  
-                                <div class=\"field\">
+                                <div class=\"field\" style=\"display: inline-block; width:120px;\">
                                     ";
         // line 156
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heureDep", array()), 'widget', array("attr" => array("pattern" => "0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]", "placeholder" => "Time")));
@@ -581,7 +581,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 /*                                     {{ form_widget(form.dateDep , {'attr': {'class': 'datepicker','value' : 'Date'}}) }}*/
 /*                                 </div>*/
 /*                                  */
-/*                                 <div class="field">*/
+/*                                 <div class="field" style="display: inline-block; width:120px;">*/
 /*                                     {{ form_widget(form.heureDep , {'attr': {'pattern' : '0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]','placeholder':'Time'}}) }}*/
 /*                                 </div>*/
 /*                                 */

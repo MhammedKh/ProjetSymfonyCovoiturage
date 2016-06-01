@@ -688,6 +688,14 @@
     </parameter>
   </parameters>
   <services>
+    <service id="sdz_user.registration_complet" class="Acme\CovoiturageBundle\Services\LoginConfirmListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="router"/>
+    </service>
+    <service id="sdz_user.login_complet" class="Acme\CovoiturageBundle\Services\LoginConfirmListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="router"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -2263,6 +2271,14 @@
         <argument>0</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>sdz_user.registration_complet</argument>
+        <argument>Acme\CovoiturageBundle\Services\LoginConfirmListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>sdz_user.login_complet</argument>
+        <argument>Acme\CovoiturageBundle\Services\LoginConfirmListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
       </call>
@@ -3025,7 +3041,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5747444ab39f1</argument>
+            <argument>574e43f654ae3</argument>
           </service>
         </argument>
         <argument type="service">
@@ -3262,8 +3278,8 @@
               <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
                 <argument type="service" id="security.http_utils"/>
                 <argument type="collection">
-                  <argument key="always_use_default_target_path">false</argument>
-                  <argument key="default_target_path">/</argument>
+                  <argument key="always_use_default_target_path">true</argument>
+                  <argument key="default_target_path">index</argument>
                   <argument key="login_path">/login</argument>
                   <argument key="target_path_parameter">_target_path</argument>
                   <argument key="use_referer">false</argument>
@@ -3304,7 +3320,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5747444ab39f1</argument>
+            <argument>574e43f654ae3</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>

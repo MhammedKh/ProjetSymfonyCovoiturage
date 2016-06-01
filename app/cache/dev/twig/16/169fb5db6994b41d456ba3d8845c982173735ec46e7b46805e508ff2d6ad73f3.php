@@ -154,7 +154,10 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
                             <div class=\"search-content\">
 
-                                <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms searchtours\">
+                                <form action=\"";
+        // line 115
+        echo $this->env->getExtension('routing')->getPath("annonce_search");
+        echo "\" method=\"POST\" novalidate autocomplete=\"off\" class=\"idealforms searchtours\">
 
                                     <div class=\"row\">
 
@@ -213,7 +216,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                                         <div class=\"col-md-3 col-sm-3 col-xs-12\">
 
                                             <div class=\"field\">
-                                                <input name=\"event\" type=\"text\" placeholder=\"Date\" class=\"datepicker\">
+                                                <input name=\"date\" type=\"text\" placeholder=\"Date\"  class=\"datepicker\">
                                             </div>
 
 
@@ -523,7 +526,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
     public function getDebugInfo()
     {
-        return array (  391 => 277,  375 => 267,  366 => 261,  354 => 254,  347 => 249,  337 => 241,  334 => 240,  324 => 232,  322 => 231,  319 => 230,  310 => 223,  308 => 222,  294 => 217,  285 => 210,  281 => 209,  208 => 138,  197 => 136,  193 => 135,  182 => 126,  171 => 124,  167 => 123,  133 => 92,  127 => 89,  117 => 82,  111 => 79,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  394 => 277,  378 => 267,  369 => 261,  357 => 254,  350 => 249,  340 => 241,  337 => 240,  327 => 232,  325 => 231,  322 => 230,  313 => 223,  311 => 222,  297 => 217,  288 => 210,  284 => 209,  211 => 138,  200 => 136,  196 => 135,  185 => 126,  174 => 124,  170 => 123,  159 => 115,  133 => 92,  127 => 89,  117 => 82,  111 => 79,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -640,7 +643,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /* */
 /*                             <div class="search-content">*/
 /* */
-/*                                 <form action="" novalidate autocomplete="off" class="idealforms searchtours">*/
+/*                                 <form action="{{ path('annonce_search') }}" method="POST" novalidate autocomplete="off" class="idealforms searchtours">*/
 /* */
 /*                                     <div class="row">*/
 /* */
@@ -671,7 +674,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                                         <div class="col-md-3 col-sm-3 col-xs-12">*/
 /* */
 /*                                             <div class="field">*/
-/*                                                 <input name="event" type="text" placeholder="Date" class="datepicker">*/
+/*                                                 <input name="date" type="text" placeholder="Date"  class="datepicker">*/
 /*                                             </div>*/
 /* */
 /* */

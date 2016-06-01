@@ -19,20 +19,90 @@ class __TwigTemplate_a59a095bedb9d913d3c8adfc145617549ea9b60eae611a8f7a48bd3ee9b
         echo "
 ";
         // line 3
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("method" => "post", "action" => $this->env->getExtension('routing')->getPath("fos_user_registration_register"), "attr" => array("class" => "fos_user_registration_register")));
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("method" => "post", "action" => $this->env->getExtension('routing')->getPath("fos_user_registration_register"), "attr" => array("class" => "fos_user_registration_register idealforms reg")));
+        echo "
+<div class=\"log-header\">
+    <span class=\"log-in\">Sign up</span>
+</div>
+
+<div class=\"log-header\">
+   ";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), "vars", array()), "errors", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["errorItem"]) {
+            // line 10
+            echo "      <label  class=\"log-in\" for=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "vars", array()), "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["errorItem"], "message", array()), "html", null, true);
+            echo "</label>
+ 
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['errorItem'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 13
+        echo "    </div>
+<div class=\"field\">
+
+    ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label', array("label" => "Email : "));
         echo "
     ";
-        // line 4
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "field")));
         echo "
-    <div>
-        <input type=\"submit\" value=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" />
-    </div>
+    <span class=\"error\"></span>
+</div>
+<div class=\"field\">
+    ";
+        // line 21
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'label', array("label" => "User Name : "));
+        echo "
+    ";
+        // line 22
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget');
+        echo "
+      
+</div>
+<div class=\"field\">
+    ";
+        // line 26
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'label', array("label" => "Password : "));
+        echo "
+    <span class=\"error\">This field is required</span> 
+    ";
+        // line 28
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'widget');
+        echo "
+    <span class=\"error\"></span>   
+</div>
+
+    
+
+<div class=\"field\">
+       ";
+        // line 35
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'label', array("label" => "Confirmed Password : "));
+        echo "
+    ";
+        // line 36
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget');
+        echo "
+    <span class=\"error\"></span>   
+</div>
+<div class=\"green-color\">
+
+    <button  class=\"green-color\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"log\" >";
+        // line 41
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
+        echo "</button>
+</div>
 ";
-        // line 8
+        // line 43
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 ";
@@ -50,15 +120,50 @@ class __TwigTemplate_a59a095bedb9d913d3c8adfc145617549ea9b60eae611a8f7a48bd3ee9b
 
     public function getDebugInfo()
     {
-        return array (  36 => 8,  31 => 6,  26 => 4,  22 => 3,  19 => 2,);
+        return array (  106 => 43,  101 => 41,  93 => 36,  89 => 35,  79 => 28,  74 => 26,  67 => 22,  63 => 21,  56 => 17,  52 => 16,  47 => 13,  35 => 10,  31 => 9,  22 => 3,  19 => 2,);
     }
 }
 /* {% trans_default_domain 'FOSUserBundle' %}*/
 /* */
-/* {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}*/
-/*     {{ form_widget(form) }}*/
-/*     <div>*/
-/*         <input type="submit" value="{{ 'registration.submit'|trans }}" />*/
+/* {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register idealforms reg'}}) }}*/
+/* <div class="log-header">*/
+/*     <span class="log-in">Sign up</span>*/
+/* </div>*/
+/* */
+/* <div class="log-header">*/
+/*    {% for errorItem in form.plainPassword.first.vars.errors %}*/
+/*       <label  class="log-in" for="{{ form.plainPassword.vars.id }}">{{ errorItem.message }}</label>*/
+/*  */
+/*     {% endfor %}*/
 /*     </div>*/
+/* <div class="field">*/
+/* */
+/*     {{ form_label(form.email,"Email : ") }}*/
+/*     {{ form_widget(form.email ,{ 'attr' :{'class':'field'}})}}*/
+/*     <span class="error"></span>*/
+/* </div>*/
+/* <div class="field">*/
+/*     {{ form_label(form.username,"User Name : ") }}*/
+/*     {{ form_widget(form.username )}}*/
+/*       */
+/* </div>*/
+/* <div class="field">*/
+/*     {{ form_label(form.plainPassword.first,"Password : ") }}*/
+/*     <span class="error">This field is required</span> */
+/*     {{ form_widget(form.plainPassword.first) }}*/
+/*     <span class="error"></span>   */
+/* </div>*/
+/* */
+/*     */
+/* */
+/* <div class="field">*/
+/*        {{ form_label(form.plainPassword.second,"Confirmed Password : ") }}*/
+/*     {{ form_widget(form.plainPassword.second) }}*/
+/*     <span class="error"></span>   */
+/* </div>*/
+/* <div class="green-color">*/
+/* */
+/*     <button  class="green-color" type="submit" id="_submit" name="_submit" value="log" >{{ 'security.login.submit'|trans }}</button>*/
+/* </div>*/
 /* {{ form_end(form) }}*/
 /* */

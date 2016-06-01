@@ -24,7 +24,7 @@ class AnnonceType extends AbstractType
 )
             ->add('prixPlace','integer',array())
             ->add('dateDep','text')
-            ->add('heureDep',  'text')
+            ->add('heureDep',  'time')
             ->add('villeDep', 'entity', array( 'empty_value' => 'From','class' => 'AcmeCovoiturageBundle:Ville'))
             ->add('villeArr', 'entity', array( 'empty_value' => 'To','class' => 'AcmeCovoiturageBundle:Ville'))
             ->add('lieuDep')

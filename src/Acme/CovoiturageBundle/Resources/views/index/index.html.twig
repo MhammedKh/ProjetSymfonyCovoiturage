@@ -112,7 +112,7 @@
 
                             <div class="search-content">
 
-                                <form action="" novalidate autocomplete="off" class="idealforms searchtours">
+                                <form action="{{ path('annonce_search') }}" method="POST" novalidate autocomplete="off" class="idealforms searchtours">
 
                                     <div class="row">
 
@@ -143,7 +143,7 @@
                                         <div class="col-md-3 col-sm-3 col-xs-12">
 
                                             <div class="field">
-                                                <input name="event" type="text" placeholder="Date" class="datepicker">
+                                                <input name="date" type="text" placeholder="Date"  class="datepicker">
                                             </div>
 
 

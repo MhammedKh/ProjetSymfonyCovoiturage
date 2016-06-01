@@ -17,7 +17,20 @@ class AnnonceRepository extends EntityRepository {
          
         return $qt->getQuery()->getResult();
     }
-    
+          public function search($villedep, $villedest, $date)
+    {  
+        $qt = $this->createQueryBuilder('j');
+        $qt->select('j')
+             
+                ->where('j.villeDep=:vd ')
+                ->setParameter('vd', $villedep)
+               ->andWhere('j.villeArr=:va' )
+                ->setParameter('va', $villedest)
+                ->andWhere('j.dateDep=:dp')
+                ->setParameter('dp', $date);
+       
+        return $qt->getQuery()->getResult();
+    }
     public function showAnnonceuser($id_user) {
 
         $qt = $this->createQueryBuilder('a');

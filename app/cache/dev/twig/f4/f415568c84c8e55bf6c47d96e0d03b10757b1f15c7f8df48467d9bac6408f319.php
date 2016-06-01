@@ -24,54 +24,91 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 4
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 6
+        // line 5
+        echo "    ";
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 7
-            echo "    <div>";
+            // line 6
+            echo "        <div>";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</div>
-";
+    ";
         }
-        // line 9
+        // line 8
         echo "
-<form action=\"";
-        // line 10
+
+
+
+        <div class=\"modal-header\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+        </div><!-- end .modal-header -->
+        <div class=\"modal-body\">
+            <form action=\"";
+        // line 16
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
-        echo "\" method=\"post\">
-    <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 11
+        echo "\" method=\"post\" novalidate autocomplete=\"off\" class=\"idealforms login\">
+                <div class=\"log-header\">
+                    <span class=\"log-in\">Log in</span>
+                </div>
+
+
+                <input type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 22
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
 
-    <label for=\"username\">";
-        // line 13
+                <div class=\"field\">
+                    <input type=\"text\" placeholder=\"";
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 14
+        echo "\"id=\"username\" name=\"_username\" value=\"";
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
         echo "\" required=\"required\" />
+                    <span class=\"error\"></span>
 
-    <label for=\"password\">";
-        // line 16
+
+                </div>
+
+
+                <div class=\"field\">
+                    
+                    <input type=\"password\" placeholder=\"";
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+        echo "\" id=\"password\" name=\"_password\" required=\"required\" />
+                    <span class=\"error\"></span>
 
-    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-    <label for=\"remember_me\">";
-        // line 20
+                </div>
+                <div class=\"field\">
+
+                    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+                    <label for=\"remember_me\">";
+        // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
+                    <span class=\"error\"></span>
+                </div>
 
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 22
+                <div class=\"field buttons green-color submit btn \">
+
+                    <button  class=\"green-color\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"log\" >";
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" />
-</form>
+        echo "</button>
+
+
+                </div>
+                                    <div class=\"field buttons green-color submit btn \">
+
+                                        <a style=\" color: #FFF\" class=\"button\" href=\"";
+        // line 53
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "\">Create Account<br>100% Free</a></div>
+                                     </div>
+            </form>
+    </div>
 ";
     }
 
@@ -87,31 +124,64 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 
     public function getDebugInfo()
     {
-        return array (  72 => 22,  67 => 20,  60 => 16,  55 => 14,  51 => 13,  46 => 11,  42 => 10,  39 => 9,  33 => 7,  31 => 6,  28 => 5,  11 => 1,);
+        return array (  107 => 53,  98 => 47,  89 => 41,  79 => 34,  65 => 25,  59 => 22,  50 => 16,  40 => 8,  34 => 6,  31 => 5,  28 => 4,  11 => 1,);
     }
 }
 /* {% extends "FOSUserBundle::layout.html.twig" %}*/
-/* */
 /* {% trans_default_domain 'FOSUserBundle' %}*/
 /* */
 /* {% block fos_user_content %}*/
-/* {% if error %}*/
-/*     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>*/
-/* {% endif %}*/
+/*     {% if error %}*/
+/*         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>*/
+/*     {% endif %}*/
 /* */
-/* <form action="{{ path("fos_user_security_check") }}" method="post">*/
-/*     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
 /* */
-/*     <label for="username">{{ 'security.login.username'|trans }}</label>*/
-/*     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />*/
 /* */
-/*     <label for="password">{{ 'security.login.password'|trans }}</label>*/
-/*     <input type="password" id="password" name="_password" required="required" />*/
 /* */
-/*     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />*/
-/*     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>*/
+/*         <div class="modal-header">*/
+/*             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
+/*         </div><!-- end .modal-header -->*/
+/*         <div class="modal-body">*/
+/*             <form action="{{ path("fos_user_security_check") }}" method="post" novalidate autocomplete="off" class="idealforms login">*/
+/*                 <div class="log-header">*/
+/*                     <span class="log-in">Log in</span>*/
+/*                 </div>*/
 /* */
-/*     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />*/
-/* </form>*/
+/* */
+/*                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
+/* */
+/*                 <div class="field">*/
+/*                     <input type="text" placeholder="{{ 'security.login.username'|trans }}"id="username" name="_username" value="{{ last_username }}" required="required" />*/
+/*                     <span class="error"></span>*/
+/* */
+/* */
+/*                 </div>*/
+/* */
+/* */
+/*                 <div class="field">*/
+/*                     */
+/*                     <input type="password" placeholder="{{ 'security.login.password'|trans }}" id="password" name="_password" required="required" />*/
+/*                     <span class="error"></span>*/
+/* */
+/*                 </div>*/
+/*                 <div class="field">*/
+/* */
+/*                     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />*/
+/*                     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>*/
+/*                     <span class="error"></span>*/
+/*                 </div>*/
+/* */
+/*                 <div class="field buttons green-color submit btn ">*/
+/* */
+/*                     <button  class="green-color" type="submit" id="_submit" name="_submit" value="log" >{{ 'security.login.submit'|trans }}</button>*/
+/* */
+/* */
+/*                 </div>*/
+/*                                     <div class="field buttons green-color submit btn ">*/
+/* */
+/*                                         <a style=" color: #FFF" class="button" href="{{ path('fos_user_registration_register')}}">Create Account<br>100% Free</a></div>*/
+/*                                      </div>*/
+/*             </form>*/
+/*     </div>*/
 /* {% endblock fos_user_content %}*/
 /* */

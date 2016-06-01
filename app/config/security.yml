@@ -18,6 +18,8 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: security.csrf.token_manager
+                always_use_default_target_path: true
+                default_target_path: index
             
             logout:       true
             anonymous:    true

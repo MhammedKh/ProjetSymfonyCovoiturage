@@ -1,8 +1,43 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register idealforms reg'}}) }}
+<div class="log-header">
+    <span class="log-in">Sign up</span>
+</div>
+
+<div class="log-header">
+   {% for errorItem in form.plainPassword.first.vars.errors %}
+      <label  class="log-in" for="{{ form.plainPassword.vars.id }}">{{ errorItem.message }}</label>
+ 
+    {% endfor %}
     </div>
+<div class="field">
+
+    {{ form_label(form.email,"Email : ") }}
+    {{ form_widget(form.email ,{ 'attr' :{'class':'field'}})}}
+    <span class="error"></span>
+</div>
+<div class="field">
+    {{ form_label(form.username,"User Name : ") }}
+    {{ form_widget(form.username )}}
+      
+</div>
+<div class="field">
+    {{ form_label(form.plainPassword.first,"Password : ") }}
+    <span class="error">This field is required</span> 
+    {{ form_widget(form.plainPassword.first) }}
+    <span class="error"></span>   
+</div>
+
+    
+
+<div class="field">
+       {{ form_label(form.plainPassword.second,"Confirmed Password : ") }}
+    {{ form_widget(form.plainPassword.second) }}
+    <span class="error"></span>   
+</div>
+<div class="green-color">
+
+    <button  class="green-color" type="submit" id="_submit" name="_submit" value="log" >{{ 'security.login.submit'|trans }}</button>
+</div>
 {{ form_end(form) }}
