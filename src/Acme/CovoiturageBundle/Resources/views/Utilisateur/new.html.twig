@@ -1,15 +1,61 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Utilisateur creation</h1>
+ 
 
-    {{ form(form) }}
+   {{ form_start(form , {'attr': {'class': 'idealforms add-ride'}}) }}
+<div class="log-header">
+    <span class="log-in">Sign up</span>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('utilisateur') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+   {% for errorItem in form.plainPassword.first.vars.errors %}
+      <label  class="log-in" for="{{ form.plainPassword.vars.id }}">{{ errorItem.message }}</label>
+ 
+    {% endfor %}
+    </div>
+    <div class="field">
+
+    
+    {{ form_widget(form.nom ,{ 'attr' :{'class':'field','placeholder' : ' Ferst name'}})}}
+    <span class="error"></span>
+</div>
+    <div class="field">
+
+    {{ form_widget(form.prenom ,{ 'attr' :{'class':'field','placeholder' : ' Last name'}})}}
+    <span class="error"></span>
+</div>
+       <div class="field">
+
+    
+    {{ form_widget(form.tel ,{ 'attr' :{'class':'field','placeholder' : 'Phone number'}})}}
+    <span class="error"></span>
+</div>
+     
+<div class="field">
+
+   
+    {{ form_widget(form.email ,{ 'attr' :{'class':'field','placeholder' : 'E-mail'}})}}
+    <span class="error"></span>
+</div>
+<div class="field">
+    
+    {{ form_widget(form.username ,{ 'attr' :{'class':'field','placeholder' : 'User name'}})}}
+      
+</div>
+<div class="field">
+    
+    {{ form_widget(form.plainPassword.first,{ 'attr' :{'class':'field','placeholder' : 'Password'}})}}
+    <span class="error"></span>   
+</div>
+
+    
+
+<div class="field">
+       
+    {{ form_widget(form.plainPassword.second,{ 'attr' :{'class':'field','placeholder' : 'Confirmed password'}})}}
+    <span class="error"></span>   
+</div>
+  
+
+{{ form_end(form) }}
+
 {% endblock %}

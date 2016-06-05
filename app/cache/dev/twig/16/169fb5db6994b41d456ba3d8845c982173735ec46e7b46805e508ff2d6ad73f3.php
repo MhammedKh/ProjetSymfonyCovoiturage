@@ -398,7 +398,10 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                             <div class=\"post-pagination pagination-margin clearfix\">
 
                                 <div class=\"next pull-right\">
-                                    <a href=\"../annonce\">
+                                    <a href=\"";
+        // line 284
+        echo $this->env->getExtension('routing')->getPath("annonce");
+        echo "\">
                                         Next
                                         <i class=\"fa fa-chevron-right\"></i>
                                     </a>
@@ -427,39 +430,12 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
     <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content\">
-
-                <div class=\"modal-header\">
-                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                </div><!-- end .modal-header -->
-
-                <div class=\"modal-body\">
-                    <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms login\">
-
-                        <div class=\"log-header\">
-                            <span class=\"log-in\">Log in</span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field buttons\">
-                            <button type=\"submit\" class=\"submit btn green-color\">Log in</button>
-                        </div>
-
-
-
-                        <div class=\"clearfix\"></div>
-
-                    </form><!-- end .login -->
-                </div><!-- end .modal-body -->
-
+                ";
+        // line 313
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("FOSUserBundle:Security:login"));
+        echo "
+              
+        
             </div><!-- end .modal-content -->
         </div><!-- end .modal-dialog -->
     </div><!-- end .modal -->
@@ -473,39 +449,10 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
                 </div>
 
                 <div class=\"modal-body\">
-                    <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms reg\">
-
-                        <div class=\"log-header\">
-                            <span class=\"log-in\">Sign up</span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input name=\"email\" type=\"email\"  placeholder=\"E-Mail\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field\">
-                            <input name=\"confirmpass\" type=\"password\"  placeholder=\"Password\">
-                            <span class=\"error\"></span>
-                        </div>
-
-                        <div class=\"field buttons\">
-                            <button type=\"submit\" class=\"submit btn green-color\">Sign up</button>
-                        </div>
-
-                        <div class=\"clearfix\"></div>
-
-                    </form><!-- end .reg -->
+              ";
+        // line 329
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("AcmeCovoiturageBundle:Utilisateur:new"));
+        echo " 
                 </div><!-- end .modal-body -->
 
             </div><!-- end .modal-content -->
@@ -526,7 +473,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 
     public function getDebugInfo()
     {
-        return array (  394 => 277,  378 => 267,  369 => 261,  357 => 254,  350 => 249,  340 => 241,  337 => 240,  327 => 232,  325 => 231,  322 => 230,  313 => 223,  311 => 222,  297 => 217,  288 => 210,  284 => 209,  211 => 138,  200 => 136,  196 => 135,  185 => 126,  174 => 124,  170 => 123,  159 => 115,  133 => 92,  127 => 89,  117 => 82,  111 => 79,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  454 => 329,  435 => 313,  403 => 284,  394 => 277,  378 => 267,  369 => 261,  357 => 254,  350 => 249,  340 => 241,  337 => 240,  327 => 232,  325 => 231,  322 => 230,  313 => 223,  311 => 222,  297 => 217,  288 => 210,  284 => 209,  211 => 138,  200 => 136,  196 => 135,  185 => 126,  174 => 124,  170 => 123,  159 => 115,  133 => 92,  127 => 89,  117 => 82,  111 => 79,  82 => 53,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -812,7 +759,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                             <div class="post-pagination pagination-margin clearfix">*/
 /* */
 /*                                 <div class="next pull-right">*/
-/*                                     <a href="../annonce">*/
+/*                                     <a href="{{ path('annonce') }}">*/
 /*                                         Next*/
 /*                                         <i class="fa fa-chevron-right"></i>*/
 /*                                     </a>*/
@@ -841,39 +788,9 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
 /*         <div class="modal-dialog">*/
 /*             <div class="modal-content">*/
-/* */
-/*                 <div class="modal-header">*/
-/*                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*                 </div><!-- end .modal-header -->*/
-/* */
-/*                 <div class="modal-body">*/
-/*                     <form action="" novalidate autocomplete="off" class="idealforms login">*/
-/* */
-/*                         <div class="log-header">*/
-/*                             <span class="log-in">Log in</span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input name="username" type="text" placeholder="Username">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input type="password" name="password" placeholder="Password">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field buttons">*/
-/*                             <button type="submit" class="submit btn green-color">Log in</button>*/
-/*                         </div>*/
-/* */
-/* */
-/* */
-/*                         <div class="clearfix"></div>*/
-/* */
-/*                     </form><!-- end .login -->*/
-/*                 </div><!-- end .modal-body -->*/
-/* */
+/*                 {{ render(controller("FOSUserBundle:Security:login")) }}*/
+/*               */
+/*         */
 /*             </div><!-- end .modal-content -->*/
 /*         </div><!-- end .modal-dialog -->*/
 /*     </div><!-- end .modal -->*/
@@ -887,39 +804,7 @@ class __TwigTemplate_38ba0040fbecccd362d0c1fd379779962c185aa2d913d421bd4c2fcc380
 /*                 </div>*/
 /* */
 /*                 <div class="modal-body">*/
-/*                     <form action="" novalidate autocomplete="off" class="idealforms reg">*/
-/* */
-/*                         <div class="log-header">*/
-/*                             <span class="log-in">Sign up</span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input name="username" type="text" placeholder="Username">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input name="email" type="email"  placeholder="E-Mail">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input type="password" name="password" placeholder="Password">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field">*/
-/*                             <input name="confirmpass" type="password"  placeholder="Password">*/
-/*                             <span class="error"></span>*/
-/*                         </div>*/
-/* */
-/*                         <div class="field buttons">*/
-/*                             <button type="submit" class="submit btn green-color">Sign up</button>*/
-/*                         </div>*/
-/* */
-/*                         <div class="clearfix"></div>*/
-/* */
-/*                     </form><!-- end .reg -->*/
+/*               {{ render(controller("AcmeCovoiturageBundle:Utilisateur:new")) }} */
 /*                 </div><!-- end .modal-body -->*/
 /* */
 /*             </div><!-- end .modal-content -->*/

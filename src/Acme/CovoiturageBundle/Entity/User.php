@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * Utilisateur
+ * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity
@@ -30,11 +30,16 @@ class User extends BaseUser
   /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=45, nullable=true)
+     * @ORM\Column(name="nom", type="string", length=45, nullable=true)
      */
-    protected $photo;
+    public $nom;
     
-    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=45, nullable=true)
+     */
+    public $prenom;
     
     public function __construct()
     { 
@@ -57,24 +62,24 @@ class User extends BaseUser
     /**
      * Set photo
      *
-     * @param string $photo
+     * @param string $nom
      * @return User
      */
-    public function setPhoto($photo)
+    public function setnom($nom)
     {
-        $this->photo = $photo;
+        $this->nom= $nom;
 
         return $this;
     }
 
     /**
-     * Get photo
+     * Get nom
      *
      * @return string 
      */
-    public function getPhoto()
+    public function getnom()
     {
-        return $this->photo;
+        return $this->nom;
     }
     
      /**

@@ -22,8 +22,8 @@ class AnnonceController extends Controller
     public function annonceUserAction()
     {
         $em = $this->getDoctrine()->getManager();
-        //TODO SESSION USER
-        $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showAnnonceuser(1);
+        
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showAnnonceuser($this->getUser());
         
         foreach ($entities as $row)
         {
@@ -115,7 +115,7 @@ class AnnonceController extends Controller
         $entity->status="En cour";
         $entity->dateIns=date("Y-m-d");
         //TODO
-        $entity->idUtilisateur=$this->showUser(1);
+        $entity->idUtilisateur=$this->showUser($this->getUser());
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         

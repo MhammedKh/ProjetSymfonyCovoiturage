@@ -3,9 +3,7 @@
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register idealforms reg'}}) }}
 <div class="log-header">
     <span class="log-in">Sign up</span>
-</div>
 
-<div class="log-header">
    {% for errorItem in form.plainPassword.first.vars.errors %}
       <label  class="log-in" for="{{ form.plainPassword.vars.id }}">{{ errorItem.message }}</label>
  

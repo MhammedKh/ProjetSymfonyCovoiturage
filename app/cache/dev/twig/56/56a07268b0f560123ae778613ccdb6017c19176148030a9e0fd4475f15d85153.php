@@ -200,7 +200,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
                               <div class=\"field\">
                                     ";
         // line 152
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDep", array()), 'widget', array("attr" => array("class" => "datepicker", "value" => "Date")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDep", array()), 'widget', array("attr" => array("class" => "datepicker", "id" => "destination", "value" => "Date")));
         echo "
                                 </div>
                                  
@@ -578,7 +578,7 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 /*                              </div>*/
 /*                              */
 /*                               <div class="field">*/
-/*                                     {{ form_widget(form.dateDep , {'attr': {'class': 'datepicker','value' : 'Date'}}) }}*/
+/*                                     {{ form_widget(form.dateDep , {'attr': {'class': 'datepicker','id': 'destination','value' : 'Date'}}) }}*/
 /*                                 </div>*/
 /*                                  */
 /*                                 <div class="field" style="display: inline-block; width:120px;">*/

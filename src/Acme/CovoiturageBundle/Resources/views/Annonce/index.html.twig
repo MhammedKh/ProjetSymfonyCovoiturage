@@ -150,7 +150,7 @@
                                 
                       
                                 <div class="ride-content">
-                                    <h3><a href="#">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
+                                    <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
                                 </div>
 
                                 <ul class="ride-meta">

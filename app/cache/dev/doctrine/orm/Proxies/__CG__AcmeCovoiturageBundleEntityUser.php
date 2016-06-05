@@ -36,7 +36,7 @@ class User extends \Acme\CovoiturageBundle\Entity\User implements \Doctrine\ORM\
      *
      * @see \Doctrine\Common\Persistence\Proxy::__getLazyProperties
      */
-    public static $lazyPropertiesDefaults = array();
+    public static $lazyPropertiesDefaults = array('nom' => NULL, 'prenom' => NULL);
 
 
 
@@ -46,16 +46,60 @@ class User extends \Acme\CovoiturageBundle\Entity\User implements \Doctrine\ORM\
      */
     public function __construct($initializer = null, $cloner = null)
     {
+        unset($this->nom, $this->prenom);
 
         $this->__initializer__ = $initializer;
         $this->__cloner__      = $cloner;
     }
 
+    /**
+     * 
+     * @param string $name
+     */
+    public function __get($name)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__get', array($name));
 
+            return $this->$name;
+        }
 
+        trigger_error(sprintf('Undefined property: %s::$%s', __CLASS__, $name), E_USER_NOTICE);
+    }
 
+    /**
+     * 
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function __set($name, $value)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__set', array($name, $value));
 
+            $this->$name = $value;
 
+            return;
+        }
+
+        $this->$name = $value;
+    }
+
+    /**
+     * 
+     * @param  string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__isset', array($name));
+
+            return isset($this->$name);
+        }
+
+        return false;
+    }
 
     /**
      * 
@@ -64,10 +108,10 @@ class User extends \Acme\CovoiturageBundle\Entity\User implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'tel', 'photo', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+            return array('__isInitialized__', 'id', 'tel', 'nom', 'prenom', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
         }
 
-        return array('__isInitialized__', 'id', 'tel', 'photo', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+        return array('__isInitialized__', 'id', 'tel', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
     }
 
     /**
@@ -89,6 +133,7 @@ class User extends \Acme\CovoiturageBundle\Entity\User implements \Doctrine\ORM\
                 }
             };
 
+            unset($this->nom, $this->prenom);
         }
     }
 
@@ -187,23 +232,23 @@ class User extends \Acme\CovoiturageBundle\Entity\User implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function setPhoto($photo)
+    public function setnom($nom)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPhoto', array($photo));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setnom', array($nom));
 
-        return parent::setPhoto($photo);
+        return parent::setnom($nom);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPhoto()
+    public function getnom()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPhoto', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getnom', array());
 
-        return parent::getPhoto();
+        return parent::getnom();
     }
 
     /**

@@ -41,9 +41,9 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 
 
 
-        <div class=\"modal-header\">
+        <!--<div class=\"modal-header\">
             <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-        </div><!-- end .modal-header -->
+        </div><!-- end .modal-header --> 
         <div class=\"modal-body\">
             <form action=\"";
         // line 16
@@ -100,13 +100,7 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 
 
                 </div>
-                                    <div class=\"field buttons green-color submit btn \">
-
-                                        <a style=\" color: #FFF\" class=\"button\" href=\"";
-        // line 53
-        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
-        echo "\">Create Account<br>100% Free</a></div>
-                                     </div>
+                                  
             </form>
     </div>
 ";
@@ -124,7 +118,7 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 
     public function getDebugInfo()
     {
-        return array (  107 => 53,  98 => 47,  89 => 41,  79 => 34,  65 => 25,  59 => 22,  50 => 16,  40 => 8,  34 => 6,  31 => 5,  28 => 4,  11 => 1,);
+        return array (  98 => 47,  89 => 41,  79 => 34,  65 => 25,  59 => 22,  50 => 16,  40 => 8,  34 => 6,  31 => 5,  28 => 4,  11 => 1,);
     }
 }
 /* {% extends "FOSUserBundle::layout.html.twig" %}*/
@@ -138,9 +132,9 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 /* */
 /* */
 /* */
-/*         <div class="modal-header">*/
+/*         <!--<div class="modal-header">*/
 /*             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*         </div><!-- end .modal-header -->*/
+/*         </div><!-- end .modal-header --> */
 /*         <div class="modal-body">*/
 /*             <form action="{{ path("fos_user_security_check") }}" method="post" novalidate autocomplete="off" class="idealforms login">*/
 /*                 <div class="log-header">*/
@@ -177,10 +171,7 @@ class __TwigTemplate_ce2d5b3621543a646be617cb552648877f56ce6cdefcc95606a5643e00d
 /* */
 /* */
 /*                 </div>*/
-/*                                     <div class="field buttons green-color submit btn ">*/
-/* */
-/*                                         <a style=" color: #FFF" class="button" href="{{ path('fos_user_registration_register')}}">Create Account<br>100% Free</a></div>*/
-/*                                      </div>*/
+/*                                   */
 /*             </form>*/
 /*     </div>*/
 /* {% endblock fos_user_content %}*/

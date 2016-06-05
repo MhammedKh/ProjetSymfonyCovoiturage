@@ -244,4 +244,21 @@ class AvisController extends Controller
             ->getForm()
         ;
     }
+    
+    public function avisUser($id_ann,$note)
+    {
+        $entity = new Avis();
+       $entity->setIdAnnonce($id_ann);
+       $entity->setIdUtilisateur($this->getUser());
+       $entity->setNote($note);
+
+        
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->render('reservation');
+    }
+    
+    
 }

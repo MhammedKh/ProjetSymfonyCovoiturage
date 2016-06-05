@@ -36,7 +36,7 @@ class ReservationController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getManager();
         //$id_user=$this->getUser();
-        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationUser(1);
+        $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationUser($this->getUser());
 
         return array(
             'entities' => $entities,
@@ -122,7 +122,7 @@ class ReservationController extends Controller {
         $entity->setStatusRes("non confirmer");
         $entity->setCommentaireRes($this->get('request')->request->get('comm_user'));
         $entityAn = $this->showAnnonce($this->get('request')->request->get('id_ann'));
-        $entityUser = $this->showUser(1);
+        $entityUser = $this->showUser($this->getUser());
         $entity->setIdAnnonce($entityAn);
 
         /* $session = new Session();

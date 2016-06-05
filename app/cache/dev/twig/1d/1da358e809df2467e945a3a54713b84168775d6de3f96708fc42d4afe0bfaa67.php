@@ -195,8 +195,10 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
                                 
                       
                                 <div class=\"ride-content\">
-                                    <h3><a href=\"#\">From ";
+                                    <h3><a href=\"";
             // line 153
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("map", array("from" => $this->getAttribute($this->getAttribute($context["entity"], "villeDep", array()), "id", array()), "to" => $this->getAttribute($this->getAttribute($context["entity"], "villeArr", array()), "id", array()))), "html", null, true);
+            echo "\">From ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleDep", array()), "html", null, true);
             echo " To ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "getVilleArr", array()), "html", null, true);
@@ -384,7 +386,7 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
 
     public function getDebugInfo()
     {
-        return array (  251 => 183,  235 => 173,  227 => 168,  215 => 161,  200 => 153,  191 => 146,  187 => 145,  133 => 94,  127 => 91,  117 => 84,  111 => 81,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
+        return array (  253 => 183,  237 => 173,  229 => 168,  217 => 161,  200 => 153,  191 => 146,  187 => 145,  133 => 94,  127 => 91,  117 => 84,  111 => 81,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -539,7 +541,7 @@ class __TwigTemplate_04bd4ab838b6b363693e2963e72fb0761beddff28adacc75be5cd1831f0
 /*                                 */
 /*                       */
 /*                                 <div class="ride-content">*/
-/*                                     <h3><a href="#">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
+/*                                     <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity.getVilleDep }} To {{ entity.getVilleArr }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>*/
 /*                                 </div>*/
 /* */
 /*                                 <ul class="ride-meta">*/

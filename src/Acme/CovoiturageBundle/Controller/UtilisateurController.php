@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Acme\CovoiturageBundle\Entity\Utilisateur;
+use Acme\CovoiturageBundle\Entity\User;
 use Acme\CovoiturageBundle\Form\UtilisateurType;
 
 /**
@@ -29,7 +29,7 @@ class UtilisateurController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AcmeCovoiturageBundle:Utilisateur')->findAll();
+        $entities = $em->getRepository('AcmeCovoiturageBundle:User')->findAll();
 
         return array(
             'entities' => $entities,
@@ -40,20 +40,20 @@ class UtilisateurController extends Controller
      *
      * @Route("/", name="utilisateur_create")
      * @Method("POST")
-     * @Template("AcmeCovoiturageBundle:Utilisateur:new.html.twig")
+     * @Template("AcmeCovoiturageBundle:User:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Utilisateur();
+        $entity = new User();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+        $entity->setEnabled(true);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('utilisateur_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('index'));
         }
 
         return array(
@@ -69,7 +69,7 @@ class UtilisateurController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Utilisateur $entity)
+    private function createCreateForm(User $entity)
     {
         $form = $this->createForm(new UtilisateurType(), $entity, array(
             'action' => $this->generateUrl('utilisateur_create'),
@@ -90,7 +90,7 @@ class UtilisateurController extends Controller
      */
     public function newAction()
     {
-        $entity = new Utilisateur();
+        $entity = new User();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -110,7 +110,7 @@ class UtilisateurController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AcmeCovoiturageBundle:Utilisateur')->find($id);
+        $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Utilisateur entity.');
@@ -135,7 +135,7 @@ class UtilisateurController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AcmeCovoiturageBundle:Utilisateur')->find($id);
+        $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Utilisateur entity.');
@@ -174,13 +174,13 @@ class UtilisateurController extends Controller
      *
      * @Route("/{id}", name="utilisateur_update")
      * @Method("PUT")
-     * @Template("AcmeCovoiturageBundle:Utilisateur:edit.html.twig")
+     * @Template("AcmeCovoiturageBundle:User:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AcmeCovoiturageBundle:Utilisateur')->find($id);
+        $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Utilisateur entity.');
@@ -215,7 +215,7 @@ class UtilisateurController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AcmeCovoiturageBundle:Utilisateur')->find($id);
+            $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Utilisateur entity.');
