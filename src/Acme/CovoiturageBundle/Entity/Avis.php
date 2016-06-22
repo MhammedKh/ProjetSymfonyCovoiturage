@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Avis
  *
  * @ORM\Table(name="avis", indexes={@ORM\Index(name="FK_avis_1", columns={"id_annonce"}), @ORM\Index(name="FK_avis_2", columns={"id_utilisateur"})})
- * @ORM\Entity
+ * * @ORM\Entity(repositoryClass="Acme\CovoiturageBundle\Entity\AvisRepository")
  */
 class Avis
 {
@@ -86,10 +86,10 @@ class Avis
     /**
      * Set idUtilisateur
      *
-     * @param \Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur
+     * @param \Acme\CovoiturageBundle\Entity\User $idUtilisateur
      * @return Avis
      */
-    public function setIdUtilisateur(\Acme\CovoiturageBundle\Entity\Utilisateur $idUtilisateur = null)
+    public function setIdUtilisateur(\Acme\CovoiturageBundle\Entity\User $idUtilisateur = null)
     {
         $this->idUtilisateur = $idUtilisateur;
 

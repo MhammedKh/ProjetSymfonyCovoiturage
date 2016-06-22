@@ -40,7 +40,7 @@ class Reservation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    public $id;
 
     /**
      * @var \Acme\CovoiturageBundle\Entity\User
@@ -142,6 +142,8 @@ class Reservation
     {
         return $this->id;
     }
+        
+    public $note;
 
     /**
      * Set idUtilisateur

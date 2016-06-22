@@ -62,27 +62,7 @@
                         </div><!-- end .user-log -->
                     </div><!-- end .col-sm-4 -->
 
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-
-                        <ul class="social-icons">
-                            <li>
-                                <a class="facebook" href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="twitter" href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="google" href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div><!-- end .col-sm-8 -->
+                  
 
                 </div><!-- end .row -->
             </section><!-- end .container -->
@@ -111,6 +91,9 @@
 
                                     </div><!-- end .col-sm-4 -->
 
+                                    {% if  app.user!=null %}
+                                    
+                                    
                                     <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">
 
                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">
@@ -136,13 +119,15 @@
                                                     </ul>
                                                 </li>
 
-
+                                              
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
 
-                                    </div><!-- end .main-header-container -->
-
+                                    </div><!-- end .col-md-8 -->
+                                    
+                                     {% endif %}  
+                                    
                                 </div><!-- end .row -->
 
                         </section><!-- end .container -->
@@ -269,13 +254,13 @@
 
 
                                     </ul><!-- end .ride-meta -->
-                                    {% if entity.getIdAnnonce.dateDep|date('Y-m-d') < date() and   entity.getStatusRes=="yes" %}
-                                        <article class="rating" style="font-size: 2em;  padding-left: 500px; ">
-                                            <a href="{{ path('add_avis', { 'id_ann': entity.id , 'note': 1}) }}" title="One point"  style="">☆</a>
-                                            <a href="{{ path('add_avis', { 'id_ann': entity.id , 'note': 2}) }}"   title="Two points">☆</a>
-                                            <a href="{{ path('add_avis', { 'id_ann': entity.id , 'note': 3}) }}"   title="Three points">☆</a>
-                                            <a href="{{ path('add_avis', { 'id_ann': entity.id , 'note': 4}) }}" title="Four points"  style="">☆</a>
-                                            <a href="{{ path('add_avis', { 'id_ann': entity.id , 'note': 5}) }}"   title="Five points">☆</a>
+                                    {% if entity.getIdAnnonce.dateDep|date('Y-m-d') < date() and   entity.getStatusRes=="yes" and  entity.note==0 %}
+                                        <article class="rating" style="font-size: 2em; padding-right:5px; color: #aaa ; padding-left: 500px; transition: color .4s;text-decoration: none;   ">
+                                            <a href="{{ path('avis_user', { 'id_ann': entity.idAnnonce , 'note': 1}) }}" title="One point"  onmouseover="this.style.color'#c0392b' ; this.style.cursor='pointer'; this.focus();" >☆</a>
+                                            <a href="{{ path('avis_user', { 'id_ann': entity.idAnnonce , 'note': 2}) }}"   title="Two points" onmouseover="this.style.color'#c0392b' ; this.style.cursor='pointer';">☆</a>
+                                            <a href="{{ path('avis_user', { 'id_ann': entity.idAnnonce , 'note': 3}) }}"   title="Three points" style=":hover,:focus{ color: #c0392b; cursor: pointer;}">☆</a>
+                                            <a href="{{ path('avis_user', { 'id_ann': entity.idAnnonce , 'note': 4}) }}" title="Four points"  style=":hover,:focus{ color: #c0392b; cursor: pointer;}">☆</a>
+                                            <a href="{{ path('avis_user', { 'id_ann': entity.idAnnonce , 'note': 5}) }}"   title="Five points" style=":hover,:focus{ color: #c0392b; cursor: pointer;}">☆</a>
 
                                         </article>
                                     {% endif %}            
@@ -312,44 +297,31 @@
     </section><!-- end .main-content -->
 
 
+    <footer id="footer">
 
+        <div class="footer-copyright">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        Copyright by My ride
+                    </div>
+
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+
+        </div><!-- end .footer-copyright -->
+
+    </footer><!-- end #footer -->
+
+   
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div><!-- end .modal-header -->
-
-                <div class="modal-body">
-                    <form action="" novalidate autocomplete="off" class="idealforms login">
-
-                        <div class="log-header">
-                            <span class="log-in">Log in</span>
-                        </div>
-
-                        <div class="field">
-                            <input name="username" type="text" placeholder="Username">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field">
-                            <input type="password" name="password" placeholder="Password">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field buttons">
-                            <button type="submit" class="submit btn green-color">Log in</button>
-                        </div>
-
-                        <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                        <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>
-
-                        <div class="clearfix"></div>
-
-                    </form><!-- end .login -->
-                </div><!-- end .modal-body -->
-
+                {{ render(controller("FOSUserBundle:Security:login")) }}
+              
+        
             </div><!-- end .modal-content -->
         </div><!-- end .modal-dialog -->
     </div><!-- end .modal -->
@@ -363,47 +335,10 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="" novalidate autocomplete="off" class="idealforms reg">
-
-                        <div class="log-header">
-                            <span class="log-in">Sign up</span>
-                        </div>
-
-                        <div class="field">
-                            <input name="username" type="text" placeholder="Username">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field">
-                            <input name="email" type="email"  placeholder="E-Mail">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field">
-                            <input type="password" name="password" placeholder="Password">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field">
-                            <input name="confirmpass" type="password"  placeholder="Password">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="field buttons">
-                            <button type="submit" class="submit btn green-color">Sign up</button>
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                    </form><!-- end .reg -->
+              {{ render(controller("AcmeCovoiturageBundle:Utilisateur:new")) }} 
                 </div><!-- end .modal-body -->
 
             </div><!-- end .modal-content -->
         </div><!-- end .modal-dialog -->
     </div><!-- end .modal -->
-
-
-
-
-
 {% endblock %}

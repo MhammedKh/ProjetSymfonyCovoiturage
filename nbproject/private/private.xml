@@ -15,11 +15,13 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/parameters.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/console</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/AvisRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_dev.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/js/bootstrap.min.js</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/AnnonceRepository.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Ville.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Utilisateur/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Services/LoginConfirmListener.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/index/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/.travis.yml</file>
@@ -41,6 +43,7 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Entity/Annonce.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Annonce/index.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/flaticon.css</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Controller/AvisController.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/check.php</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/app/config/config_test.yml</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/css/style.css</file>
@@ -62,6 +65,7 @@
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/UPGRADE-2.2.md</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Utilisateur/new.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/config/services.xml</file>
+            <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/src/Acme/CovoiturageBundle/Resources/views/Reservation/AnnonceReservation.html.twig</file>
             <file>file:/C:/xampp/htdocs/ProjetSymfonyCovoiturage/web/js/bootstrap.js</file>
         </group>
     </open-files>

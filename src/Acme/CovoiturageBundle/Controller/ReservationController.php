@@ -22,7 +22,7 @@ class ReservationController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonceUser($id);
-
+       
         return($this->render("AcmeCovoiturageBundle:Reservation:AnnonceReservation.html.twig", array("entities" => $entities)));
     }
 
@@ -37,7 +37,20 @@ class ReservationController extends Controller {
         $em = $this->getDoctrine()->getManager();
         //$id_user=$this->getUser();
         $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationUser($this->getUser());
-
+        
+        foreach ($entities as $row)
+        {
+            //echo $row->getIdAnnonce()."  ".$this->getUser()."<br>";
+             $i=0;
+             $entitiesAvis = $em->getRepository('AcmeCovoiturageBundle:Avis')->showAvisUserAnnonce($row->getIdAnnonce(),$this->getUser());
+             foreach ($entitiesAvis as $rowAvis)
+             {
+                
+                 $i=$i+1;
+                 
+             }
+             $row->note=$i;
+        }
         return array(
             'entities' => $entities,
         );

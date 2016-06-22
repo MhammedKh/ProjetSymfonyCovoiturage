@@ -15,8 +15,7 @@ use Acme\CovoiturageBundle\Form\AnnonceType;
  *
  * @Route("/index")
  */
-class IndexController extends Controller
-{
+class IndexController extends Controller {
 
     /**
      * Lists all Annonce entities.
@@ -25,36 +24,43 @@ class IndexController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showIndexAnnonce();
-        foreach ($entities as $row)
-        {
-           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
+
+        foreach ($entities as $row) {
+            $sumAvis = 0;
+            $i=0;
+            $row->nbrPlacedesp = $row->nombrePlace - $this->sommeReservationAnnonce($row->id);
+            $entitieAvis = $em->getRepository('AcmeCovoiturageBundle:Avis')->showAvisAnnonce($row->id);
+            foreach ($entitieAvis as $rowAvis) {
+                $sumAvis+=$rowAvis->getNote();
+                $i++;
+            }
+            if($i!=0)
+            {
+                $row->idUtilisateur->note+=round(($sumAvis/$i));
+            }
             
         }
-        
+
         $entitiesV = $em->getRepository('AcmeCovoiturageBundle:Ville')->findAll();
-        
-        
-        
+
+
+
         return array(
             'entities' => $entities, 'entitiesVille' => $entitiesV
         );
     }
-    
-    public function sommeReservationAnnonce($id_ann)
-    {
-         $em = $this->getDoctrine()->getManager();
-         $sum =0;
+
+    public function sommeReservationAnnonce($id_ann) {
+        $em = $this->getDoctrine()->getManager();
+        $sum = 0;
         $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonce($id_ann);
-         foreach ($entities as $row)
-         {
-             $sum+=$row->getNbrPlace();
-         }
+        foreach ($entities as $row) {
+            $sum+=$row->getNbrPlace();
+        }
         return $sum;
     }
-       
+
 }
-    

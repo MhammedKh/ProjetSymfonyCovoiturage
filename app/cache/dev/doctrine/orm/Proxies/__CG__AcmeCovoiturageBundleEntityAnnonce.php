@@ -302,6 +302,17 @@ class Annonce extends \Acme\CovoiturageBundle\Entity\Annonce implements \Doctrin
     /**
      * {@inheritDoc}
      */
+    public function getUser()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', array());
+
+        return parent::getUser();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getTelUser()
     {
 

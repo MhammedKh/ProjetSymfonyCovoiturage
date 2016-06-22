@@ -29,495 +29,492 @@ class __TwigTemplate_9618f9ce2ec363e66296e7deb6b1ac5607503c8f459a4c10654309c89b4
     {
         // line 4
         echo "<!-- <h1>Annonce</h1>
-
-    <table class=\"record_properties\">
-        <tbody>
-            <tr>
-                <th>Marquevoiture</th>
-                <td>";
+ 
+     <table class=\"record_properties\">
+         <tbody>
+             <tr>
+                 <th>Marquevoiture</th>
+                 <td>";
         // line 10
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "marqueVoiture", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Nombreplace</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Nombreplace</th>
+                 <td>";
         // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nombrePlace", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Prixplace</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Prixplace</th>
+                 <td>";
         // line 18
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "prixPlace", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Datedep</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Datedep</th>
+                 <td>";
         // line 22
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDep", array()), "Y-m-d H:i:s"), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Heuredep</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Heuredep</th>
+                 <td>";
         // line 26
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "heureDep", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Lieudep</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Lieudep</th>
+                 <td>";
         // line 30
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "lieuDep", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Commentaire</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Commentaire</th>
+                 <td>";
         // line 34
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "commentaire", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Status</th>
+                 <td>";
         // line 38
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "status", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Dateins</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Dateins</th>
+                 <td>";
         // line 42
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateIns", array()), "Y-m-d H:i:s"), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Fumeur</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Fumeur</th>
+                 <td>";
         // line 46
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "fumeur", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Musique</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Musique</th>
+                 <td>";
         // line 50
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "musique", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Discussion</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Discussion</th>
+                 <td>";
         // line 54
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "discussion", array()), "html", null, true);
         echo "</td>
-            </tr>
-            <tr>
-                <th>Id</th>
-                <td>";
+             </tr>
+             <tr>
+                 <th>Id</th>
+                 <td>";
         // line 58
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()), "html", null, true);
         echo "</td>
-            </tr>
-        </tbody>
-    </table>
-
-        <ul class=\"record_actions\">
-    <li>
-        <a href=\"";
+             </tr>
+         </tbody>
+     </table>
+ 
+         <ul class=\"record_actions\">
+     <li>
+         <a href=\"";
         // line 65
         echo $this->env->getExtension('routing')->getPath("annonce");
         echo "\">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href=\"";
+             Back to the list
+         </a>
+     </li>
+     <li>
+         <a href=\"";
         // line 70
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("annonce_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo "\">
-            Edit
-        </a>
-    </li>
-    <li>";
+             Edit
+         </a>
+     </li>
+     <li>";
         // line 74
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
-</ul>-->
-    
-    
-    
+ </ul>-->
 
-        <header class=\"header\">
 
-            <div class=\"top-menu\">
 
-                <section class=\"container\">
-                    <div class=\"row\">
 
-                        <div class=\"col-md-4 col-sm-4 col-xs-12\">
-                            <div class=\"user-log\">
+    <header class=\"header\">
 
-                                <a data-toggle=\"modal\" data-target=\"#loginModal\">
-                                    Log in
-                                </a> /
-                                <a data-toggle=\"modal\" data-target=\"#regModal\">
-                                    Sign up
-                                </a>
+        <div class=\"top-menu\">
 
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
+            <section class=\"container\">
+                <div class=\"row\">
 
-                        <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                    <div class=\"col-md-4 col-sm-4 col-xs-12\">
+                        <div class=\"user-log\">
 
-                            <ul class=\"social-icons\">
-                                <li>
-                                    <a class=\"facebook\" href=\"#\">
-                                        <i class=\"fa fa-facebook\"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class=\"twitter\" href=\"#\">
-                                        <i class=\"fa fa-twitter\"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class=\"google\" href=\"#\">
-                                        <i class=\"fa fa-google-plus\"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <a data-toggle=\"modal\" data-target=\"#loginModal\">
+                                Log in
+                            </a> /
+                            <a data-toggle=\"modal\" data-target=\"#regModal\">
+                                Sign up
+                            </a>
 
-                        </div><!-- end .col-sm-8 -->
+                        </div><!-- end .user-log -->
+                    </div><!-- end .col-sm-4 -->
 
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
+                   
 
-            </div><!-- end .top-menu -->
+                </div><!-- end .row -->
+            </section><!-- end .container -->
 
-            <div class=\"main-baner\">
+        </div><!-- end .top-menu -->
 
-                <div class=\"background parallax clearfix\" style=\"background-image:url(";
-        // line 129
+        <div class=\"main-baner\">
+
+            <div class=\"background parallax clearfix\" style=\"background-image:url(";
+        // line 109
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg"), "html", null, true);
         echo ");\" data-img-width=\"1600\" data-img-height=\"1064\">
 
                 <div class=\"main-parallax-content\">
 
-                        <div class=\"second-parallax-content\">
+                    <div class=\"second-parallax-content\">
 
-                            <section class=\"container\">
+                        <section class=\"container\">
 
-                                <div class=\"row\">
+                            <div class=\"row\">
 
-                                    <div class=\"main-header-container clearfix\">
+                                <div class=\"main-header-container clearfix\">
 
-                                        <div class=\"col-md-4 col-sm-12 col-xs-12\">
+                                    <div class=\"col-md-4 col-sm-12 col-xs-12\">
 
-                                               <div class=\"logo\">
+                                        <div class=\"logo\">
                                             <h1>Carpool.Tn</h1>
                                         </div><!-- end .logo -->
 
-                                        </div><!-- end .col-sm-4 -->
+                                    </div><!-- end .col-sm-4 -->
 
-                                        <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                                   ";
+        // line 129
+        if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) != null)) {
+            // line 130
+            echo "                                    
+                                    
+                                    <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
 
-                                    <nav id=\"nav\" class=\"main-navigation\">
+                                        <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
 
                                             <ul class=\"navigation\">
                                                 <li>
-                                                    <a href=\"index.html\">Home</a>
+                                                    <a href=";
+            // line 138
+            echo $this->env->getExtension('routing')->getPath("index");
+            echo ">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href=\"rides.html\">Your Reservation</a>
+                                                    <a href=\"";
+            // line 141
+            echo $this->env->getExtension('routing')->getPath("reservation");
+            echo "\">Your Reservation</a>
                                                 </li>
-                                                
+
                                                 <li>
-                                                    <a href=\"#\">Announcement</a>
+                                                    <a>Announcement</a>
                                                     <ul class=\"sub-menu\">
                                                         <li>
-                                                            <a href=\"events.html\">New Announcement</a>
+                                                            <a href=\"";
+            // line 148
+            echo $this->env->getExtension('routing')->getPath("annonce_new");
+            echo "\">New Announcement</a>
                                                         </li>
                                                         <li>
-                                                            <a href=\"single-post.html\">Your Announcement</a>
+                                                            <a href=\"";
+            // line 151
+            echo $this->env->getExtension('routing')->getPath("annonceUser");
+            echo "\">Your Announcement</a>
                                                         </li>
-                                                      
+
                                                     </ul>
                                                 </li>
+
                                               
-                                                <li>
-                                                    <a href=\"contact-page.html\">Contact</a>
-                                                </li>
                                             </ul>
 
                                         </nav><!-- end .main-navigation -->
 
-                                        </div><!-- end .col-md-8 -->
+                                    </div><!-- end .col-md-8 -->
+                                    
+                                     ";
+        }
+        // line 164
+        echo "  
+                                    
 
-                                    </div><!-- end .main-header-container -->
+                                </div><!-- end .main-header-container -->
 
-                                </div><!-- end .row -->
+                            </div><!-- end .row -->
 
-                            </section><!-- end .container -->
+                        </section><!-- end .container -->
 
-                        </div><!-- end .second-parallax-content -->
+                    </div><!-- end .second-parallax-content -->
 
-                    </div><!-- end .main-parallax-content -->
+                </div><!-- end .main-parallax-content -->
 
-                </div><!-- end .background .parallax -->
+            </div><!-- end .background .parallax -->
 
-            </div><!-- end .main-baner -->
+        </div><!-- end .main-baner -->
 
-        </header><!-- end .header -->
+    </header><!-- end .header -->
 
-        <section class=\"main-content\">
+    <section class=\"main-content\">
+
+        <div class=\"container\">
+            <div class=\"row\">
+
+                <div class=\"col-md-12 col-sm-12 col-xs-12\">
+
+                    <div class=\"page-content\">
+
+                        <article class=\"single-article\">
+
+                          <div class=\"ride-content\">
+                                     <h3><a href=\"";
+        // line 195
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("map", array("from" => $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "villeDep", array()), "id", array()), "to" => $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "villeArr", array()), "id", array()))), "html", null, true);
+        echo "\">From ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getVilleDepString", array()), "html", null, true);
+        echo " To ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getVilleArrString", array()), "html", null, true);
+        echo " </a></h3> ride by: <a href=\"#\">";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idUtilisateur", array()), "nom", array()), "html", null, true);
+        echo "</a> <a href=\"#\">&nbsp;";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idUtilisateur", array()), "prenom", array()), "html", null, true);
+        echo "</a>
+                                        <br>
+                                    ";
+        // line 197
+        if (($this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idUtilisateur", array()), "note", array()) != 0)) {
+            // line 198
+            echo "                                        
+                                        <div class=\"rating\" style=\"padding-left: 50px;\" >
+                                            ";
+            // line 200
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idUtilisateur", array()), "note", array())));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 201
+                echo "                                            <a style=\"font-size: 2em;  color: #63a599 ;  \" >☆</a>
+                                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 203
+            echo "                                             ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(4, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "idUtilisateur", array()), "note", array())));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 204
+                echo "                                            <a style=\"font-size: 2em;  color: #aaa ;  \" >☆</a>
+                                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 206
+            echo "                                        </div>
+                                        
+                                        
+                                        ";
+        }
+        // line 210
+        echo "                                </div>
+
+                            <ul class=\"article-meta\">
+
+                                <li class=\"article-date\">
+                                    <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
+                                        <i class=\"fa fa-calendar\"></i>
+                                        ";
+        // line 217
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDep", array()), "Y-m-d"), "html", null, true);
+        echo " At ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "heureDep", array()), "html", null, true);
+        echo " PM
+                                    </a>
+                                </li><!-- end .article-date -->
+
+                                <li class=\"article-people\">
+                                    <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
+                                        <i class=\"fa fa-user\"></i>
+                                        ";
+        // line 224
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPlacedesp", array()), "html", null, true);
+        echo "
+                                    </a>
+                                </li><!-- end .article-people -->
+
+                                <li>
+                                    <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Car\" data-toggle=\"tooltip\">
+                                        <i class=\"fa fa-car\"></i>
+                                        ";
+        // line 231
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "marqueVoiture", array()), "html", null, true);
+        echo "
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number\" data-toggle=\"tooltip\">
+                                        <i class=\"fa fa-mobile\"></i>
+                                        ";
+        // line 239
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getTelUser", array(), "method"), "html", null, true);
+        echo "
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a>
+                                        <i class=\"fa fa-dollar\"></i>
+                                        ";
+        // line 246
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "prixPlace", array()), "html", null, true);
+        echo " DT
+                                    </a>
+                                </li>
+
+                            </ul><!-- end .article-meta -->
+
+                            <div class=\"article-content\">
+                                ";
+        // line 253
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "commentaire", array()), "html", null, true);
+        echo "
+                            </div>
+
+
+                        </article>
+                        ";
+        // line 258
+        if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) != null)) {
+            // line 259
+            echo "                            <div class=\"ride-suggestions\">
+                                <h3>Reservation</h3>
+                            </div>
+
+
+
+
+
+                            <article class=\"ride-box clearfix\">
+                                <form method=\"POST\" action=\"";
+            // line 268
+            echo $this->env->getExtension('routing')->getPath("reservation_add");
+            echo "\">
+                                    <div class=\"field\">
+                                        <input type=\"hidden\" name=\"id_ann\" value=\"";
+            // line 270
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()), "html", null, true);
+            echo "\">
+                                        <input name=\"nbr_p\" type=\"number\" min =\"1\" max=\"";
+            // line 271
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPlacedesp", array()), "html", null, true);
+            echo "\"> 
+                                    </div>
+                                    <div class=\"field\">
+                                        <input type=\"text\" name=\"comm_user\"> 
+                                    </div>
+                                    <div class=\"field buttons\">
+                                        <button type=\"submit\" class=\"btn btn-lg green-color\">Submit</button>
+                                    </div>
+
+                                </form>
+
+
+                            </article><!-- end .ride-box -->
+                        ";
+        }
+        // line 285
+        echo "                        ";
+        if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) == null)) {
+            // line 286
+            echo "                            <div class=\"ride-suggestions\">
+                                <h3>Pls. Try to connect for reservation</h3>
+                            </div>
+                        ";
+        }
+        // line 290
+        echo "                    </div><!-- end .page-content -->
+
+                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+
+    </section><!-- end .main-content -->
+
+    <footer id=\"footer\">
+
+        <div class=\"footer-copyright\">
 
             <div class=\"container\">
                 <div class=\"row\">
 
                     <div class=\"col-md-12 col-sm-12 col-xs-12\">
-
-                        <div class=\"page-content\">
-
-                            <article class=\"single-article\">
-
-                                <header class=\"single-article-title\">
-                                    <h2>From ";
-        // line 211
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getVilleDep", array()), "html", null, true);
-        echo " To ";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getVilleArr", array()), "html", null, true);
-        echo "</h2>
-                                    <span>ride by <a href=\"#\">";
-        // line 212
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getNameUser", array()), "html", null, true);
-        echo "</a></span>
-                                </header>
-
-                                <ul class=\"article-meta\">
-
-                                    <li class=\"article-date\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Date\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-calendar\"></i>
-                                            ";
-        // line 220
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "dateDep", array()), "Y-m-d"), "html", null, true);
-        echo " At ";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "heureDep", array()), "html", null, true);
-        echo " PM
-                                        </a>
-                                    </li><!-- end .article-date -->
-
-                                    <li class=\"article-people\">
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number of seats\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-user\"></i>
-                                            ";
-        // line 227
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPlacedesp", array()), "html", null, true);
-        echo "
-                                        </a>
-                                    </li><!-- end .article-people -->
-
-                                    <li>
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Car\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-car\"></i>
-                                            ";
-        // line 234
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "marqueVoiture", array()), "html", null, true);
-        echo "
-                                        </a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href=\"#\" class=\"tooltip-link\" data-original-title=\"Number\" data-toggle=\"tooltip\">
-                                            <i class=\"fa fa-mobile\"></i>
-                                            ";
-        // line 242
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getTelUser", array(), "method"), "html", null, true);
-        echo "
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a>
-                                            <i class=\"fa fa-dollar\"></i>
-                                             ";
-        // line 249
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "prixPlace", array()), "html", null, true);
-        echo " DT
-                                        </a>
-                                    </li>
-
-                                </ul><!-- end .article-meta -->
-
-                                <div class=\"article-content\">
-                                   ";
-        // line 256
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "commentaire", array()), "html", null, true);
-        echo "
-                                </div>
-
-
-                            </article>
-
-                            <div class=\"ride-suggestions\">
-                                <h3>Reservation</h3>
-                            </div>
-                                
-                                
-                                
-                                
-
-                            <article class=\"ride-box clearfix\">
-                            <form method=\"POST\" action=\"";
-        // line 271
-        echo $this->env->getExtension('routing')->getPath("reservation_add");
-        echo "\">
-                             <div class=\"field\">
-                                 <input type=\"hidden\" name=\"id_ann\" value=\"";
-        // line 273
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()), "html", null, true);
-        echo "\">
-                                  <input name=\"nbr_p\" type=\"number\" min =\"1\" max=\"";
-        // line 274
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPlacedesp", array()), "html", null, true);
-        echo "\"> 
-                                </div>
-                                <div class=\"field\">
-                                  <input type=\"text\" name=\"comm_user\"> 
-                                </div>
-                                <div class=\"field buttons\">
-                                    <button type=\"submit\" class=\"btn btn-lg green-color\">Submit</button>
-                                </div>
-                                
-                            </form>
-    
-
-                            </article><!-- end .ride-box -->
-
-                        </div><!-- end .page-content -->
-
-                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                        Copyright by My ride
+                    </div>
 
                 </div><!-- end .row -->
             </div><!-- end .container -->
 
-        </section><!-- end .main-content -->
+        </div><!-- end .footer-copyright -->
 
-        <footer id=\"footer\">
+    </footer><!-- end #footer -->
 
-            <div class=\"footer-copyright\">
+   
+    <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
+                ";
+        // line 321
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("FOSUserBundle:Security:login"));
+        echo "
+              
+        
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
 
-                <div class=\"container\">
-                    <div class=\"row\">
+    <div class=\"modal fade\" id=\"regModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
 
-                        <div class=\"col-md-12 col-sm-12 col-xs-12\">
-                            Copyright by My ride
-                        </div>
+                <div class=\"modal-header\">
+                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                </div>
 
-                    </div><!-- end .row -->
-                </div><!-- end .container -->
+                <div class=\"modal-body\">
+              ";
+        // line 337
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("AcmeCovoiturageBundle:Utilisateur:new"));
+        echo " 
+                </div><!-- end .modal-body -->
 
-            </div><!-- end .footer-copyright -->
-
-        </footer><!-- end #footer -->
-
-        <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
-                <div class=\"modal-content\">
-
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                    </div><!-- end .modal-header -->
-
-                    <div class=\"modal-body\">
-                        <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms login\">
-
-                            <div class=\"log-header\">
-                                <span class=\"log-in\">Log in</span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field buttons\">
-                                <button type=\"submit\" class=\"submit btn green-color\">Log in</button>
-                            </div>
-
-                            <a href=\"#\" class=\"log-twitter twitter\"><i class=\"fa fa-twitter\"></i>Twitter</a>
-                            <a href=\"#\" class=\"log-facebook facebook\"><i class=\"fa fa-facebook\"></i>Facebook</a>
-
-                            <div class=\"clearfix\"></div>
-
-                        </form><!-- end .login -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-
-        <div class=\"modal fade\" id=\"regModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
-                <div class=\"modal-content\">
-
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                    </div>
-
-                    <div class=\"modal-body\">
-                        <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms reg\">
-
-                            <div class=\"log-header\">
-                                <span class=\"log-in\">Sign up</span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"email\" type=\"email\"  placeholder=\"E-Mail\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"confirmpass\" type=\"password\"  placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field buttons\">
-                                <button type=\"submit\" class=\"submit btn green-color\">Sign up</button>
-                            </div>
-
-                            <div class=\"clearfix\"></div>
-
-                        </form><!-- end .reg -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-
-    
-    
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
 ";
     }
 
@@ -533,413 +530,350 @@ class __TwigTemplate_9618f9ce2ec363e66296e7deb6b1ac5607503c8f459a4c10654309c89b4
 
     public function getDebugInfo()
     {
-        return array (  388 => 274,  384 => 273,  379 => 271,  361 => 256,  351 => 249,  341 => 242,  330 => 234,  320 => 227,  308 => 220,  297 => 212,  291 => 211,  206 => 129,  148 => 74,  141 => 70,  133 => 65,  123 => 58,  116 => 54,  109 => 50,  102 => 46,  95 => 42,  88 => 38,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  511 => 337,  492 => 321,  459 => 290,  453 => 286,  450 => 285,  433 => 271,  429 => 270,  424 => 268,  413 => 259,  411 => 258,  403 => 253,  393 => 246,  383 => 239,  372 => 231,  362 => 224,  350 => 217,  341 => 210,  335 => 206,  328 => 204,  323 => 203,  316 => 201,  312 => 200,  308 => 198,  306 => 197,  293 => 195,  260 => 164,  243 => 151,  237 => 148,  227 => 141,  221 => 138,  211 => 130,  209 => 129,  186 => 109,  148 => 74,  141 => 70,  133 => 65,  123 => 58,  116 => 54,  109 => 50,  102 => 46,  95 => 42,  88 => 38,  81 => 34,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
-/*    <!-- <h1>Annonce</h1>*/
+/*     <!-- <h1>Annonce</h1>*/
+/*  */
+/*      <table class="record_properties">*/
+/*          <tbody>*/
+/*              <tr>*/
+/*                  <th>Marquevoiture</th>*/
+/*                  <td>{{ entity.marqueVoiture }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Nombreplace</th>*/
+/*                  <td>{{ entity.nombrePlace }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Prixplace</th>*/
+/*                  <td>{{ entity.prixPlace }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Datedep</th>*/
+/*                  <td>{{ entity.dateDep|date('Y-m-d H:i:s') }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Heuredep</th>*/
+/*                  <td>{{ entity.heureDep }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Lieudep</th>*/
+/*                  <td>{{ entity.lieuDep }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Commentaire</th>*/
+/*                  <td>{{ entity.commentaire }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Status</th>*/
+/*                  <td>{{ entity.status }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Dateins</th>*/
+/*                  <td>{{ entity.dateIns|date('Y-m-d H:i:s') }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Fumeur</th>*/
+/*                  <td>{{ entity.fumeur }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Musique</th>*/
+/*                  <td>{{ entity.musique }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Discussion</th>*/
+/*                  <td>{{ entity.discussion }}</td>*/
+/*              </tr>*/
+/*              <tr>*/
+/*                  <th>Id</th>*/
+/*                  <td>{{ entity.id }}</td>*/
+/*              </tr>*/
+/*          </tbody>*/
+/*      </table>*/
+/*  */
+/*          <ul class="record_actions">*/
+/*      <li>*/
+/*          <a href="{{ path('annonce') }}">*/
+/*              Back to the list*/
+/*          </a>*/
+/*      </li>*/
+/*      <li>*/
+/*          <a href="{{ path('annonce_edit', { 'id': entity.id }) }}">*/
+/*              Edit*/
+/*          </a>*/
+/*      </li>*/
+/*      <li>{{ form(delete_form) }}</li>*/
+/*  </ul>-->*/
 /* */
-/*     <table class="record_properties">*/
-/*         <tbody>*/
-/*             <tr>*/
-/*                 <th>Marquevoiture</th>*/
-/*                 <td>{{ entity.marqueVoiture }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Nombreplace</th>*/
-/*                 <td>{{ entity.nombrePlace }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Prixplace</th>*/
-/*                 <td>{{ entity.prixPlace }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Datedep</th>*/
-/*                 <td>{{ entity.dateDep|date('Y-m-d H:i:s') }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Heuredep</th>*/
-/*                 <td>{{ entity.heureDep }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Lieudep</th>*/
-/*                 <td>{{ entity.lieuDep }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Commentaire</th>*/
-/*                 <td>{{ entity.commentaire }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Status</th>*/
-/*                 <td>{{ entity.status }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Dateins</th>*/
-/*                 <td>{{ entity.dateIns|date('Y-m-d H:i:s') }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Fumeur</th>*/
-/*                 <td>{{ entity.fumeur }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Musique</th>*/
-/*                 <td>{{ entity.musique }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Discussion</th>*/
-/*                 <td>{{ entity.discussion }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Id</th>*/
-/*                 <td>{{ entity.id }}</td>*/
-/*             </tr>*/
-/*         </tbody>*/
-/*     </table>*/
 /* */
-/*         <ul class="record_actions">*/
-/*     <li>*/
-/*         <a href="{{ path('annonce') }}">*/
-/*             Back to the list*/
-/*         </a>*/
-/*     </li>*/
-/*     <li>*/
-/*         <a href="{{ path('annonce_edit', { 'id': entity.id }) }}">*/
-/*             Edit*/
-/*         </a>*/
-/*     </li>*/
-/*     <li>{{ form(delete_form) }}</li>*/
-/* </ul>-->*/
-/*     */
-/*     */
-/*     */
 /* */
-/*         <header class="header">*/
 /* */
-/*             <div class="top-menu">*/
+/*     <header class="header">*/
 /* */
-/*                 <section class="container">*/
-/*                     <div class="row">*/
+/*         <div class="top-menu">*/
 /* */
-/*                         <div class="col-md-4 col-sm-4 col-xs-12">*/
-/*                             <div class="user-log">*/
+/*             <section class="container">*/
+/*                 <div class="row">*/
 /* */
-/*                                 <a data-toggle="modal" data-target="#loginModal">*/
-/*                                     Log in*/
-/*                                 </a> /*/
-/*                                 <a data-toggle="modal" data-target="#regModal">*/
-/*                                     Sign up*/
-/*                                 </a>*/
+/*                     <div class="col-md-4 col-sm-4 col-xs-12">*/
+/*                         <div class="user-log">*/
 /* */
-/*                             </div><!-- end .user-log -->*/
-/*                         </div><!-- end .col-sm-4 -->*/
+/*                             <a data-toggle="modal" data-target="#loginModal">*/
+/*                                 Log in*/
+/*                             </a> /*/
+/*                             <a data-toggle="modal" data-target="#regModal">*/
+/*                                 Sign up*/
+/*                             </a>*/
 /* */
-/*                         <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                         </div><!-- end .user-log -->*/
+/*                     </div><!-- end .col-sm-4 -->*/
 /* */
-/*                             <ul class="social-icons">*/
-/*                                 <li>*/
-/*                                     <a class="facebook" href="#">*/
-/*                                         <i class="fa fa-facebook"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                                 <li>*/
-/*                                     <a class="twitter" href="#">*/
-/*                                         <i class="fa fa-twitter"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                                 <li>*/
-/*                                     <a class="google" href="#">*/
-/*                                         <i class="fa fa-google-plus"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                             </ul>*/
+/*                    */
 /* */
-/*                         </div><!-- end .col-sm-8 -->*/
+/*                 </div><!-- end .row -->*/
+/*             </section><!-- end .container -->*/
 /* */
-/*                     </div><!-- end .row -->*/
-/*                 </section><!-- end .container -->*/
+/*         </div><!-- end .top-menu -->*/
 /* */
-/*             </div><!-- end .top-menu -->*/
+/*         <div class="main-baner">*/
 /* */
-/*             <div class="main-baner">*/
-/* */
-/*                 <div class="background parallax clearfix" style="background-image:url({{ asset('img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg') }});" data-img-width="1600" data-img-height="1064">*/
+/*             <div class="background parallax clearfix" style="background-image:url({{ asset('img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg') }});" data-img-width="1600" data-img-height="1064">*/
 /* */
 /*                 <div class="main-parallax-content">*/
 /* */
-/*                         <div class="second-parallax-content">*/
+/*                     <div class="second-parallax-content">*/
 /* */
-/*                             <section class="container">*/
+/*                         <section class="container">*/
 /* */
-/*                                 <div class="row">*/
+/*                             <div class="row">*/
 /* */
-/*                                     <div class="main-header-container clearfix">*/
+/*                                 <div class="main-header-container clearfix">*/
 /* */
-/*                                         <div class="col-md-4 col-sm-12 col-xs-12">*/
+/*                                     <div class="col-md-4 col-sm-12 col-xs-12">*/
 /* */
-/*                                                <div class="logo">*/
+/*                                         <div class="logo">*/
 /*                                             <h1>Carpool.Tn</h1>*/
 /*                                         </div><!-- end .logo -->*/
 /* */
-/*                                         </div><!-- end .col-sm-4 -->*/
+/*                                     </div><!-- end .col-sm-4 -->*/
 /* */
-/*                                         <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                                    {% if  app.user!=null %}*/
+/*                                     */
+/*                                     */
+/*                                     <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
 /* */
-/*                                     <nav id="nav" class="main-navigation">*/
+/*                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
 /*                                             <ul class="navigation">*/
 /*                                                 <li>*/
-/*                                                     <a href="index.html">Home</a>*/
+/*                                                     <a href={{ path('index') }}>Home</a>*/
 /*                                                 </li>*/
 /*                                                 <li>*/
-/*                                                     <a href="rides.html">Your Reservation</a>*/
+/*                                                     <a href="{{ path('reservation') }}">Your Reservation</a>*/
 /*                                                 </li>*/
-/*                                                 */
+/* */
 /*                                                 <li>*/
-/*                                                     <a href="#">Announcement</a>*/
+/*                                                     <a>Announcement</a>*/
 /*                                                     <ul class="sub-menu">*/
 /*                                                         <li>*/
-/*                                                             <a href="events.html">New Announcement</a>*/
+/*                                                             <a href="{{ path('annonce_new') }}">New Announcement</a>*/
 /*                                                         </li>*/
 /*                                                         <li>*/
-/*                                                             <a href="single-post.html">Your Announcement</a>*/
+/*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
 /*                                                         </li>*/
-/*                                                       */
+/* */
 /*                                                     </ul>*/
 /*                                                 </li>*/
+/* */
 /*                                               */
-/*                                                 <li>*/
-/*                                                     <a href="contact-page.html">Contact</a>*/
-/*                                                 </li>*/
 /*                                             </ul>*/
 /* */
 /*                                         </nav><!-- end .main-navigation -->*/
 /* */
-/*                                         </div><!-- end .col-md-8 -->*/
+/*                                     </div><!-- end .col-md-8 -->*/
+/*                                     */
+/*                                      {% endif %}  */
+/*                                     */
 /* */
-/*                                     </div><!-- end .main-header-container -->*/
+/*                                 </div><!-- end .main-header-container -->*/
 /* */
-/*                                 </div><!-- end .row -->*/
+/*                             </div><!-- end .row -->*/
 /* */
-/*                             </section><!-- end .container -->*/
+/*                         </section><!-- end .container -->*/
 /* */
-/*                         </div><!-- end .second-parallax-content -->*/
+/*                     </div><!-- end .second-parallax-content -->*/
 /* */
-/*                     </div><!-- end .main-parallax-content -->*/
+/*                 </div><!-- end .main-parallax-content -->*/
 /* */
-/*                 </div><!-- end .background .parallax -->*/
+/*             </div><!-- end .background .parallax -->*/
 /* */
-/*             </div><!-- end .main-baner -->*/
+/*         </div><!-- end .main-baner -->*/
 /* */
-/*         </header><!-- end .header -->*/
+/*     </header><!-- end .header -->*/
 /* */
-/*         <section class="main-content">*/
+/*     <section class="main-content">*/
+/* */
+/*         <div class="container">*/
+/*             <div class="row">*/
+/* */
+/*                 <div class="col-md-12 col-sm-12 col-xs-12">*/
+/* */
+/*                     <div class="page-content">*/
+/* */
+/*                         <article class="single-article">*/
+/* */
+/*                           <div class="ride-content">*/
+/*                                      <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by: <a href="#">{{ entity.idUtilisateur.nom }}</a> <a href="#">&nbsp;{{ entity.idUtilisateur.prenom }}</a>*/
+/*                                         <br>*/
+/*                                     {% if entity.idUtilisateur.note!=0 %}*/
+/*                                         */
+/*                                         <div class="rating" style="padding-left: 50px;" >*/
+/*                                             {% for i in 1..entity.idUtilisateur.note %}*/
+/*                                             <a style="font-size: 2em;  color: #63a599 ;  " >☆</a>*/
+/*                                             {% endfor %}*/
+/*                                              {% for i in 4..entity.idUtilisateur.note %}*/
+/*                                             <a style="font-size: 2em;  color: #aaa ;  " >☆</a>*/
+/*                                             {% endfor %}*/
+/*                                         </div>*/
+/*                                         */
+/*                                         */
+/*                                         {% endif %}*/
+/*                                 </div>*/
+/* */
+/*                             <ul class="article-meta">*/
+/* */
+/*                                 <li class="article-date">*/
+/*                                     <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">*/
+/*                                         <i class="fa fa-calendar"></i>*/
+/*                                         {{ entity.dateDep|date('Y-m-d') }} At {{ entity.heureDep }} PM*/
+/*                                     </a>*/
+/*                                 </li><!-- end .article-date -->*/
+/* */
+/*                                 <li class="article-people">*/
+/*                                     <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">*/
+/*                                         <i class="fa fa-user"></i>*/
+/*                                         {{entity.nbrPlacedesp}}*/
+/*                                     </a>*/
+/*                                 </li><!-- end .article-people -->*/
+/* */
+/*                                 <li>*/
+/*                                     <a href="#" class="tooltip-link" data-original-title="Car" data-toggle="tooltip">*/
+/*                                         <i class="fa fa-car"></i>*/
+/*                                         {{entity.marqueVoiture}}*/
+/*                                     </a>*/
+/*                                 </li>*/
+/* */
+/* */
+/*                                 <li>*/
+/*                                     <a href="#" class="tooltip-link" data-original-title="Number" data-toggle="tooltip">*/
+/*                                         <i class="fa fa-mobile"></i>*/
+/*                                         {{entity.getTelUser()}}*/
+/*                                     </a>*/
+/*                                 </li>*/
+/* */
+/*                                 <li>*/
+/*                                     <a>*/
+/*                                         <i class="fa fa-dollar"></i>*/
+/*                                         {{entity.prixPlace}} DT*/
+/*                                     </a>*/
+/*                                 </li>*/
+/* */
+/*                             </ul><!-- end .article-meta -->*/
+/* */
+/*                             <div class="article-content">*/
+/*                                 {{ entity.commentaire }}*/
+/*                             </div>*/
+/* */
+/* */
+/*                         </article>*/
+/*                         {% if  app.user!=null %}*/
+/*                             <div class="ride-suggestions">*/
+/*                                 <h3>Reservation</h3>*/
+/*                             </div>*/
+/* */
+/* */
+/* */
+/* */
+/* */
+/*                             <article class="ride-box clearfix">*/
+/*                                 <form method="POST" action="{{path('reservation_add')}}">*/
+/*                                     <div class="field">*/
+/*                                         <input type="hidden" name="id_ann" value="{{entity.id}}">*/
+/*                                         <input name="nbr_p" type="number" min ="1" max="{{ entity.nbrPlacedesp }}"> */
+/*                                     </div>*/
+/*                                     <div class="field">*/
+/*                                         <input type="text" name="comm_user"> */
+/*                                     </div>*/
+/*                                     <div class="field buttons">*/
+/*                                         <button type="submit" class="btn btn-lg green-color">Submit</button>*/
+/*                                     </div>*/
+/* */
+/*                                 </form>*/
+/* */
+/* */
+/*                             </article><!-- end .ride-box -->*/
+/*                         {% endif %}*/
+/*                         {% if  app.user==null %}*/
+/*                             <div class="ride-suggestions">*/
+/*                                 <h3>Pls. Try to connect for reservation</h3>*/
+/*                             </div>*/
+/*                         {% endif %}*/
+/*                     </div><!-- end .page-content -->*/
+/* */
+/*                 </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->*/
+/* */
+/*             </div><!-- end .row -->*/
+/*         </div><!-- end .container -->*/
+/* */
+/*     </section><!-- end .main-content -->*/
+/* */
+/*     <footer id="footer">*/
+/* */
+/*         <div class="footer-copyright">*/
 /* */
 /*             <div class="container">*/
 /*                 <div class="row">*/
 /* */
 /*                     <div class="col-md-12 col-sm-12 col-xs-12">*/
-/* */
-/*                         <div class="page-content">*/
-/* */
-/*                             <article class="single-article">*/
-/* */
-/*                                 <header class="single-article-title">*/
-/*                                     <h2>From {{ entity.getVilleDep }} To {{ entity.getVilleArr }}</h2>*/
-/*                                     <span>ride by <a href="#">{{ entity.getNameUser }}</a></span>*/
-/*                                 </header>*/
-/* */
-/*                                 <ul class="article-meta">*/
-/* */
-/*                                     <li class="article-date">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-calendar"></i>*/
-/*                                             {{ entity.dateDep|date('Y-m-d') }} At {{ entity.heureDep }} PM*/
-/*                                         </a>*/
-/*                                     </li><!-- end .article-date -->*/
-/* */
-/*                                     <li class="article-people">*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-user"></i>*/
-/*                                             {{entity.nbrPlacedesp}}*/
-/*                                         </a>*/
-/*                                     </li><!-- end .article-people -->*/
-/* */
-/*                                     <li>*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Car" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-car"></i>*/
-/*                                             {{entity.marqueVoiture}}*/
-/*                                         </a>*/
-/*                                     </li>*/
-/* */
-/* */
-/*                                     <li>*/
-/*                                         <a href="#" class="tooltip-link" data-original-title="Number" data-toggle="tooltip">*/
-/*                                             <i class="fa fa-mobile"></i>*/
-/*                                             {{entity.getTelUser()}}*/
-/*                                         </a>*/
-/*                                     </li>*/
-/* */
-/*                                     <li>*/
-/*                                         <a>*/
-/*                                             <i class="fa fa-dollar"></i>*/
-/*                                              {{entity.prixPlace}} DT*/
-/*                                         </a>*/
-/*                                     </li>*/
-/* */
-/*                                 </ul><!-- end .article-meta -->*/
-/* */
-/*                                 <div class="article-content">*/
-/*                                    {{ entity.commentaire }}*/
-/*                                 </div>*/
-/* */
-/* */
-/*                             </article>*/
-/* */
-/*                             <div class="ride-suggestions">*/
-/*                                 <h3>Reservation</h3>*/
-/*                             </div>*/
-/*                                 */
-/*                                 */
-/*                                 */
-/*                                 */
-/* */
-/*                             <article class="ride-box clearfix">*/
-/*                             <form method="POST" action="{{path('reservation_add')}}">*/
-/*                              <div class="field">*/
-/*                                  <input type="hidden" name="id_ann" value="{{entity.id}}">*/
-/*                                   <input name="nbr_p" type="number" min ="1" max="{{ entity.nbrPlacedesp }}"> */
-/*                                 </div>*/
-/*                                 <div class="field">*/
-/*                                   <input type="text" name="comm_user"> */
-/*                                 </div>*/
-/*                                 <div class="field buttons">*/
-/*                                     <button type="submit" class="btn btn-lg green-color">Submit</button>*/
-/*                                 </div>*/
-/*                                 */
-/*                             </form>*/
-/*     */
-/* */
-/*                             </article><!-- end .ride-box -->*/
-/* */
-/*                         </div><!-- end .page-content -->*/
-/* */
-/*                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->*/
+/*                         Copyright by My ride*/
+/*                     </div>*/
 /* */
 /*                 </div><!-- end .row -->*/
 /*             </div><!-- end .container -->*/
 /* */
-/*         </section><!-- end .main-content -->*/
+/*         </div><!-- end .footer-copyright -->*/
 /* */
-/*         <footer id="footer">*/
+/*     </footer><!-- end #footer -->*/
 /* */
-/*             <div class="footer-copyright">*/
+/*    */
+/*     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
+/*         <div class="modal-dialog">*/
+/*             <div class="modal-content">*/
+/*                 {{ render(controller("FOSUserBundle:Security:login")) }}*/
+/*               */
+/*         */
+/*             </div><!-- end .modal-content -->*/
+/*         </div><!-- end .modal-dialog -->*/
+/*     </div><!-- end .modal -->*/
 /* */
-/*                 <div class="container">*/
-/*                     <div class="row">*/
+/*     <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
+/*         <div class="modal-dialog">*/
+/*             <div class="modal-content">*/
 /* */
-/*                         <div class="col-md-12 col-sm-12 col-xs-12">*/
-/*                             Copyright by My ride*/
-/*                         </div>*/
+/*                 <div class="modal-header">*/
+/*                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
+/*                 </div>*/
 /* */
-/*                     </div><!-- end .row -->*/
-/*                 </div><!-- end .container -->*/
+/*                 <div class="modal-body">*/
+/*               {{ render(controller("AcmeCovoiturageBundle:Utilisateur:new")) }} */
+/*                 </div><!-- end .modal-body -->*/
 /* */
-/*             </div><!-- end .footer-copyright -->*/
-/* */
-/*         </footer><!-- end #footer -->*/
-/* */
-/*         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
-/*             <div class="modal-dialog">*/
-/*                 <div class="modal-content">*/
-/* */
-/*                     <div class="modal-header">*/
-/*                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*                     </div><!-- end .modal-header -->*/
-/* */
-/*                     <div class="modal-body">*/
-/*                         <form action="" novalidate autocomplete="off" class="idealforms login">*/
-/* */
-/*                             <div class="log-header">*/
-/*                                 <span class="log-in">Log in</span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="username" type="text" placeholder="Username">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input type="password" name="password" placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field buttons">*/
-/*                                 <button type="submit" class="submit btn green-color">Log in</button>*/
-/*                             </div>*/
-/* */
-/*                             <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>*/
-/*                             <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>*/
-/* */
-/*                             <div class="clearfix"></div>*/
-/* */
-/*                         </form><!-- end .login -->*/
-/*                     </div><!-- end .modal-body -->*/
-/* */
-/*                 </div><!-- end .modal-content -->*/
-/*             </div><!-- end .modal-dialog -->*/
-/*         </div><!-- end .modal -->*/
-/* */
-/*         <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
-/*             <div class="modal-dialog">*/
-/*                 <div class="modal-content">*/
-/* */
-/*                     <div class="modal-header">*/
-/*                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*                     </div>*/
-/* */
-/*                     <div class="modal-body">*/
-/*                         <form action="" novalidate autocomplete="off" class="idealforms reg">*/
-/* */
-/*                             <div class="log-header">*/
-/*                                 <span class="log-in">Sign up</span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="username" type="text" placeholder="Username">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="email" type="email"  placeholder="E-Mail">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input type="password" name="password" placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="confirmpass" type="password"  placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field buttons">*/
-/*                                 <button type="submit" class="submit btn green-color">Sign up</button>*/
-/*                             </div>*/
-/* */
-/*                             <div class="clearfix"></div>*/
-/* */
-/*                         </form><!-- end .reg -->*/
-/*                     </div><!-- end .modal-body -->*/
-/* */
-/*                 </div><!-- end .modal-content -->*/
-/*             </div><!-- end .modal-dialog -->*/
-/*         </div><!-- end .modal -->*/
-/* */
-/*     */
-/*     */
+/*             </div><!-- end .modal-content -->*/
+/*         </div><!-- end .modal-dialog -->*/
+/*     </div><!-- end .modal -->*/
 /* {% endblock %}*/
 /* */

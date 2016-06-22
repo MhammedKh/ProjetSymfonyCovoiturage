@@ -15,58 +15,59 @@ use Acme\CovoiturageBundle\Form\AnnonceType;
  *
  * @Route("/annonce")
  */
-class AnnonceController extends Controller
-{
+class AnnonceController extends Controller {
 
-    
-    public function annonceUserAction()
-    {
+    public function annonceUserAction() {
         $em = $this->getDoctrine()->getManager();
-        
+
         $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->showAnnonceuser($this->getUser());
-        
-        foreach ($entities as $row)
-        {
-           $row->sumReserv =  $this->sommeReservationAnnonce($row->id);
-           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
-            
+
+        foreach ($entities as $row) {
+            $row->sumReserv = $this->sommeReservationAnnonce($row->id);
+            $row->nbrPlacedesp = $row->nombrePlace - $this->sommeReservationAnnonce($row->id);
         }
 
         return($this->render("AcmeCovoiturageBundle:Annonce:userAnnonce.html.twig", array("entities" => $entities)));
     }
-    
-   public function searchAnnonceAction()
-    {
+
+    public function searchAnnonceAction() {
 
 
-      $villedep =$this->get('request')->request->get('from');
-      $villedest =$this->get('request')->request->get('to');
-      $date = $this->get('request')->request->get('date');
-      
-       
-        $day=substr($date,3,2);
-        $month=substr($date,0,2);
-        $year=substr($date,6,4);
-        $date=$year.'-'.$month.'-'.$day;
-        
+        $villedep = $this->get('request')->request->get('from');
+        $villedest = $this->get('request')->request->get('to');
+        $date = $this->get('request')->request->get('date');
+
+
+        $day = substr($date, 3, 2);
+        $month = substr($date, 0, 2);
+        $year = substr($date, 6, 4);
+        $date = $year . '-' . $month . '-' . $day;
+
         $em = $this->getDoctrine()->getManager();
- 
-         $annoncelist = $em->getRepository("AcmeCovoiturageBundle:Annonce")
+
+        $annoncelist = $em->getRepository("AcmeCovoiturageBundle:Annonce")
                 ->search($villedep, $villedest, $date);
-               foreach ($annoncelist as $row)
-        {
-           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
-            
+        foreach ($annoncelist as $row) {
+
+            $sumAvis = 0;
+            $i = 0;
+            $row->nbrPlacedesp = $row->nombrePlace - $this->sommeReservationAnnonce($row->id);
+            $entitieAvis = $em->getRepository('AcmeCovoiturageBundle:Avis')->showAvisAnnonce($row->id);
+            foreach ($entitieAvis as $rowAvis) {
+                $sumAvis+=$rowAvis->getNote();
+                $i++;
+            }
+            if ($i != 0) {
+                $row->idUtilisateur->note+=round(($sumAvis / $i));
+            }
         }
-      
- 
+
+
         return $this->render('AcmeCovoiturageBundle:Annonce:index.html.twig', array(
-      'entities' => $annoncelist
-    ));
+                    'entities' => $annoncelist
+        ));
     }
-    
-    
-    
+
     /**
      * Lists all Annonce entities.
      *
@@ -74,34 +75,30 @@ class AnnonceController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeCovoiturageBundle:Annonce')->findAll();
-        
-        foreach ($entities as $row)
-        {
-           $row->nbrPlacedesp = $row->nombrePlace -  $this->sommeReservationAnnonce($row->id);
-            
+
+        foreach ($entities as $row) {
+            $row->nbrPlacedesp = $row->nombrePlace - $this->sommeReservationAnnonce($row->id);
         }
 
         return array(
             'entities' => $entities,
         );
     }
-    
-        public function sommeReservationAnnonce($id_ann)
-    {
-         $em = $this->getDoctrine()->getManager();
-         $sum =0;
+
+    public function sommeReservationAnnonce($id_ann) {
+        $em = $this->getDoctrine()->getManager();
+        $sum = 0;
         $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationAnnonce($id_ann);
-         foreach ($entities as $row)
-         {
-             $sum+=$row->getNbrPlace();
-         }
+        foreach ($entities as $row) {
+            $sum+=$row->getNbrPlace();
+        }
         return $sum;
     }
+
     /**
      * Creates a new Annonce entity.
      *
@@ -109,22 +106,21 @@ class AnnonceController extends Controller
      * @Method("POST")
      * @Template("AcmeCovoiturageBundle:Annonce:new.html.twig")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Annonce();
-        $entity->status="En cour";
-        $entity->dateIns=date("Y-m-d");
+        $entity->status = "En cour";
+        $entity->dateIns = date("Y-m-d");
         //TODO
-        $entity->idUtilisateur=$this->showUser($this->getUser());
+        $entity->idUtilisateur = $this->showUser($this->getUser());
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-        
-       $datedepString=  $entity->dateDep;
-        $day=substr($datedepString,3,2);
-        $month=substr($datedepString,0,2);
-        $year=substr($datedepString,6,4);
-        $entity->dateDep=$year.'-'.$month.'-'.$day;
-        
+
+        $datedepString = $entity->dateDep;
+        $day = substr($datedepString, 3, 2);
+        $month = substr($datedepString, 0, 2);
+        $year = substr($datedepString, 6, 4);
+        $entity->dateDep = $year . '-' . $month . '-' . $day;
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -135,20 +131,17 @@ class AnnonceController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
-    
-    
-    
-        public function showUser($id)
-    {
+
+    public function showUser($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:User')->find($id);
 
 
-        return  $entity;
+        return $entity;
     }
 
     /**
@@ -158,8 +151,7 @@ class AnnonceController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Annonce $entity)
-    {
+    private function createCreateForm(Annonce $entity) {
         $form = $this->createForm(new AnnonceType(), $entity, array(
             'action' => $this->generateUrl('annonce_create'),
             'method' => 'POST',
@@ -177,16 +169,15 @@ class AnnonceController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Annonce();
-        
-        $form   = $this->createCreateForm($entity);
-        
+
+        $form = $this->createCreateForm($entity);
+
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -197,14 +188,27 @@ class AnnonceController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id);
-       
-           $entity->nbrPlacedesp = $entity->nombrePlace -  $this->sommeReservationAnnonce($id);
+
+        $entity->nbrPlacedesp = $entity->nombrePlace - $this->sommeReservationAnnonce($id);
+
+         $sumAvis = 0;
+            $i = 0;
             
+            $entitieAvis = $em->getRepository('AcmeCovoiturageBundle:Avis')->showAvisAnnonce($entity->id);
+            foreach ($entitieAvis as $rowAvis) {
+                $sumAvis+=$rowAvis->getNote();
+                $i++;
+            }
+            if ($i != 0) {
+                $entity->idUtilisateur->note+=round(($sumAvis / $i));
+            }
+        
+        
+        
         
 
         if (!$entity) {
@@ -214,18 +218,10 @@ class AnnonceController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
-    
-    
-    
-    
-   
-    
-    
-    
 
     /**
      * Displays a form to edit an existing Annonce entity.
@@ -234,8 +230,7 @@ class AnnonceController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id);
@@ -248,21 +243,20 @@ class AnnonceController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a Annonce entity.
-    *
-    * @param Annonce $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Annonce $entity)
-    {
+     * Creates a form to edit a Annonce entity.
+     *
+     * @param Annonce $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Annonce $entity) {
         $form = $this->createForm(new AnnonceType(), $entity, array(
             'action' => $this->generateUrl('annonce_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -272,6 +266,7 @@ class AnnonceController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Annonce entity.
      *
@@ -279,8 +274,7 @@ class AnnonceController extends Controller
      * @Method("PUT")
      * @Template("AcmeCovoiturageBundle:Annonce:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id);
@@ -300,19 +294,19 @@ class AnnonceController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Annonce entity.
      *
      * @Route("/{id}", name="annonce_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -338,13 +332,13 @@ class AnnonceController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('annonce_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
+                        ->setAction($this->generateUrl('annonce_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Delete'))
+                        ->getForm()
         ;
     }
+
 }

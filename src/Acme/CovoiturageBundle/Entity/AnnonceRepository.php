@@ -42,7 +42,7 @@ class AnnonceRepository extends EntityRepository {
          
         return $qt->getQuery()->getResult();
     }
-
+ 
     
 
 }

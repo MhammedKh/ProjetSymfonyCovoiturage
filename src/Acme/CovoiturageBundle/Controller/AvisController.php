@@ -245,19 +245,42 @@ class AvisController extends Controller
         ;
     }
     
-    public function avisUser($id_ann,$note)
+    
+     /**
+     * new avis user.
+     *
+     * @Route("/{id_ann}/{note}", name="avis_user")
+     * @Method("GET")
+     * @Template()
+     */
+    public function avis_userAction($id_ann,$note)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        
         $entity = new Avis();
-       $entity->setIdAnnonce($id_ann);
+       $entity->setIdAnnonce($em->getRepository('AcmeCovoiturageBundle:Annonce')->find($id_ann));
        $entity->setIdUtilisateur($this->getUser());
        $entity->setNote($note);
 
         
-            $em = $this->getDoctrine()->getManager();
+            
             $em->persist($entity);
             $em->flush();
+            
+            $entities = $em->getRepository('AcmeCovoiturageBundle:Reservation')->showReservationUser($this->getUser());
+            foreach ($entities as $row)
+        {
+             $i=0;
+             $entitiesAvis = $em->getRepository('AcmeCovoiturageBundle:Avis')->showAvisUserAnnonce($row->getIdAnnonce()->getId(),$this->getUser()->getId());
+             foreach ($entitiesAvis as $rowAvis)
+             {
+                 $i=$i+1;
+             }
+             $row->note=$i;
+        }
 
-            return $this->render('reservation');
+            return($this->render("AcmeCovoiturageBundle:Reservation:index.html.twig", array("entities" => $entities)));
     }
     
     

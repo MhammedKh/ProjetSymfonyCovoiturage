@@ -213,7 +213,15 @@ class Annonce
     {
         return $this->idUtilisateur->getUsername();
     }
-    
+     /**
+     * Get NameUser
+     *
+     * @return \Acme\CovoiturageBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->idUtilisateur->note;
+    }
     
       /**
      * Get TelUser

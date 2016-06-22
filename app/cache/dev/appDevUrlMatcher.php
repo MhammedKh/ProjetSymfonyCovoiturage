@@ -782,9 +782,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\IndexController::indexAction',  '_route' => 'index',);
         }
 
-        // add_avis
-        if (0 === strpos($pathinfo, '/reservation/avis') && preg_match('#^/reservation/avis/(?P<id_ann>[^/]++)/(?P<note>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_avis')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\AvisController::avisUserAction',));
+        // avis_user
+        if (0 === strpos($pathinfo, '/avis_user') && preg_match('#^/avis_user/(?P<id_ann>[^/]++)/(?P<note>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'avis_user')), array (  '_controller' => 'Acme\\CovoiturageBundle\\Controller\\AvisController::avis_userAction',));
         }
 
         // _welcome

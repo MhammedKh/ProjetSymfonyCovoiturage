@@ -21,27 +21,7 @@
                         </div><!-- end .user-log -->
                     </div><!-- end .col-sm-4 -->
 
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-
-                        <ul class="social-icons">
-                            <li>
-                                <a class="facebook" href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="twitter" href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="google" href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div><!-- end .col-sm-8 -->
+                   
 
                 </div><!-- end .row -->
             </section><!-- end .container -->
@@ -70,6 +50,11 @@
 
                                     </div><!-- end .col-sm-4 -->
 
+                                    
+                                    
+                                    {% if  app.user!=null %}
+                                    
+                                    
                                     <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">
 
                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">
@@ -101,6 +86,9 @@
                                         </nav><!-- end .main-navigation -->
 
                                     </div><!-- end .col-md-8 -->
+                                    
+                                     {% endif %}  
+                                    
 
                                 </div><!-- end .main-header-container -->
 
@@ -214,9 +202,23 @@
 
 
                                     <div class="ride-content">
-                                        <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by <a href="#">{{ entity.getNameUser }}</a>
+                                        <h3><a href="{{ path('map', { 'from': entity.villeDep.id ,'to': entity.villeArr.id }) }}">From {{ entity. getVilleDepString }} To {{ entity.getVilleArrString }} </a></h3> ride by: <a href="#">{{ entity.idUtilisateur.nom }}</a> <a href="#">&nbsp;{{ entity.idUtilisateur.prenom }}</a>
+                                        <br>
+                                    {% if entity.idUtilisateur.note!=0 %}
+                                        
+                                        <div class="rating" style="padding-left: 50px;" >
+                                            {% for i in 1..entity.idUtilisateur.note %}
+                                            <a style="font-size: 2em;  color: #63a599 ;  " >☆</a>
+                                            {% endfor %}
+                                             {% for i in 4..entity.idUtilisateur.note %}
+                                            <a style="font-size: 2em;  color: #aaa ;  " >☆</a>
+                                            {% endfor %}
+                                        </div>
+                                        
+                                        
+                                        {% endif %}
                                     </div>
-
+                                     
                                     <ul class="ride-meta">
 
                                         {% if entity.fumeur==1 %}

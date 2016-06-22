@@ -40,10 +40,11 @@ class UtilisateurController extends Controller
      *
      * @Route("/", name="utilisateur_create")
      * @Method("POST")
-     * @Template("AcmeCovoiturageBundle:User:new.html.twig")
+     
      */
     public function createAction(Request $request)
     {
+        
         $entity = new User();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);

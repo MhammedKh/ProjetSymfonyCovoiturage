@@ -30,385 +30,335 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
         // line 6
         echo "<header class=\"header\">
 
-            <div class=\"top-menu\">
+        <div class=\"top-menu\">
 
-                <section class=\"container\">
-                    <div class=\"row\">
+            <section class=\"container\">
+                <div class=\"row\">
 
-                        <div class=\"col-md-4 col-sm-4 col-xs-12\">
-                            <div class=\"user-log\">
+                    <div class=\"col-md-4 col-sm-4 col-xs-12\">
+                        <div class=\"user-log\">
 
-                                <a data-toggle=\"modal\" data-target=\"#loginModal\">
-                                    Log in
-                                </a> /
-                                <a data-toggle=\"modal\" data-target=\"#regModal\">
-                                    Sign up
+                            <a data-toggle=\"modal\" data-target=\"#loginModal\">
+                                Log in
+                            </a> /
+                            <a data-toggle=\"modal\" data-target=\"#regModal\">
+                                Sign up
+                            </a>
+
+                        </div><!-- end .user-log -->
+                    </div><!-- end .col-sm-4 -->
+
+                    <div class=\"col-md-8 col-sm-8 col-xs-12\">
+
+                        <ul class=\"social-icons\">
+                            <li>
+                                <a class=\"facebook\" href=\"#\">
+                                    <i class=\"fa fa-facebook\"></i>
                                 </a>
+                            </li>
+                            <li>
+                                <a class=\"twitter\" href=\"#\">
+                                    <i class=\"fa fa-twitter\"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class=\"google\" href=\"#\">
+                                    <i class=\"fa fa-google-plus\"></i>
+                                </a>
+                            </li>
+                        </ul>
 
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
+                    </div><!-- end .col-sm-8 -->
 
-                        <div class=\"col-md-8 col-sm-8 col-xs-12\">
+                </div><!-- end .row -->
+            </section><!-- end .container -->
 
-                            <ul class=\"social-icons\">
-                                <li>
-                                    <a class=\"facebook\" href=\"#\">
-                                        <i class=\"fa fa-facebook\"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class=\"twitter\" href=\"#\">
-                                        <i class=\"fa fa-twitter\"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class=\"google\" href=\"#\">
-                                        <i class=\"fa fa-google-plus\"></i>
-                                    </a>
-                                </li>
-                            </ul>
+        </div><!-- end .top-menu -->
 
-                        </div><!-- end .col-sm-8 -->
+        <div class=\"main-baner\">
 
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
-
-            <div class=\"main-baner\">
-
-                <div class=\"background parallax clearfix\" style=\"background-image:url(";
+            <div class=\"background parallax clearfix\" style=\"background-image:url(";
         // line 55
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg"), "html", null, true);
         echo ");\" data-img-width=\"1600\" data-img-height=\"1064\">
 
                 <div class=\"main-parallax-content\">
 
-                        <div class=\"second-parallax-content\">
+                    <div class=\"second-parallax-content\">
 
-                            <section class=\"container\">
+                        <section class=\"container\">
 
-                                <div class=\"row\">
+                            <div class=\"row\">
 
-                                    <div class=\"main-header-container clearfix\">
+                                <div class=\"main-header-container clearfix\">
 
-                                        <div class=\"col-md-4 col-sm-12 col-xs-12\">
+                                    <div class=\"col-md-4 col-sm-12 col-xs-12\">
 
-                                            <div class=\"logo\">
+                                        <div class=\"logo\">
                                             <h1>Carpool.Tn</h1>
                                         </div><!-- end .logo -->
 
-                                        </div><!-- end .col-sm-4 -->
+                                    </div><!-- end .col-sm-4 -->
 
-                                       <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
+                                    ";
+        // line 75
+        if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()) != null)) {
+            // line 76
+            echo "
 
-                                        <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
+                                        <div class=\"col-md-8 col-sm-8 col-xs-12\"   style=\"padding-left:20px;\">
 
-                                            <ul class=\"navigation\">
-                                                <li>
-                                                    <a href=";
-        // line 81
-        echo $this->env->getExtension('routing')->getPath("index");
-        echo ">Home</a>
-                                                </li>
-                                                <li>
-                                                    <a href=\"";
-        // line 84
-        echo $this->env->getExtension('routing')->getPath("reservation");
-        echo "\">Your Reservation</a>
-                                                </li>
+                                            <nav id=\"nav\" class=\"main-navigation\" style=\"padding-left:60px;\">
 
-                                                <li>
-                                                    <a>Announcement</a>
-                                                    <ul class=\"sub-menu\">
-                                                        <li>
-                                                            <a href=\"";
-        // line 91
-        echo $this->env->getExtension('routing')->getPath("annonce_new");
-        echo "\">New Announcement</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=\"";
-        // line 94
-        echo $this->env->getExtension('routing')->getPath("annonceUser");
-        echo "\">Your Announcement</a>
-                                                        </li>
+                                                <ul class=\"navigation\">
+                                                    <li>
+                                                        <a href=";
+            // line 84
+            echo $this->env->getExtension('routing')->getPath("index");
+            echo ">Home</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=\"";
+            // line 87
+            echo $this->env->getExtension('routing')->getPath("reservation");
+            echo "\">Your Reservation</a>
+                                                    </li>
 
-                                                    </ul>
-                                                </li>
+                                                    <li>
+                                                        <a>Announcement</a>
+                                                        <ul class=\"sub-menu\">
+                                                            <li>
+                                                                <a href=\"";
+            // line 94
+            echo $this->env->getExtension('routing')->getPath("annonce_new");
+            echo "\">New Announcement</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href=\"";
+            // line 97
+            echo $this->env->getExtension('routing')->getPath("annonceUser");
+            echo "\">Your Announcement</a>
+                                                            </li>
 
-                                              
-                                            </ul>
+                                                        </ul>
+                                                    </li>
 
-                                        </nav><!-- end .main-navigation -->
 
-                                    </div><!-- end .main-header-container -->
+                                                </ul>
 
+                                            </nav><!-- end .main-navigation -->
+
+                                        </div><!-- end .col-md-8 -->
+
+                                    ";
+        }
+        // line 110
+        echo "  
 
                                 </div><!-- end .row -->
 
-                            </section><!-- end .container -->
+                        </section><!-- end .container -->
 
-                        </div><!-- end .second-parallax-content -->
+                    </div><!-- end .second-parallax-content -->
 
-                    </div><!-- end .main-parallax-content -->
+                </div><!-- end .main-parallax-content -->
 
-                </div><!-- end .background .parallax -->
+            </div><!-- end .background .parallax -->
 
-            </div><!-- end .main-baner -->
+        </div><!-- end .main-baner -->
 
-        </header><!-- end .header -->
+    </header><!-- end .header -->
 
-        <section class=\"main-content\">
+    <section class=\"main-content\">
+
+        <div class=\"container\">
+            <div class=\"row\">
+
+                <div class=\"col-sm-12 col-md-12 col-xs-12\">
+
+                    <div class=\"page-sub-title textcenter\">
+                        <h2>Add new Annoncment</h2>
+                        <div class=\"line\"></div>
+                    </div><!-- end .page-sub-title -->
+
+                </div><!-- end .col-lg-12 -->
+
+                <div class=\"col-sm-12 col-md-12 col-xs-12\">
+
+                    <div class=\"page-content add-new-ride\">
+
+                        ";
+        // line 144
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "idealforms add-ride")));
+        echo "
+
+
+
+                        <div class=\"field\">
+                            ";
+        // line 149
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeDep", array()), 'widget', array("attr" => array("id" => "destination")));
+        echo "
+                        </div>
+                        <div class=\"field\">
+                            ";
+        // line 152
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeArr", array()), 'widget', array("attr" => array("id" => "destination")));
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 156
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDep", array()), 'widget', array("attr" => array("class" => "datepicker", "value" => "Date")));
+        echo "
+                        </div>
+
+                        <div class=\"field\" style=\"display: inline-block; width:120px;\">
+                            ";
+        // line 160
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heureDep", array()), 'widget', array("attr" => array("pattern" => "0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]", "placeholder" => "Time")));
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 164
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombrePlace", array()), 'widget');
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 168
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "marqueVoiture", array()), 'widget', array("attr" => array("placeholder" => "Car s Brand")));
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 172
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prixPlace", array()), 'widget', array("attr" => array("placeholder" => "Price", "step" => "0.5")));
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 176
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "lieuDep", array()), 'widget', array("attr" => array("placeholder" => "Place")));
+        echo "
+                        </div>
+
+
+
+                        <div class=\"field\">
+                            ";
+        // line 182
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "fumeur", array()), 'widget');
+        echo "
+                        </div>
+
+                        <div class=\"field\">
+                            ";
+        // line 186
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "musique", array()), 'widget');
+        echo "
+                        </div>
+                        <div class=\"field\">
+                            ";
+        // line 189
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "discussion", array()), 'widget');
+        echo "
+                        </div>
+                        <div class=\"field\">
+                            ";
+        // line 192
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("placeholder" => "Comment")));
+        echo "
+                        </div>
+                        <div class=\"field buttons\">
+                            ";
+        // line 195
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'row', array("attr" => array("class" => "btn btn-lg green-color")));
+        echo "
+                        </div>
+
+
+
+
+
+
+
+
+
+                        ";
+        // line 206
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
+        echo "
+
+
+
+
+
+                    </div><!-- end .page-content -->
+
+                </div><!-- end .col-sm-12 -->
+
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+
+    </section><!-- end .main-content -->
+
+    <footer id=\"footer\">
+
+        <div class=\"footer-copyright\">
 
             <div class=\"container\">
                 <div class=\"row\">
 
-                    <div class=\"col-sm-12 col-md-12 col-xs-12\">
-
-                        <div class=\"page-sub-title textcenter\">
-                            <h2>Add new Annoncment</h2>
-                            <div class=\"line\"></div>
-                        </div><!-- end .page-sub-title -->
-
-                    </div><!-- end .col-lg-12 -->
-
-                    <div class=\"col-sm-12 col-md-12 col-xs-12\">
-
-                        <div class=\"page-content add-new-ride\">
-                            
-                            ";
-        // line 140
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "idealforms add-ride")));
-        echo "
-                            
-                            
-                            
-                             <div class=\"field\">
-                            ";
-        // line 145
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeDep", array()), 'widget', array("attr" => array("id" => "destination")));
-        echo "
-                             </div>
-                              <div class=\"field\">
-                                  ";
-        // line 148
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "villeArr", array()), 'widget', array("attr" => array("id" => "destination")));
-        echo "
-                             </div>
-                             
-                              <div class=\"field\">
-                                    ";
-        // line 152
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateDep", array()), 'widget', array("attr" => array("class" => "datepicker", "id" => "destination", "value" => "Date")));
-        echo "
-                                </div>
-                                 
-                                <div class=\"field\" style=\"display: inline-block; width:120px;\">
-                                    ";
-        // line 156
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heureDep", array()), 'widget', array("attr" => array("pattern" => "0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]", "placeholder" => "Time")));
-        echo "
-                                </div>
-                                
-                                <div class=\"field\">
-                                    ";
-        // line 160
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombrePlace", array()), 'widget');
-        echo "
-                                </div>
-                                
-                                 <div class=\"field\">
-                                    ";
-        // line 164
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "marqueVoiture", array()), 'widget', array("attr" => array("placeholder" => "Car s Brand")));
-        echo "
-                                </div>
-                                
-                                 <div class=\"field\">
-                                    ";
-        // line 168
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prixPlace", array()), 'widget', array("attr" => array("placeholder" => "Price", "step" => "0.5")));
-        echo "
-                                </div>
-                                
-                                 <div class=\"field\">
-                                    ";
-        // line 172
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "lieuDep", array()), 'widget', array("attr" => array("placeholder" => "Place")));
-        echo "
-                                </div>
-                                
-                              
-                                
-                                <div class=\"field\">
-                                    ";
-        // line 178
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "fumeur", array()), 'widget');
-        echo "
-                                </div>
-                                
-                                <div class=\"field\">
-                                    ";
-        // line 182
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "musique", array()), 'widget');
-        echo "
-                                </div>
-                                <div class=\"field\">
-                                    ";
-        // line 185
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "discussion", array()), 'widget');
-        echo "
-                                </div>
-                                   <div class=\"field\">
-                                    ";
-        // line 188
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("placeholder" => "Comment")));
-        echo "
-                                </div>
-                                 <div class=\"field buttons\">
-                                ";
-        // line 191
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'row', array("attr" => array("class" => "btn btn-lg green-color")));
-        echo "
-                                 </div>
-                                
-                               
-
- 
-
-                            
-                            
-                            
-                            
-                             ";
-        // line 202
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
-        echo "
-
-                           
-
-             
-
-                        </div><!-- end .page-content -->
-
-                    </div><!-- end .col-sm-12 -->
+                    <div class=\"col-md-12 col-sm-12 col-xs-12\">
+                        Copyright by My ride
+                    </div>
 
                 </div><!-- end .row -->
             </div><!-- end .container -->
 
-        </section><!-- end .main-content -->
+        </div><!-- end .footer-copyright -->
 
-        <footer id=\"footer\">
+    </footer><!-- end #footer -->
 
-            <div class=\"footer-copyright\">
 
-                <div class=\"container\">
-                    <div class=\"row\">
+    <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
+                ";
+        // line 243
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("FOSUserBundle:Security:login"));
+        echo "
 
-                        <div class=\"col-md-12 col-sm-12 col-xs-12\">
-                            Copyright by My ride
-                        </div>
 
-                    </div><!-- end .row -->
-                </div><!-- end .container -->
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
 
-            </div><!-- end .footer-copyright -->
+    <div class=\"modal fade\" id=\"regModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
 
-        </footer><!-- end #footer -->
+                <div class=\"modal-header\">
+                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                </div>
 
-        <div class=\"modal fade\" id=\"loginModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
-                <div class=\"modal-content\">
+                <div class=\"modal-body\">
+                    ";
+        // line 259
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("AcmeCovoiturageBundle:Utilisateur:new"));
+        echo " 
+                </div><!-- end .modal-body -->
 
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                    </div><!-- end .modal-header -->
-
-                    <div class=\"modal-body\">
-                        <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms login\">
-
-                            <div class=\"log-header\">
-                                <span class=\"log-in\">Log in</span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field buttons\">
-                                <button type=\"submit\" class=\"submit btn green-color\">Log in</button>
-                            </div>
-
-                            <a href=\"#\" class=\"log-twitter twitter\"><i class=\"fa fa-twitter\"></i>Twitter</a>
-                            <a href=\"#\" class=\"log-facebook facebook\"><i class=\"fa fa-facebook\"></i>Facebook</a>
-
-                            <div class=\"clearfix\"></div>
-
-                        </form><!-- end .login -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-
-        <div class=\"modal fade\" id=\"regModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-            <div class=\"modal-dialog\">
-                <div class=\"modal-content\">
-
-                    <div class=\"modal-header\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                    </div>
-
-                    <div class=\"modal-body\">
-                        <form action=\"\" novalidate autocomplete=\"off\" class=\"idealforms reg\">
-
-                            <div class=\"log-header\">
-                                <span class=\"log-in\">Sign up</span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"username\" type=\"text\" placeholder=\"Username\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"email\" type=\"email\"  placeholder=\"E-Mail\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input type=\"password\" name=\"password\" placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field\">
-                                <input name=\"confirmpass\" type=\"password\"  placeholder=\"Password\">
-                                <span class=\"error\"></span>
-                            </div>
-
-                            <div class=\"field buttons\">
-                                <button type=\"submit\" class=\"submit btn green-color\">Sign up</button>
-                            </div>
-
-                            <div class=\"clearfix\"></div>
-
-                        </form><!-- end .reg -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-    
-    
-    
-    
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
 ";
     }
 
@@ -424,334 +374,274 @@ class __TwigTemplate_4e488c7f51c59a58520d36a90c49a3dfb3bc6dbe7c5eadd937891f922eb
 
     public function getDebugInfo()
     {
-        return array (  286 => 202,  272 => 191,  266 => 188,  260 => 185,  254 => 182,  247 => 178,  238 => 172,  231 => 168,  224 => 164,  217 => 160,  210 => 156,  203 => 152,  196 => 148,  190 => 145,  182 => 140,  133 => 94,  127 => 91,  117 => 84,  111 => 81,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
+        return array (  355 => 259,  336 => 243,  296 => 206,  282 => 195,  276 => 192,  270 => 189,  264 => 186,  257 => 182,  248 => 176,  241 => 172,  234 => 168,  227 => 164,  220 => 160,  213 => 156,  206 => 152,  200 => 149,  192 => 144,  156 => 110,  139 => 97,  133 => 94,  123 => 87,  117 => 84,  107 => 76,  105 => 75,  82 => 55,  31 => 6,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
 /* */
 /* {% block body -%}*/
 /* */
-/*     */
-/*      <header class="header">*/
 /* */
-/*             <div class="top-menu">*/
+/*     <header class="header">*/
 /* */
-/*                 <section class="container">*/
-/*                     <div class="row">*/
+/*         <div class="top-menu">*/
 /* */
-/*                         <div class="col-md-4 col-sm-4 col-xs-12">*/
-/*                             <div class="user-log">*/
+/*             <section class="container">*/
+/*                 <div class="row">*/
 /* */
-/*                                 <a data-toggle="modal" data-target="#loginModal">*/
-/*                                     Log in*/
-/*                                 </a> /*/
-/*                                 <a data-toggle="modal" data-target="#regModal">*/
-/*                                     Sign up*/
+/*                     <div class="col-md-4 col-sm-4 col-xs-12">*/
+/*                         <div class="user-log">*/
+/* */
+/*                             <a data-toggle="modal" data-target="#loginModal">*/
+/*                                 Log in*/
+/*                             </a> /*/
+/*                             <a data-toggle="modal" data-target="#regModal">*/
+/*                                 Sign up*/
+/*                             </a>*/
+/* */
+/*                         </div><!-- end .user-log -->*/
+/*                     </div><!-- end .col-sm-4 -->*/
+/* */
+/*                     <div class="col-md-8 col-sm-8 col-xs-12">*/
+/* */
+/*                         <ul class="social-icons">*/
+/*                             <li>*/
+/*                                 <a class="facebook" href="#">*/
+/*                                     <i class="fa fa-facebook"></i>*/
 /*                                 </a>*/
+/*                             </li>*/
+/*                             <li>*/
+/*                                 <a class="twitter" href="#">*/
+/*                                     <i class="fa fa-twitter"></i>*/
+/*                                 </a>*/
+/*                             </li>*/
+/*                             <li>*/
+/*                                 <a class="google" href="#">*/
+/*                                     <i class="fa fa-google-plus"></i>*/
+/*                                 </a>*/
+/*                             </li>*/
+/*                         </ul>*/
 /* */
-/*                             </div><!-- end .user-log -->*/
-/*                         </div><!-- end .col-sm-4 -->*/
+/*                     </div><!-- end .col-sm-8 -->*/
 /* */
-/*                         <div class="col-md-8 col-sm-8 col-xs-12">*/
+/*                 </div><!-- end .row -->*/
+/*             </section><!-- end .container -->*/
 /* */
-/*                             <ul class="social-icons">*/
-/*                                 <li>*/
-/*                                     <a class="facebook" href="#">*/
-/*                                         <i class="fa fa-facebook"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                                 <li>*/
-/*                                     <a class="twitter" href="#">*/
-/*                                         <i class="fa fa-twitter"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                                 <li>*/
-/*                                     <a class="google" href="#">*/
-/*                                         <i class="fa fa-google-plus"></i>*/
-/*                                     </a>*/
-/*                                 </li>*/
-/*                             </ul>*/
+/*         </div><!-- end .top-menu -->*/
 /* */
-/*                         </div><!-- end .col-sm-8 -->*/
+/*         <div class="main-baner">*/
 /* */
-/*                     </div><!-- end .row -->*/
-/*                 </section><!-- end .container -->*/
-/* */
-/*             </div><!-- end .top-menu -->*/
-/* */
-/*             <div class="main-baner">*/
-/* */
-/*                 <div class="background parallax clearfix" style="background-image:url({{ asset('img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg') }});" data-img-width="1600" data-img-height="1064">*/
+/*             <div class="background parallax clearfix" style="background-image:url({{ asset('img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg') }});" data-img-width="1600" data-img-height="1064">*/
 /* */
 /*                 <div class="main-parallax-content">*/
 /* */
-/*                         <div class="second-parallax-content">*/
+/*                     <div class="second-parallax-content">*/
 /* */
-/*                             <section class="container">*/
+/*                         <section class="container">*/
 /* */
-/*                                 <div class="row">*/
+/*                             <div class="row">*/
 /* */
-/*                                     <div class="main-header-container clearfix">*/
+/*                                 <div class="main-header-container clearfix">*/
 /* */
-/*                                         <div class="col-md-4 col-sm-12 col-xs-12">*/
+/*                                     <div class="col-md-4 col-sm-12 col-xs-12">*/
 /* */
-/*                                             <div class="logo">*/
+/*                                         <div class="logo">*/
 /*                                             <h1>Carpool.Tn</h1>*/
 /*                                         </div><!-- end .logo -->*/
 /* */
-/*                                         </div><!-- end .col-sm-4 -->*/
+/*                                     </div><!-- end .col-sm-4 -->*/
 /* */
-/*                                        <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
+/*                                     {% if  app.user!=null %}*/
 /* */
-/*                                         <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
-/*                                             <ul class="navigation">*/
-/*                                                 <li>*/
-/*                                                     <a href={{ path('index') }}>Home</a>*/
-/*                                                 </li>*/
-/*                                                 <li>*/
-/*                                                     <a href="{{ path('reservation') }}">Your Reservation</a>*/
-/*                                                 </li>*/
+/*                                         <div class="col-md-8 col-sm-8 col-xs-12"   style="padding-left:20px;">*/
 /* */
-/*                                                 <li>*/
-/*                                                     <a>Announcement</a>*/
-/*                                                     <ul class="sub-menu">*/
-/*                                                         <li>*/
-/*                                                             <a href="{{ path('annonce_new') }}">New Announcement</a>*/
-/*                                                         </li>*/
-/*                                                         <li>*/
-/*                                                             <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
-/*                                                         </li>*/
+/*                                             <nav id="nav" class="main-navigation" style="padding-left:60px;">*/
 /* */
-/*                                                     </ul>*/
-/*                                                 </li>*/
+/*                                                 <ul class="navigation">*/
+/*                                                     <li>*/
+/*                                                         <a href={{ path('index') }}>Home</a>*/
+/*                                                     </li>*/
+/*                                                     <li>*/
+/*                                                         <a href="{{ path('reservation') }}">Your Reservation</a>*/
+/*                                                     </li>*/
 /* */
-/*                                               */
-/*                                             </ul>*/
+/*                                                     <li>*/
+/*                                                         <a>Announcement</a>*/
+/*                                                         <ul class="sub-menu">*/
+/*                                                             <li>*/
+/*                                                                 <a href="{{ path('annonce_new') }}">New Announcement</a>*/
+/*                                                             </li>*/
+/*                                                             <li>*/
+/*                                                                 <a href="{{ path('annonceUser') }}">Your Announcement</a>*/
+/*                                                             </li>*/
 /* */
-/*                                         </nav><!-- end .main-navigation -->*/
+/*                                                         </ul>*/
+/*                                                     </li>*/
 /* */
-/*                                     </div><!-- end .main-header-container -->*/
 /* */
+/*                                                 </ul>*/
+/* */
+/*                                             </nav><!-- end .main-navigation -->*/
+/* */
+/*                                         </div><!-- end .col-md-8 -->*/
+/* */
+/*                                     {% endif %}  */
 /* */
 /*                                 </div><!-- end .row -->*/
 /* */
-/*                             </section><!-- end .container -->*/
+/*                         </section><!-- end .container -->*/
 /* */
-/*                         </div><!-- end .second-parallax-content -->*/
+/*                     </div><!-- end .second-parallax-content -->*/
 /* */
-/*                     </div><!-- end .main-parallax-content -->*/
+/*                 </div><!-- end .main-parallax-content -->*/
 /* */
-/*                 </div><!-- end .background .parallax -->*/
+/*             </div><!-- end .background .parallax -->*/
 /* */
-/*             </div><!-- end .main-baner -->*/
+/*         </div><!-- end .main-baner -->*/
 /* */
-/*         </header><!-- end .header -->*/
+/*     </header><!-- end .header -->*/
 /* */
-/*         <section class="main-content">*/
+/*     <section class="main-content">*/
+/* */
+/*         <div class="container">*/
+/*             <div class="row">*/
+/* */
+/*                 <div class="col-sm-12 col-md-12 col-xs-12">*/
+/* */
+/*                     <div class="page-sub-title textcenter">*/
+/*                         <h2>Add new Annoncment</h2>*/
+/*                         <div class="line"></div>*/
+/*                     </div><!-- end .page-sub-title -->*/
+/* */
+/*                 </div><!-- end .col-lg-12 -->*/
+/* */
+/*                 <div class="col-sm-12 col-md-12 col-xs-12">*/
+/* */
+/*                     <div class="page-content add-new-ride">*/
+/* */
+/*                         {{ form_start(form , {'attr': {'class': 'idealforms add-ride'}}) }}*/
+/* */
+/* */
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget( form.villeDep , {'attr': { 'id': 'destination'}}) }}*/
+/*                         </div>*/
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.villeArr , {'attr': { 'id': 'destination'}}) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.dateDep , {'attr': {'class': 'datepicker','value' : 'Date'}}) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field" style="display: inline-block; width:120px;">*/
+/*                             {{ form_widget(form.heureDep , {'attr': {'pattern' : '0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]','placeholder':'Time'}}) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.nombrePlace)}}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.marqueVoiture, {'attr': {'placeholder' : 'Car s Brand'}}) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.prixPlace, {'attr': {'placeholder' : 'Price','step':'0.5'}}) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.lieuDep, {'attr': {'placeholder' : 'Place'}}) }}*/
+/*                         </div>*/
+/* */
+/* */
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.fumeur) }}*/
+/*                         </div>*/
+/* */
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.musique) }}*/
+/*                         </div>*/
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.discussion) }}*/
+/*                         </div>*/
+/*                         <div class="field">*/
+/*                             {{ form_widget(form.commentaire, {'attr': {'placeholder' : 'Comment'}}) }}*/
+/*                         </div>*/
+/*                         <div class="field buttons">*/
+/*                             {{ form_row(form.submit, {'attr': {'class':'btn btn-lg green-color' }}) }}*/
+/*                         </div>*/
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/*                         {{ form_end(form) }}*/
+/* */
+/* */
+/* */
+/* */
+/* */
+/*                     </div><!-- end .page-content -->*/
+/* */
+/*                 </div><!-- end .col-sm-12 -->*/
+/* */
+/*             </div><!-- end .row -->*/
+/*         </div><!-- end .container -->*/
+/* */
+/*     </section><!-- end .main-content -->*/
+/* */
+/*     <footer id="footer">*/
+/* */
+/*         <div class="footer-copyright">*/
 /* */
 /*             <div class="container">*/
 /*                 <div class="row">*/
 /* */
-/*                     <div class="col-sm-12 col-md-12 col-xs-12">*/
-/* */
-/*                         <div class="page-sub-title textcenter">*/
-/*                             <h2>Add new Annoncment</h2>*/
-/*                             <div class="line"></div>*/
-/*                         </div><!-- end .page-sub-title -->*/
-/* */
-/*                     </div><!-- end .col-lg-12 -->*/
-/* */
-/*                     <div class="col-sm-12 col-md-12 col-xs-12">*/
-/* */
-/*                         <div class="page-content add-new-ride">*/
-/*                             */
-/*                             {{ form_start(form , {'attr': {'class': 'idealforms add-ride'}}) }}*/
-/*                             */
-/*                             */
-/*                             */
-/*                              <div class="field">*/
-/*                             {{ form_widget( form.villeDep , {'attr': { 'id': 'destination'}}) }}*/
-/*                              </div>*/
-/*                               <div class="field">*/
-/*                                   {{ form_widget(form.villeArr , {'attr': { 'id': 'destination'}}) }}*/
-/*                              </div>*/
-/*                              */
-/*                               <div class="field">*/
-/*                                     {{ form_widget(form.dateDep , {'attr': {'class': 'datepicker','id': 'destination','value' : 'Date'}}) }}*/
-/*                                 </div>*/
-/*                                  */
-/*                                 <div class="field" style="display: inline-block; width:120px;">*/
-/*                                     {{ form_widget(form.heureDep , {'attr': {'pattern' : '0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]','placeholder':'Time'}}) }}*/
-/*                                 </div>*/
-/*                                 */
-/*                                 <div class="field">*/
-/*                                     {{ form_widget(form.nombrePlace)}}*/
-/*                                 </div>*/
-/*                                 */
-/*                                  <div class="field">*/
-/*                                     {{ form_widget(form.marqueVoiture, {'attr': {'placeholder' : 'Car s Brand'}}) }}*/
-/*                                 </div>*/
-/*                                 */
-/*                                  <div class="field">*/
-/*                                     {{ form_widget(form.prixPlace, {'attr': {'placeholder' : 'Price','step':'0.5'}}) }}*/
-/*                                 </div>*/
-/*                                 */
-/*                                  <div class="field">*/
-/*                                     {{ form_widget(form.lieuDep, {'attr': {'placeholder' : 'Place'}}) }}*/
-/*                                 </div>*/
-/*                                 */
-/*                               */
-/*                                 */
-/*                                 <div class="field">*/
-/*                                     {{ form_widget(form.fumeur) }}*/
-/*                                 </div>*/
-/*                                 */
-/*                                 <div class="field">*/
-/*                                     {{ form_widget(form.musique) }}*/
-/*                                 </div>*/
-/*                                 <div class="field">*/
-/*                                     {{ form_widget(form.discussion) }}*/
-/*                                 </div>*/
-/*                                    <div class="field">*/
-/*                                     {{ form_widget(form.commentaire, {'attr': {'placeholder' : 'Comment'}}) }}*/
-/*                                 </div>*/
-/*                                  <div class="field buttons">*/
-/*                                 {{ form_row(form.submit, {'attr': {'class':'btn btn-lg green-color' }}) }}*/
-/*                                  </div>*/
-/*                                 */
-/*                                */
-/* */
-/*  */
-/* */
-/*                             */
-/*                             */
-/*                             */
-/*                             */
-/*                              {{ form_end(form) }}*/
-/* */
-/*                            */
-/* */
-/*              */
-/* */
-/*                         </div><!-- end .page-content -->*/
-/* */
-/*                     </div><!-- end .col-sm-12 -->*/
+/*                     <div class="col-md-12 col-sm-12 col-xs-12">*/
+/*                         Copyright by My ride*/
+/*                     </div>*/
 /* */
 /*                 </div><!-- end .row -->*/
 /*             </div><!-- end .container -->*/
 /* */
-/*         </section><!-- end .main-content -->*/
+/*         </div><!-- end .footer-copyright -->*/
 /* */
-/*         <footer id="footer">*/
+/*     </footer><!-- end #footer -->*/
 /* */
-/*             <div class="footer-copyright">*/
 /* */
-/*                 <div class="container">*/
-/*                     <div class="row">*/
+/*     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
+/*         <div class="modal-dialog">*/
+/*             <div class="modal-content">*/
+/*                 {{ render(controller("FOSUserBundle:Security:login")) }}*/
 /* */
-/*                         <div class="col-md-12 col-sm-12 col-xs-12">*/
-/*                             Copyright by My ride*/
-/*                         </div>*/
 /* */
-/*                     </div><!-- end .row -->*/
-/*                 </div><!-- end .container -->*/
+/*             </div><!-- end .modal-content -->*/
+/*         </div><!-- end .modal-dialog -->*/
+/*     </div><!-- end .modal -->*/
 /* */
-/*             </div><!-- end .footer-copyright -->*/
+/*     <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
+/*         <div class="modal-dialog">*/
+/*             <div class="modal-content">*/
 /* */
-/*         </footer><!-- end #footer -->*/
+/*                 <div class="modal-header">*/
+/*                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
+/*                 </div>*/
 /* */
-/*         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
-/*             <div class="modal-dialog">*/
-/*                 <div class="modal-content">*/
+/*                 <div class="modal-body">*/
+/*                     {{ render(controller("AcmeCovoiturageBundle:Utilisateur:new")) }} */
+/*                 </div><!-- end .modal-body -->*/
 /* */
-/*                     <div class="modal-header">*/
-/*                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*                     </div><!-- end .modal-header -->*/
-/* */
-/*                     <div class="modal-body">*/
-/*                         <form action="" novalidate autocomplete="off" class="idealforms login">*/
-/* */
-/*                             <div class="log-header">*/
-/*                                 <span class="log-in">Log in</span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="username" type="text" placeholder="Username">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input type="password" name="password" placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field buttons">*/
-/*                                 <button type="submit" class="submit btn green-color">Log in</button>*/
-/*                             </div>*/
-/* */
-/*                             <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>*/
-/*                             <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>*/
-/* */
-/*                             <div class="clearfix"></div>*/
-/* */
-/*                         </form><!-- end .login -->*/
-/*                     </div><!-- end .modal-body -->*/
-/* */
-/*                 </div><!-- end .modal-content -->*/
-/*             </div><!-- end .modal-dialog -->*/
-/*         </div><!-- end .modal -->*/
-/* */
-/*         <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
-/*             <div class="modal-dialog">*/
-/*                 <div class="modal-content">*/
-/* */
-/*                     <div class="modal-header">*/
-/*                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*/
-/*                     </div>*/
-/* */
-/*                     <div class="modal-body">*/
-/*                         <form action="" novalidate autocomplete="off" class="idealforms reg">*/
-/* */
-/*                             <div class="log-header">*/
-/*                                 <span class="log-in">Sign up</span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="username" type="text" placeholder="Username">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="email" type="email"  placeholder="E-Mail">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input type="password" name="password" placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field">*/
-/*                                 <input name="confirmpass" type="password"  placeholder="Password">*/
-/*                                 <span class="error"></span>*/
-/*                             </div>*/
-/* */
-/*                             <div class="field buttons">*/
-/*                                 <button type="submit" class="submit btn green-color">Sign up</button>*/
-/*                             </div>*/
-/* */
-/*                             <div class="clearfix"></div>*/
-/* */
-/*                         </form><!-- end .reg -->*/
-/*                     </div><!-- end .modal-body -->*/
-/* */
-/*                 </div><!-- end .modal-content -->*/
-/*             </div><!-- end .modal-dialog -->*/
-/*         </div><!-- end .modal -->*/
-/*     */
-/*     */
-/*     */
-/*     */
+/*             </div><!-- end .modal-content -->*/
+/*         </div><!-- end .modal-dialog -->*/
+/*     </div><!-- end .modal -->*/
 /* {% endblock %}*/
+/* */
+/* */
 /* */

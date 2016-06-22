@@ -4,6 +4,12 @@
  
 
    {{ form_start(form , {'attr': {'class': 'idealforms add-ride'}}) }}
+   
+   
+    {% for errorItem in form.plainPassword.first.vars.errors %}
+      <label  class="log-in" for="{{ form.plainPassword.vars.id }}">{{ errorItem.message }}</label>
+ 
+    {% endfor %}
 <div class="log-header">
     <span class="log-in">Sign up</span>
 
@@ -15,35 +21,35 @@
     <div class="field">
 
     
-    {{ form_widget(form.nom ,{ 'attr' :{'class':'field','placeholder' : ' Ferst name'}})}}
+    {{ form_widget(form.nom ,{ 'attr' :{'class':'field','placeholder' : ' Ferst name','required':'required'}})}}
     <span class="error"></span>
 </div>
     <div class="field">
 
-    {{ form_widget(form.prenom ,{ 'attr' :{'class':'field','placeholder' : ' Last name'}})}}
+    {{ form_widget(form.prenom ,{ 'attr' :{'class':'field','placeholder' : ' Last name','required':'required'}})}}
     <span class="error"></span>
 </div>
        <div class="field">
 
     
-    {{ form_widget(form.tel ,{ 'attr' :{'class':'field','placeholder' : 'Phone number'}})}}
+    {{ form_widget(form.tel ,{ 'attr' :{'class':'field','placeholder' : 'Phone number','required':'required'}})}}
     <span class="error"></span>
 </div>
      
 <div class="field">
 
    
-    {{ form_widget(form.email ,{ 'attr' :{'class':'field','placeholder' : 'E-mail'}})}}
+    {{ form_widget(form.email ,{ 'attr' :{'class':'field','placeholder' : 'E-mail','required':'required'}})}}
     <span class="error"></span>
 </div>
 <div class="field">
     
-    {{ form_widget(form.username ,{ 'attr' :{'class':'field','placeholder' : 'User name'}})}}
+    {{ form_widget(form.username ,{ 'attr' :{'class':'field','placeholder' : 'User name','required':'required'}})}}
       
 </div>
 <div class="field">
     
-    {{ form_widget(form.plainPassword.first,{ 'attr' :{'class':'field','placeholder' : 'Password'}})}}
+    {{ form_widget(form.plainPassword.first,{ 'attr' :{'class':'field','placeholder' : 'Password','required':'required'}})}}
     <span class="error"></span>   
 </div>
 
@@ -54,8 +60,12 @@
     {{ form_widget(form.plainPassword.second,{ 'attr' :{'class':'field','placeholder' : 'Confirmed password'}})}}
     <span class="error"></span>   
 </div>
-  
+    
+ 
+<div class="field buttons">
+{{ form_row(form.submit,{'attr' :{'class':'submit btn green-color'}})}}
+</div>
+
 
 {{ form_end(form) }}
-
 {% endblock %}

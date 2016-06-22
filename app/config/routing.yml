@@ -37,6 +37,6 @@ index:
     
 
 
-add_avis:
-    pattern : /reservation/avis/{id_ann}/{note}
-    defaults: { _controller: AcmeCovoiturageBundle:Avis:avisUser}
+avis_user:
+    pattern : /avis_user/{id_ann}/{note}
+    defaults: { _controller: AcmeCovoiturageBundle:Avis:avis_user}
